@@ -1,0 +1,818 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>High Order Function · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="7-module.html" />
+    
+    
+    <link rel="prev" href="5-recursion.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    HASKELL 趣學指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1-introduction.html">
+            
+                <a href="1-introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2-ready-go.html">
+            
+                <a href="2-ready-go.html">
+            
+                    
+                    Ready Go
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3-type-and-typeclass.html">
+            
+                <a href="3-type-and-typeclass.html">
+            
+                    
+                    Type And Typeclass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4-syntax-in-function.html">
+            
+                <a href="4-syntax-in-function.html">
+            
+                    
+                    Syntax in Function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5-recursion.html">
+            
+                <a href="5-recursion.html">
+            
+                    
+                    Recursion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="6-high-order-function.html">
+            
+                <a href="6-high-order-function.html">
+            
+                    
+                    High Order Function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="7-module.html">
+            
+                <a href="7-module.html">
+            
+                    
+                    Module
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="8-build-our-own-type-and-typeclass.html">
+            
+                <a href="8-build-our-own-type-and-typeclass.html">
+            
+                    
+                    Build Our Own Type and Typeclass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="9-input-and-output.html">
+            
+                <a href="9-input-and-output.html">
+            
+                    
+                    Input and Output
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="10-functionally-solving-problems.html">
+            
+                <a href="10-functionally-solving-problems.html">
+            
+                    
+                    Functionally Solving Problems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="11-functors-applicative-functors-and-monoids.html">
+            
+                <a href="11-functors-applicative-functors-and-monoids.html">
+            
+                    
+                    Functors, Applicative Functors 與 Monoids
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="12-a-fistful-of-monads.html">
+            
+                <a href="12-a-fistful-of-monads.html">
+            
+                    
+                    A Fistful of Monad
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="13-for-a-few-monads-more.html">
+            
+                <a href="13-for-a-few-monads-more.html">
+            
+                    
+                    For a Few Monad More
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="14-zippers.html">
+            
+                <a href="14-zippers.html">
+            
+                    
+                    Zippers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="resource.html">
+            
+                <a href="resource.html">
+            
+                    
+                    Resource
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >High Order Function</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9AD8;&#x968E;&#x51FD;&#x6578;">&#x9AD8;&#x968E;&#x51FD;&#x6578;</h1>
+<p><img src="img/sun.png" alt=""> Haskell &#x4E2D;&#x7684;&#x51FD;&#x6578;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x51FD;&#x6578;&#x4F5C;&#x70BA;&#x53C3;&#x6578;&#x4E5F;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x51FD;&#x6578;&#x4F5C;&#x70BA;&#x7D50;&#x679C;&#xFF0C;&#x9019;&#x6A23;&#x7684;&#x51FD;&#x6578;&#x5C31;&#x88AB;&#x7A31;&#x4F5C;&#x9AD8;&#x968E;&#x51FD;&#x6578;&#x3002;&#x9AD8;&#x968E;&#x51FD;&#x6578;&#x53EF;&#x4E0D;&#x53EA;&#x662F;&#x67D0;&#x7C21;&#x55AE;&#x7279;&#x6027;&#x800C;&#x5DF2;&#xFF0C;&#x5B83;&#x8CAB;&#x7A7F;&#x4E8E; Haskell &#x7684;&#x65B9;&#x65B9;&#x9762;&#x9762;&#x3002;&#x8981;&#x62D2;&#x7D76;&#x5FAA;&#x74B0;&#x8207;&#x72C0;&#x614B;&#x7684;&#x6539;&#x8B8A;&#x800C;&#x901A;&#x904E;&#x5B9A;&#x7FA9;&#x554F;&#x984C;&quot;&#x662F;&#x4EC0;&#x9EBC;&quot;&#x4F86;&#x89E3;&#x6C7A;&#x554F;&#x984C;&#xFF0C;&#x9AD8;&#x968E;&#x51FD;&#x6578;&#x5FC5;&#x4E0D;&#x53EF;&#x5C11;&#x3002;&#x5B83;&#x5011;&#x662F;&#x7DE8;&#x78BC;&#x7684;&#x5F97;&#x529B;&#x5DE5;&#x5177;&#x3002;</p>
+<h2 id="curried-functions">Curried functions</h2>
+<p>&#x672C;&#x8CEA;&#x4E0A;&#xFF0C;Haskell &#x7684;&#x6240;&#x6709;&#x51FD;&#x6578;&#x90FD;&#x53EA;&#x6709;&#x4E00;&#x500B;&#x53C3;&#x6578;&#xFF0C;&#x90A3;&#x9EBC;&#x6211;&#x5011;&#x5148;&#x524D;&#x7DE8;&#x90A3;&#x9EBC;&#x591A;&#x542B;&#x6709;&#x591A;&#x500B;&#x53C3;&#x6578;&#x7684;&#x51FD;&#x6578;&#x53C8;&#x662F;&#x600E;&#x9EBC;&#x56DE;&#x4E8B;? &#x5475;&#xFF0C;&#x5C0F;&#x4F0E;&#x5006;! &#x6240;&#x6709;&#x591A;&#x500B;&#x53C3;&#x6578;&#x7684;&#x51FD;&#x6578;&#x90FD;&#x662F; Curried functions&#x3002; &#x4EC0;&#x9EBC;&#x610F;&#x601D;&#x5462;? &#x53D6;&#x4E00;&#x500B;&#x4F8B;&#x5B50;&#x6700;&#x597D;&#x7406;&#x89E3;&#xFF0C;&#x5C31;&#x62FF;&#x6211;&#x5011;&#x7684;&#x597D;&#x670B;&#x53CB; <code>max</code> &#x51FD;&#x6578;&#x8AAA;&#x4E8B;&#x5427;&#x3002;&#x5B83;&#x770B;&#x8D77;&#x4F86;&#x50CF;&#x662F;&#x53D6;&#x5169;&#x500B;&#x53C3;&#x6578;&#xFF0C;&#x56DE;&#x50B3;&#x8F03;&#x5927;&#x7684;&#x90A3;&#x500B;&#x6578;&#x3002; &#x5BE6;&#x969B;&#x4E0A;&#xFF0C;&#x57F7;&#x884C; <code>max 4 5</code> &#x6642;&#xFF0C;&#x5B83;&#x6703;&#x9996;&#x5148;&#x56DE;&#x50B3;&#x4E00;&#x500B;&#x53D6;&#x4E00;&#x500B;&#x53C3;&#x6578;&#x7684;&#x51FD;&#x6578;&#xFF0C;&#x5176;&#x56DE;&#x50B3;&#x503C;&#x4E0D;&#x662F; 4 &#x5C31;&#x662F;&#x8A72;&#x53C3;&#x6578;&#xFF0C;&#x53D6;&#x6C7A;&#x65BC;&#x8AB0;&#x5927;&#x3002; &#x7136;&#x5F8C;&#xFF0C;&#x4EE5; 5 &#x70BA;&#x53C3;&#x6578;&#x547C;&#x53EB;&#x5B83;&#xFF0C;&#x4E26;&#x53D6;&#x5F97;&#x6700;&#x7D42;&#x7D50;&#x679C;&#x3002; &#x9019;&#x807D;&#x8457;&#x633A;&#x7E5E;&#x53E3;&#x7684;&#xFF0C;&#x4E0D;&#x904E;&#x9019;&#x4E00;&#x6982;&#x5FF5;&#x5341;&#x5206;&#x7684;&#x9177;! &#x5982;&#x4E0B;&#x7684;&#x5169;&#x500B;&#x547C;&#x53EB;&#x662F;&#x7B49;&#x50F9;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; max <span class="hljs-number">4</span> <span class="hljs-number">5</span>
+<span class="hljs-number">5</span>
+<span class="hljs-title">ghci</span>&gt; (max <span class="hljs-number">4</span>) <span class="hljs-number">5</span>
+<span class="hljs-number">5</span>
+</code></pre>
+<p><img src="img/curry.png" alt=""></p>
+<p>&#x628A;&#x7A7A;&#x683C;&#x653E;&#x5230;&#x5169;&#x500B;&#x6771;&#x897F;&#x4E4B;&#x9593;&#xFF0C;&#x7A31;&#x4F5C;<em>&#x51FD;&#x6578;&#x547C;&#x53EB;</em>&#x3002;&#x5B83;&#x6709;&#x9EDE;&#x50CF;&#x500B;&#x904B;&#x7B97;&#x7B26;&#xFF0C;&#x4E26;&#x64C1;&#x6709;&#x6700;&#x9AD8;&#x7684;&#x512A;&#x5148;&#x9806;&#x5E8F;&#x3002; &#x770B;&#x770B; <code>max</code> &#x51FD;&#x6578;&#x7684;&#x578B;&#x5225;: <code>max :: (Ord a) =&gt; a -&gt; a -&gt; a</code>&#x3002; &#x4E5F;&#x53EF;&#x4EE5;&#x5BEB;&#x4F5C;: <code>max :: (Ord a) =&gt; a -&gt; (a -&gt; a)</code>&#x3002; &#x53EF;&#x4EE5;&#x8B80;&#x4F5C; <code>max</code> &#x53D6;&#x4E00;&#x500B;&#x53C3;&#x6578; <code>a</code>&#xFF0C;&#x4E26;&#x56DE;&#x50B3;&#x4E00;&#x500B;&#x51FD;&#x6578;(&#x5C31;&#x662F;&#x90A3;&#x500B; <code>-&gt;</code>)&#xFF0C;&#x9019;&#x500B;&#x51FD;&#x6578;&#x53D6;&#x4E00;&#x500B; <code>a</code> &#x578B;&#x5225;&#x7684;&#x53C3;&#x6578;&#xFF0C;&#x56DE;&#x50B3;&#x4E00;&#x500B;a&#x3002; &#x9019;&#x4FBF;&#x662F;&#x70BA;&#x4F55;&#x53EA;&#x7528;&#x7BAD;&#x982D;&#x4F86;&#x5206;&#x9694;&#x53C3;&#x6578;&#x548C;&#x56DE;&#x50B3;&#x503C;&#x578B;&#x5225;&#x3002;</p>
+<p>&#x9019;&#x6A23;&#x7684;&#x597D;&#x8655;&#x53C8;&#x662F;&#x5982;&#x4F55;? &#x7C21;&#x8A00;&#x4E4B;&#xFF0C;&#x6211;&#x5011;&#x82E5;&#x4EE5;&#x4E0D;&#x5168;&#x7684;&#x53C3;&#x6578;&#x4F86;&#x547C;&#x53EB;&#x67D0;&#x51FD;&#x6578;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4E00;&#x500B;<em>&#x4E0D;&#x5168;&#x547C;&#x53EB;</em>&#x7684;&#x51FD;&#x6578;&#x3002; &#x5982;&#x679C;&#x4F60;&#x9AD8;&#x8208;&#xFF0C;&#x69CB;&#x9020;&#x65B0;&#x51FD;&#x6578;&#x5C31;&#x53EF;&#x4EE5;&#x5982;&#x6B64;&#x4FBF;&#x6377;&#xFF0C;&#x5C07;&#x5176;&#x50B3;&#x7D66;&#x53E6;&#x4E00;&#x500B;&#x51FD;&#x6578;&#x4E5F;&#x662F;&#x540C;&#x6A23;&#x65B9;&#x4FBF;&#x3002;</p>
+<p>&#x770B;&#x4E0B;&#x9019;&#x500B;&#x51FD;&#x6578;&#xFF0C;&#x7C21;&#x55AE;&#x81F3;&#x6975;:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">multThree</span> :: (<span class="hljs-type">Num</span> a) =&gt; a -&gt; a -&gt; a -&gt; a
+<span class="hljs-title">multThree</span> x y z = x * y * z
+</code></pre>
+<p>&#x6211;&#x5011;&#x82E5;&#x57F7;&#x884C; <code>mulThree 3 5 9</code> &#x6216; <code>((mulThree 3) 5) 9</code>&#xFF0C;&#x5B83;&#x80CC;&#x5F8C;&#x662F;&#x5982;&#x4F55;&#x904B;&#x4F5C;&#x5462;&#xFF1F; &#x9996;&#x5148;&#xFF0C;&#x6309;&#x7167;&#x7A7A;&#x683C;&#x5206;&#x9694;&#xFF0C;&#x628A; <code>3</code> &#x4EA4;&#x7D66; <code>mulThree</code>&#x3002; &#x9019;&#x56DE;&#x50B3;&#x4E00;&#x500B;&#x56DE;&#x50B3;&#x51FD;&#x6578;&#x7684;&#x51FD;&#x6578;&#x3002; &#x7136;&#x5F8C;&#x628A; <code>5</code> &#x4EA4;&#x7D66;&#x5B83;&#xFF0C;&#x56DE;&#x50B3;&#x4E00;&#x500B;&#x53D6;&#x4E00;&#x500B;&#x53C3;&#x6578;&#x4E26;&#x4F7F;&#x4E4B;&#x4E58;&#x4EE5; <code>15</code> &#x7684;&#x51FD;&#x6578;&#x3002; &#x6700;&#x5F8C;&#x628A; <code>9</code> &#x4EA4;&#x7D66;&#x9019;&#x4E00;&#x51FD;&#x6578;&#xFF0C;&#x56DE;&#x50B3; <code>135</code>&#x3002; &#x60F3;&#x60F3;&#xFF0C;&#x9019;&#x500B;&#x51FD;&#x6578;&#x7684;&#x578B;&#x5225;&#x4E5F;&#x53EF;&#x4EE5;&#x5BEB;&#x4F5C; <code>multThree :: (Num a) =&gt; a -&gt; (a -&gt; (a -&gt; a))</code>&#xFF0C;<code>-&gt;</code> &#x524D;&#x9762;&#x7684;&#x6771;&#x897F;&#x5C31;&#x662F;&#x51FD;&#x6578;&#x53D6;&#x7684;&#x53C3;&#x6578;&#xFF0C;&#x5F8C;&#x9762;&#x7684;&#x6771;&#x897F;&#x5C31;&#x662F;&#x5176;&#x56DE;&#x50B3;&#x503C;&#x3002;&#x6240;&#x4EE5;&#x8AAA;&#xFF0C;&#x6211;&#x5011;&#x7684;&#x51FD;&#x6578;&#x53D6;&#x4E00;&#x500B; <code>a</code>&#xFF0C;&#x4E26;&#x56DE;&#x50B3;&#x4E00;&#x500B;&#x578B;&#x5225;&#x70BA; <code>(Num a) =&gt; a -&gt; (a -&gt; a)</code> &#x7684;&#x51FD;&#x6578;&#xFF0C;&#x985E;&#x4F3C;&#xFF0C;&#x9019;&#x4E00;&#x51FD;&#x6578;&#x56DE;&#x50B3;&#x4E00;&#x500B;&#x53D6;&#x4E00;&#x500B; <code>a</code>&#xFF0C;&#x56DE;&#x50B3;&#x4E00;&#x500B;&#x578B;&#x5225;&#x70BA; <code>(Num a) =&gt; a -&gt; a</code> &#x7684;&#x51FD;&#x6578;&#x3002; &#x800C;&#x6700;&#x5F8C;&#x7684;&#x9019;&#x500B;&#x51FD;&#x6578;&#x5C31;&#x53EA;&#x53D6;&#x4E00;&#x500B; <code>a</code> &#x4E26;&#x56DE;&#x50B3;&#x4E00;&#x500B; <code>a</code>&#xFF0C;&#x5982;&#x4E0B;:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> multTwoWithNine = multThree <span class="hljs-number">9</span>
+<span class="hljs-title">ghci</span>&gt; multTwoWithNine <span class="hljs-number">2</span> <span class="hljs-number">3</span>
+<span class="hljs-number">54</span>
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> multWithEighteen = multTwoWithNine <span class="hljs-number">2</span>
+<span class="hljs-title">ghci</span>&gt; multWithEighteen <span class="hljs-number">10</span>
+<span class="hljs-number">180</span>
+</code></pre>
+<p>&#x524D;&#x9762;&#x63D0;&#x5230;&#xFF0C;&#x4EE5;&#x4E0D;&#x5168;&#x7684;&#x53C3;&#x6578;&#x547C;&#x53EB;&#x51FD;&#x6578;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5730;&#x5275;&#x9020;&#x65B0;&#x7684;&#x51FD;&#x6578;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x641E;&#x500B;&#x53D6;&#x4E00;&#x6578;&#x8207; 100 &#x6BD4;&#x8F03;&#x5927;&#x5C0F;&#x7684;&#x51FD;&#x6578;&#x8A72;&#x5982;&#x4F55;? &#x5927;&#x53EF;&#x9019;&#x6A23;:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">compareWithHundred</span> :: (<span class="hljs-type">Num</span> a, <span class="hljs-type">Ord</span> a) =&gt; a -&gt; <span class="hljs-type">Ordering</span>
+<span class="hljs-title">compareWithHundred</span> x = compare <span class="hljs-number">100</span> x
+</code></pre>
+<p>&#x7528; 99 &#x547C;&#x53EB;&#x5B83;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4E00;&#x500B; <code>GT</code>&#x3002; &#x7C21;&#x55AE;&#x3002; &#x6CE8;&#x610F;&#x4E0B;&#x5728;&#x7B49;&#x865F;&#x5169;&#x908A;&#x90FD;&#x6709; <code>x</code>&#x3002; &#x60F3;&#x60F3; <code>compare 100</code> &#x6703;&#x56DE;&#x50B3;&#x4EC0;&#x9EBC;&#xFF1F;&#x4E00;&#x500B;&#x53D6;&#x4E00;&#x6578;&#x8207; 100 &#x6BD4;&#x8F03;&#x7684;&#x51FD;&#x6578;&#x3002; Wow&#xFF0C;&#x9019;&#x4E0D;&#x6B63;&#x662F;&#x6211;&#x5011;&#x60F3;&#x8981;&#x7684;? &#x9019;&#x6A23;&#x91CD;&#x5BEB;:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">compareWithHundred</span> :: (<span class="hljs-type">Num</span> a, <span class="hljs-type">Ord</span> a) =&gt; a -&gt; <span class="hljs-type">Ordering</span>
+<span class="hljs-title">compareWithHundred</span> = compare <span class="hljs-number">100</span>
+</code></pre>
+<p>&#x578B;&#x5225;&#x8072;&#x660E;&#x4F9D;&#x7136;&#x76F8;&#x540C;&#xFF0C;&#x56E0;&#x70BA; <code>compare 100</code> &#x56DE;&#x50B3;&#x51FD;&#x6578;&#x3002;<code>compare</code> &#x7684;&#x578B;&#x5225;&#x70BA; <code>(Ord a) =&gt; a -&gt; (a -&gt; Ordering)</code>&#xFF0C;&#x7528; 100 &#x547C;&#x53EB;&#x5B83;&#x5F8C;&#x56DE;&#x50B3;&#x7684;&#x51FD;&#x6578;&#x578B;&#x5225;&#x70BA; <code>(Num a, Ord a) =&gt; a -&gt; Ordering</code>&#xFF0C;&#x540C;&#x6642;&#x7531;&#x65BC; 100 &#x9084;&#x662F; <code>Num</code> &#x578B;&#x5225;&#x985E;&#x7684;&#x5BE6;&#x4F8B;&#xFF0C;&#x6240;&#x4EE5;&#x9084;&#x5F97;&#x53E6;&#x7559;&#x4E00;&#x500B;&#x985E;&#x7D04;&#x675F;&#x3002;</p>
+<p>Yo! &#x4F60;&#x5F97;&#x4FDD;&#x8B49;&#x5DF2;&#x7D93;&#x5F04;&#x660E;&#x767D;&#x4E86; Curried functions &#x8207;&#x4E0D;&#x5168;&#x547C;&#x53EB;&#x7684;&#x539F;&#x7406;&#xFF0C;&#x5B83;&#x5011;&#x5F88;&#x91CD;&#x8981;&#xFF01;</p>
+<p>&#x4E2D;&#x7DB4;&#x51FD;&#x6578;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x5168;&#x547C;&#x53EB;&#xFF0C;&#x7528;&#x62EC;&#x865F;&#x628A;&#x5B83;&#x548C;&#x4E00;&#x908A;&#x7684;&#x53C3;&#x6578;&#x62EC;&#x5728;&#x4E00;&#x8D77;&#x5C31;&#x884C;&#x4E86;&#x3002; &#x9019;&#x56DE;&#x50B3;&#x4E00;&#x500B;&#x53D6;&#x4E00;&#x53C3;&#x6578;&#x4E26;&#x5C07;&#x5176;&#x88DC;&#x5230;&#x7F3A;&#x5C11;&#x7684;&#x90A3;&#x4E00;&#x7AEF;&#x7684;&#x51FD;&#x6578;&#x3002; &#x4E00;&#x500B;&#x7C21;&#x55AE;&#x51FD;&#x6578;&#x5982;&#x4E0B;:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">divideByTen</span> :: (<span class="hljs-type">Floating</span> a) =&gt; a -&gt; a
+<span class="hljs-title">divideByTen</span> = (/<span class="hljs-number">10</span>)
+</code></pre>
+<p>&#x547C;&#x53EB; <code>divideByTen 200</code> &#x5C31;&#x662F; <code>(/10) 200</code>&#xFF0C;&#x548C; <code>200 / 10</code> &#x7B49;&#x50F9;&#x3002;</p>
+<p>&#x4E00;&#x500B;&#x6AA2;&#x67E5;&#x5B57;&#x5143;&#x662F;&#x5426;&#x70BA;&#x5927;&#x5BEB;&#x7684;&#x51FD;&#x6578;:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">isUpperAlphanum</span> :: <span class="hljs-type">Char</span> -&gt; <span class="hljs-type">Bool</span>
+<span class="hljs-title">isUpperAlphanum</span> = (`elem` [&apos;<span class="hljs-type">A&apos;</span>..&apos;<span class="hljs-type">Z&apos;</span>])
+</code></pre>
+<p>&#x552F;&#x4E00;&#x7684;&#x4F8B;&#x5916;&#x5C31;&#x662F; <code>-</code> &#x904B;&#x7B97;&#x7B26;&#xFF0C;&#x6309;&#x7167;&#x524D;&#x9762;&#x63D0;&#x5230;&#x7684;&#x5B9A;&#x7FA9;&#xFF0C;<code>(-4)</code> &#x7406;&#x61C9;&#x56DE;&#x50B3;&#x4E00;&#x500B;&#x4E26;&#x5C07;&#x53C3;&#x6578;&#x6E1B; 4 &#x7684;&#x51FD;&#x6578;&#xFF0C;&#x800C;&#x5BE6;&#x969B;&#x4E0A;&#xFF0C;&#x8655;&#x4E8E;&#x8A08;&#x7B97;&#x4E0A;&#x7684;&#x65B9;&#x4FBF;&#xFF0C;<code>(-4)</code> &#x8868;&#x793A;&#x8CA0; <code>4</code>&#x3002; &#x82E5;&#x4F60;&#x4E00;&#x5B9A;&#x8981;&#x5F04;&#x500B;&#x5C07;&#x53C3;&#x6578;&#x6E1B; 4 &#x7684;&#x51FD;&#x6578;&#xFF0C;&#x5C31;&#x7528; <code>subtract</code> &#x597D;&#x4E86;&#xFF0C;&#x50CF;&#x9019;&#x6A23; <code>(subtract 4)</code>.</p>
+<p>&#x82E5;&#x4E0D;&#x7528; <code>let</code> &#x7D66;&#x5B83;&#x547D;&#x540D;&#x6216;&#x50B3;&#x5230;&#x53E6;&#x4E00;&#x51FD;&#x6578;&#x4E2D;&#xFF0C;&#x5728; ghci &#x4E2D;&#x76F4;&#x63A5;&#x57F7;&#x884C; <code>multThree 3 4</code> &#x6703;&#x600E;&#x6A23;?</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; multThree <span class="hljs-number">3</span> <span class="hljs-number">4</span>
+:<span class="hljs-number">1</span>:<span class="hljs-number">0</span>:
+<span class="hljs-type">No</span> <span class="hljs-keyword">instance</span> for (<span class="hljs-type">Show</span> (t -&gt; t))
+<span class="hljs-title">arising</span> from a use <span class="hljs-keyword">of</span> `print&apos; at :<span class="hljs-number">1</span>:<span class="hljs-number">0</span><span class="hljs-number">-12</span>
+<span class="hljs-type">Possible</span> fix: add an <span class="hljs-keyword">instance</span> declaration for (<span class="hljs-type">Show</span> (t -&gt; t))
+<span class="hljs-type">In</span> the expression: print it
+<span class="hljs-type">In</span> a &apos;<span class="hljs-keyword">do</span>&apos; expression: print it
+</code></pre>
+<p>ghci &#x8AAA;&#xFF0C;&#x9019;&#x4E00;&#x8868;&#x9054;&#x5F0F;&#x56DE;&#x50B3;&#x4E86;&#x4E00;&#x500B; <code>a -&gt; a</code> &#x578B;&#x5225;&#x7684;&#x51FD;&#x6578;&#xFF0C;&#x4F46;&#x5B83;&#x4E0D;&#x77E5;&#x9053;&#x8A72;&#x5982;&#x4F55;&#x986F;&#x793A;&#x5B83;&#x3002; &#x51FD;&#x6578;&#x4E0D;&#x662F; <code>Show</code> &#x578B;&#x5225;&#x985E;&#x7684;&#x5BE6;&#x4F8B;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x5011;&#x4E0D;&#x80FD;&#x5F97;&#x5230;&#x8868;&#x793A;&#x4E00;&#x51FD;&#x6578;&#x5167;&#x5BB9;&#x7684;&#x5B57;&#x4E32;&#x3002; &#x82E5;&#x5728; ghci &#x4E2D;&#x8A08;&#x7B97; <code>1+1</code>&#xFF0C;&#x5B83;&#x6703;&#x9996;&#x5148;&#x8A08;&#x7B97;&#x5F97; <code>2</code>&#xFF0C;&#x7136;&#x5F8C;&#x547C;&#x53EB; <code>show 2</code> &#x5F97;&#x5230;&#x8A72;&#x6578;&#x503C;&#x7684;&#x5B57;&#x4E32;&#x8868;&#x793A;&#xFF0C;&#x5373; <code>&quot;2&quot;</code>&#xFF0C;&#x518D;&#x8F38;&#x51FA;&#x5230;&#x5C4F;&#x5E55;.</p>
+<h2 id="&#x662F;&#x6642;&#x5019;&#x4E86;&#xFF0C;&#x4F86;&#x9EDE;&#x9AD8;&#x968E;&#x51FD;&#x6578;&#xFF01;">&#x662F;&#x6642;&#x5019;&#x4E86;&#xFF0C;&#x4F86;&#x9EDE;&#x9AD8;&#x968E;&#x51FD;&#x6578;&#xFF01;</h2>
+<p>Haskell &#x4E2D;&#x7684;&#x51FD;&#x6578;&#x53EF;&#x4EE5;&#x53D6;&#x53E6;&#x4E00;&#x500B;&#x51FD;&#x6578;&#x505A;&#x53C3;&#x6578;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x56DE;&#x50B3;&#x51FD;&#x6578;&#x3002; &#x8209;&#x500B;&#x4F8B;&#x5B50;&#xFF0C;&#x6211;&#x5011;&#x5F04;&#x500B;&#x53D6;&#x4E00;&#x500B;&#x51FD;&#x6578;&#x4E26;&#x547C;&#x53EB;&#x5B83;&#x5169;&#x6B21;&#x7684;&#x51FD;&#x6578;.</p>
+<pre><code class="lang-haskell"><span class="hljs-title">applyTwice</span> :: (a -&gt; a) -&gt; a -&gt; a  
+<span class="hljs-title">applyTwice</span> f x = f (f x)
+</code></pre>
+<p><img src="img/bonus.png" alt=""></p>
+<p>&#x9996;&#x5148;&#x6CE8;&#x610F;&#x9019;&#x578B;&#x5225;&#x8072;&#x660E;&#x3002; &#x5728;&#x6B64;&#x4E4B;&#x524D;&#x6211;&#x5011;&#x5F88;&#x5C11;&#x7528;&#x5230;&#x62EC;&#x865F;&#xFF0C;&#x56E0;&#x70BA; <code>(-&gt;)</code> &#x662F;&#x81EA;&#x7136;&#x7684;&#x53F3;&#x7D50;&#x5408;&#xFF0C;&#x4E0D;&#x904E;&#x5728;&#x9019;&#x88E1;&#x62EC;&#x865F;&#x662F;&#x5FC5;&#x9808;&#x7684;&#x3002; &#x5B83;&#x6A19;&#x660E;&#x4E86;&#x9996;&#x500B;&#x53C3;&#x6578;&#x662F;&#x500B;&#x53C3;&#x6578;&#x8207;&#x56DE;&#x50B3;&#x503C;&#x578B;&#x5225;&#x90FD;&#x662F;a&#x7684;&#x51FD;&#x6578;&#xFF0C;&#x7B2C;&#x4E8C;&#x500B;&#x53C3;&#x6578;&#x8207;&#x56DE;&#x50B3;&#x503C;&#x7684;&#x578B;&#x5225;&#x4E5F;&#x90FD;&#x662F;a&#x3002; &#x6211;&#x5011;&#x53EF;&#x4EE5;&#x7528; Curried functions &#x7684;&#x601D;&#x8DEF;&#x4F86;&#x7406;&#x89E3;&#x9019;&#x4E00;&#x51FD;&#x6578;&#xFF0C;&#x4E0D;&#x904E;&#x514D;&#x5F97;&#x81EA;&#x5C0B;&#x7169;&#x60F1;&#xFF0C;&#x6211;&#x5011;&#x59D1;&#x4E14;&#x76F4;&#x63A5;&#x628A;&#x5B83;&#x770B;&#x4F5C;&#x662F;&#x53D6;&#x5169;&#x500B;&#x53C3;&#x6578;&#x56DE;&#x50B3;&#x4E00;&#x500B;&#x503C;&#xFF0C;&#x5176;&#x9996;&#x500B;&#x53C3;&#x6578;&#x662F;&#x500B;&#x578B;&#x5225;&#x70BA; <code>(a-&gt;a)</code> &#x7684;&#x51FD;&#x6578;,&#x7B2C;&#x4E8C;&#x500B;&#x53C3;&#x6578;&#x662F;&#x500B; <code>a</code>&#x3002; &#x8A72;&#x51FD;&#x6578;&#x7684;&#x578B;&#x5225;&#x53EF;&#x4EE5;&#x662F; <code>(Int-&gt;Int)</code>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F; <code>(String-&gt;String)</code>&#xFF0C;&#x4F46;&#x7B2C;&#x4E8C;&#x500B;&#x53C3;&#x6578;&#x5FC5;&#x9808;&#x8207;&#x4E4B;&#x4E00;&#x81F4;&#x3002;</p>
+<pre><code class="lang-text">*Note*: &#x73FE;&#x5728;&#x958B;&#x59CB;&#x6211;&#x5011;&#x6703;&#x76F4;&#x8AAA;&#x67D0;&#x51FD;&#x6578;&#x542B;&#x6709;&#x591A;&#x500B;&#x53C3;&#x6578;(&#x9664;&#x975E;&#x5B83;&#x771F;&#x7684;&#x53EA;&#x6709;&#x4E00;&#x500B;&#x53C3;&#x6578;)&#x3002; &#x4EE5;&#x7C21;&#x6F54;&#x4E4B;&#x540D;&#xFF0C;&#x6211;&#x5011;&#x6703;&#x8AAA; ``(a-&gt;a-&gt;a)`` &#x53D6;&#x5169;&#x500B;&#x53C3;&#x6578;&#xFF0C;&#x5118;&#x7BA1;&#x6211;&#x5011;&#x77E5;&#x9053;&#x5B83;&#x5728;&#x80CC;&#x5F8C;&#x505A;&#x7684;&#x624B;&#x8173;.
+</code></pre>
+<p>&#x9019;&#x500B;&#x51FD;&#x6578;&#x662F;&#x76F8;&#x7576;&#x7684;&#x7C21;&#x55AE;&#xFF0C;&#x5C31;&#x62FF;&#x53C3;&#x6578; <code>f</code> &#x7576;&#x51FD;&#x6578;&#xFF0C;&#x7528; <code>x</code> &#x547C;&#x53EB;&#x5B83;&#x5F97;&#x5230;&#x7684;&#x7D50;&#x679C;&#x518D;&#x53BB;&#x547C;&#x53EB;&#x5B83;&#x3002;&#x4E5F;&#x5C31;&#x53EF;&#x4EE5;&#x9019;&#x6A23;&#x73A9;:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; applyTwice (+<span class="hljs-number">3</span>) <span class="hljs-number">10</span>  
+<span class="hljs-number">16</span>  
+<span class="hljs-title">ghci</span>&gt; applyTwice (++ <span class="hljs-string">&quot; HAHA&quot;</span>) <span class="hljs-string">&quot;HEY&quot;</span>  
+<span class="hljs-string">&quot;HEY HAHA HAHA&quot;</span>  
+<span class="hljs-title">ghci</span>&gt; applyTwice (<span class="hljs-string">&quot;HAHA &quot;</span> ++) <span class="hljs-string">&quot;HEY&quot;</span>  
+<span class="hljs-string">&quot;HAHA HAHA HEY&quot;</span>  
+<span class="hljs-title">ghci</span>&gt; applyTwice (multThree <span class="hljs-number">2</span> <span class="hljs-number">2</span>) <span class="hljs-number">9</span>  
+<span class="hljs-number">144</span>  
+<span class="hljs-title">ghci</span>&gt; applyTwice (<span class="hljs-number">3</span>:) [<span class="hljs-number">1</span>]  
+[<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>]
+</code></pre>
+<p>&#x770B;&#xFF0C;&#x4E0D;&#x5168;&#x547C;&#x53EB;&#x591A;&#x795E;&#x5947;! &#x5982;&#x679C;&#x6709;&#x500B;&#x51FD;&#x6578;&#x8981;&#x6211;&#x5011;&#x7D66;&#x5B83;&#x50B3;&#x500B;&#x4E00;&#x5143;&#x51FD;&#x6578;&#xFF0C;&#x5927;&#x53EF;&#x4EE5;&#x4E0D;&#x5168;&#x547C;&#x53EB;&#x4E00;&#x500B;&#x51FD;&#x6578;&#x8B93;&#x5B83;&#x5269;&#x4E00;&#x500B;&#x53C3;&#x6578;&#xFF0C;&#x518D;&#x628A;&#x5B83;&#x4EA4;&#x51FA;&#x53BB;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x4F86;&#x6211;&#x5011;&#x7528;&#x9AD8;&#x968E;&#x51FD;&#x6578;&#x7684;&#x7DE8;&#x7A0B;&#x601D;&#x60F3;&#x4F86;&#x5BE6;&#x73FE;&#x500B;&#x6A19;&#x6E96;&#x5EAB;&#x4E2D;&#x7684;&#x51FD;&#x6578;&#xFF0C;&#x5B83;&#x5C31;&#x662F; <code>zipWith</code>&#x3002; &#x5B83;&#x53D6;&#x4E00;&#x500B;&#x51FD;&#x6578;&#x548C;&#x5169;&#x500B; List &#x505A;&#x53C3;&#x6578;&#xFF0C;&#x4E26;&#x628A;&#x5169;&#x500B; List &#x4EA4;&#x5230;&#x4E00;&#x8D77;(&#x4F7F;&#x76F8;&#x61C9;&#x7684;&#x5143;&#x7D20;&#x53BB;&#x547C;&#x53EB;&#x8A72;&#x51FD;&#x6578;)&#x3002; &#x5982;&#x4E0B;&#x5C31;&#x662F;&#x6211;&#x5011;&#x7684;&#x5BE6;&#x73FE;:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">zipWith&apos;</span> :: (a -&gt; b -&gt; c) -&gt; [a] -&gt; [b] -&gt; [c]  
+<span class="hljs-title">zipWith&apos;</span> _ [] _ = []  
+<span class="hljs-title">zipWith&apos;</span> _ _ [] = []  
+<span class="hljs-title">zipWith&apos;</span> f (x:xs) (y:ys) = f x y : zipWith&apos; f xs ys
+</code></pre>
+<p>&#x770B;&#x4E0B;&#x9019;&#x500B;&#x578B;&#x5225;&#x8072;&#x660E;&#xFF0C;&#x5B83;&#x7684;&#x9996;&#x500B;&#x53C3;&#x6578;&#x662F;&#x500B;&#x51FD;&#x6578;&#xFF0C;&#x53D6;&#x5169;&#x500B;&#x53C3;&#x6578;&#x8655;&#x7406;&#x4EA4;&#x53C9;&#xFF0C;&#x5176;&#x578B;&#x5225;&#x4E0D;&#x5FC5;&#x76F8;&#x540C;&#xFF0C;&#x4E0D;&#x904E;&#x76F8;&#x540C;&#x4E5F;&#x6C92;&#x95DC;&#x4FC2;&#x3002; &#x7B2C;&#x4E8C;&#x4E09;&#x500B;&#x53C3;&#x6578;&#x90FD;&#x662F; List&#xFF0C;&#x56DE;&#x50B3;&#x503C;&#x4E5F;&#x662F;&#x500B; List&#x3002; &#x7B2C;&#x4E00;&#x500B; List&#x4E2D;&#x5143;&#x7D20;&#x7684;&#x578B;&#x5225;&#x5FC5;&#x9808;&#x662F;a&#xFF0C;&#x56E0;&#x70BA;&#x9019;&#x500B;&#x8655;&#x7406;&#x4EA4;&#x53C9;&#x7684;&#x51FD;&#x6578;&#x7684;&#x7B2C;&#x4E00;&#x500B;&#x53C3;&#x6578;&#x662F;a&#x3002; &#x7B2C;&#x4E8C;&#x500B; List &#x4E2D;&#x5143;&#x7D20;&#x7684;&#x578B;&#x5225;&#x5FC5;&#x70BA; <code>b</code>&#xFF0C;&#x56E0;&#x70BA;&#x9019;&#x500B;&#x8655;&#x7406;&#x4EA4;&#x53C9;&#x7684;&#x51FD;&#x6578;&#x7B2C;&#x4E8C;&#x500B;&#x53C3;&#x6578;&#x7684;&#x578B;&#x5225;&#x662F; <code>b</code>&#x3002; &#x56DE;&#x50B3;&#x7684; List &#x4E2D;&#x5143;&#x7D20;&#x578B;&#x5225;&#x70BA; <code>c</code>&#x3002; &#x5982;&#x679C;&#x4E00;&#x500B;&#x51FD;&#x6578;&#x8AAA;&#x53D6;&#x4E00;&#x500B;&#x578B;&#x5225;&#x70BA; <code>a-&gt;b-&gt;c</code> &#x7684;&#x51FD;&#x6578;&#x505A;&#x53C3;&#x6578;&#xFF0C;&#x50B3;&#x7D66;&#x5B83;&#x500B; <code>a-&gt;a-&gt;c</code> &#x578B;&#x5225;&#x7684;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;&#x4F46;&#x53CD;&#x904E;&#x4F86;&#x5C31;&#x4E0D;&#x884C;&#x4E86;&#x3002; &#x53EF;&#x4EE5;&#x8A18;&#x4E0B;&#xFF0C;&#x82E5;&#x5728;&#x4F7F;&#x7528;&#x9AD8;&#x968E;&#x51FD;&#x6578;&#x7684;&#x6642;&#x5019;&#x4E0D;&#x6E05;&#x695A;&#x5176;&#x578B;&#x5225;&#x70BA;&#x4F55;&#xFF0C;&#x5C31;&#x5148;&#x5FFD;&#x7565;&#x6389;&#x5B83;&#x7684;&#x578B;&#x5225;&#x8072;&#x660E;&#xFF0C;&#x518D;&#x5230; ghci &#x4E0B;&#x7528; <code>:t</code> &#x547D;&#x4EE4;&#x4F86;&#x770B;&#x4E0B; Haskell &#x7684;&#x578B;&#x5225;&#x63A8;&#x5C0E;.</p>
+<p>&#x9019;&#x51FD;&#x6578;&#x7684;&#x884C;&#x70BA;&#x8207;&#x666E;&#x901A;&#x7684; <code>zip</code> &#x5F88;&#x76F8;&#x4F3C;&#xFF0C;&#x908A;&#x754C;&#x689D;&#x4EF6;&#x4E5F;&#x662F;&#x76F8;&#x540C;&#xFF0C;&#x53EA;&#x4E0D;&#x904E;&#x591A;&#x4E86;&#x500B;&#x53C3;&#x6578;&#xFF0C;&#x5373;&#x8655;&#x7406;&#x5143;&#x7D20;&#x4EA4;&#x53C9;&#x7684;&#x51FD;&#x6578;&#x3002;&#x5B83;&#x95DC;&#x4E0D;&#x7740;&#x908A;&#x754C;&#x689D;&#x4EF6;&#x4EC0;&#x9EBC;&#x4E8B;&#x5152;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x5011;&#x5C31;&#x53EA;&#x7559;&#x4E00;&#x500B; <code>_</code>&#x3002;&#x5F8C;&#x4E00;&#x500B;&#x6A21;&#x5F0F;&#x7684;&#x51FD;&#x6578;&#x9AD4;&#x8207; <code>zip</code> &#x4E5F;&#x5F88;&#x50CF;&#xFF0C;&#x53EA;&#x4E0D;&#x904E;&#x9019;&#x88E1;&#x662F; <code>f x y</code> &#x800C;&#x975E; <code>(x,y)</code>&#x3002; &#x53EA;&#x8981;&#x8DB3;&#x5920;&#x901A;&#x7528;&#xFF0C;&#x4E00;&#x500B;&#x7C21;&#x55AE;&#x7684;&#x9AD8;&#x968E;&#x51FD;&#x6578;&#x53EF;&#x4EE5;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x5834;&#x5408;&#x53CD;&#x8986;&#x4F7F;&#x7528;&#x3002; &#x5982;&#x4E0B;&#x4FBF;&#x662F;&#x6211;&#x5011; <code>zipWith&apos;</code> &#x51FD;&#x6578;&#x672C;&#x9818;&#x7684;&#x51B0;&#x5C71;&#x4E00;&#x89D2;:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; zipWith&apos; (+) [<span class="hljs-number">4</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>] [<span class="hljs-number">2</span>,<span class="hljs-number">6</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]  
+[<span class="hljs-number">6</span>,<span class="hljs-number">8</span>,<span class="hljs-number">7</span>,<span class="hljs-number">9</span>]  
+<span class="hljs-title">ghci</span>&gt; zipWith&apos; max [<span class="hljs-number">6</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>] [<span class="hljs-number">7</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">5</span>]  
+[<span class="hljs-number">7</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>]  
+<span class="hljs-title">ghci</span>&gt; zipWith&apos; (++) [<span class="hljs-string">&quot;foo &quot;</span>&#xFF0C;<span class="hljs-string">&quot;bar &quot;</span>&#xFF0C;<span class="hljs-string">&quot;baz &quot;</span>] [<span class="hljs-string">&quot;fighters&quot;</span>&#xFF0C;<span class="hljs-string">&quot;hoppers&quot;</span>&#xFF0C;<span class="hljs-string">&quot;aldrin&quot;</span>]  
+[<span class="hljs-string">&quot;foo fighters&quot;</span>,<span class="hljs-string">&quot;bar hoppers&quot;</span>,<span class="hljs-string">&quot;baz aldrin&quot;</span>]  
+<span class="hljs-title">ghci</span>&gt; zipWith&apos; (*) (replicate <span class="hljs-number">5</span> <span class="hljs-number">2</span>) [<span class="hljs-number">1.</span>.]  
+[<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">6</span>,<span class="hljs-number">8</span>,<span class="hljs-number">10</span>]  
+<span class="hljs-title">ghci</span>&gt; zipWith&apos; (zipWith&apos; (*)) [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]] [[<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>],[<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>]]  
+[[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">6</span>],[<span class="hljs-number">9</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30</span>],[<span class="hljs-number">10</span>,<span class="hljs-number">12</span>,<span class="hljs-number">12</span>]]
+</code></pre>
+<p>&#x5982;&#x4F60;&#x6240;&#x898B;&#xFF0C;&#x4E00;&#x500B;&#x7C21;&#x55AE;&#x7684;&#x9AD8;&#x968E;&#x51FD;&#x6578;&#x5C31;&#x53EF;&#x4EE5;&#x73A9;&#x51FA;&#x5F88;&#x591A;&#x82B1;&#x6A23;&#x3002;&#x547D;&#x4EE4;&#x5F0F;&#x8A9E;&#x8A00;&#x4F7F;&#x7528; <code>for</code>&#x3001;<code>while</code>&#x3001;&#x8CE6;&#x503C;&#x3001;&#x72C0;&#x614B;&#x6AA2;&#x6E2C;&#x4F86;&#x5BE6;&#x73FE;&#x529F;&#x80FD;&#xFF0C;&#x518D;&#x5305;&#x8D77;&#x4F86;&#x7559;&#x500B;&#x4ECB;&#x9762;&#xFF0C;&#x4F7F;&#x4E4B;&#x50CF;&#x500B;&#x51FD;&#x6578;&#x4E00;&#x6A23;&#x547C;&#x53EB;&#x3002;&#x800C;&#x51FD;&#x6578;&#x5F0F;&#x8A9E;&#x8A00;&#x4F7F;&#x7528;&#x9AD8;&#x968E;&#x51FD;&#x6578;&#x4F86;&#x62BD;&#x8C61;&#x51FA;&#x5E38;&#x898B;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x50CF;&#x6210;&#x5C0D;&#x904D;&#x6B77;&#x4E26;&#x8655;&#x7406;&#x5169;&#x500B; List &#x6216;&#x5F9E;&#x4E2D;&#x7BE9;&#x6389;&#x81EA;&#x5DF1;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x7D50;&#x679C;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x4F86;&#x5BE6;&#x73FE;&#x6A19;&#x6E96;&#x5EAB;&#x4E2D;&#x7684;&#x53E6;&#x4E00;&#x500B;&#x51FD;&#x6578; <code>flip</code>&#xFF0C;<code>flip</code>&#x7C21;&#x55AE;&#x5730;&#x53D6;&#x4E00;&#x500B;&#x51FD;&#x6578;&#x4F5C;&#x53C3;&#x6578;&#x4E26;&#x56DE;&#x50B3;&#x4E00;&#x500B;&#x76F8;&#x4F3C;&#x7684;&#x51FD;&#x6578;&#xFF0C;&#x53EA;&#x662F;&#x5B83;&#x5011;&#x7684;&#x5169;&#x500B;&#x53C3;&#x6578;&#x5012;&#x4E86;&#x500B;&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">flip&apos;</span> :: (a -&gt; b -&gt; c) -&gt; (b -&gt; a -&gt; c)  
+<span class="hljs-title">flip&apos;</span> f = g  
+    <span class="hljs-keyword">where</span> g x y = f y x
+</code></pre>
+<p>&#x5F9E;&#x9019;&#x578B;&#x5225;&#x8072;&#x660E;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5B83;&#x53D6;&#x4E00;&#x500B;&#x51FD;&#x6578;&#xFF0C;&#x5176;&#x53C3;&#x6578;&#x578B;&#x5225;&#x5206;&#x5225;&#x70BA; <code>a</code> &#x548C; <code>b</code>&#xFF0C;&#x800C;&#x5B83;&#x56DE;&#x50B3;&#x7684;&#x51FD;&#x6578;&#x7684;&#x53C3;&#x6578;&#x578B;&#x5225;&#x70BA; <code>b</code> &#x548C; <code>a</code>&#x3002; &#x7531;&#x65BC;&#x51FD;&#x6578;&#x9810;&#x8A2D;&#x90FD;&#x662F;&#x67EF;&#x88E1;&#x5316;&#x7684;&#xFF0C;<code>-&gt;</code> &#x70BA;&#x53F3;&#x7D50;&#x5408;&#xFF0C;&#x9019;&#x88E1;&#x7684;&#x7B2C;&#x4E8C;&#x5C0D;&#x62EC;&#x865F;&#x5176;&#x5BE6;&#x4E26;&#x7121;&#x5FC5;&#x8981;&#xFF0C;<code>(a -&gt; b -&gt; c) -&gt; (b -&gt; a -&gt; c)</code> &#x8207; <code>(a -&gt; b -&gt; c) -&gt; (b -&gt; (a -&gt; c))</code> &#x7B49;&#x50F9;,&#x4E5F;&#x8207; <code>(a -&gt; b -&gt; c) -&gt; b -&gt; a -&gt; c</code> &#x7B49;&#x50F9;&#x3002; &#x524D;&#x9762;&#x6211;&#x5011;&#x5BEB;&#x4E86; <code>g x y = f y x</code>&#xFF0C;&#x65E2;&#x7136;&#x9019;&#x6A23;&#x53EF;&#x884C;&#xFF0C;&#x90A3;&#x9EBC; <code>f y x = g x y</code> &#x4E0D;&#x4E5F;&#x4E00;&#x6A23;? &#x9019;&#x4E00;&#x4F86;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x6539;&#x6210;&#x66F4;&#x7C21;&#x55AE;&#x7684;&#x5BEB;&#x6CD5;:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">flip&apos;</span> :: (a -&gt; b -&gt; c) -&gt; b -&gt; a -&gt; c  
+<span class="hljs-title">flip&apos;</span> f y x = f x y
+</code></pre>
+<p>&#x5728;&#x9019;&#x88E1;&#x6211;&#x5011;&#x5C31;&#x5229;&#x7528;&#x4E86; Curried functions &#x7684;&#x512A;&#x52E2;&#xFF0C;&#x53EA;&#x8981;&#x547C;&#x53EB; <code>flip&apos; f</code> &#x800C;&#x4E0D;&#x5E36; <code>y</code>&#x548C;<code>x</code>&#xFF0C;&#x5B83;&#x5C31;&#x6703;&#x56DE;&#x50B3;&#x4E00;&#x500B;&#x5006;&#x53C3;&#x6578;&#x5012;&#x500B;&#x7684;&#x51FD;&#x6578;&#x3002; <code>flip</code> &#x8655;&#x7406;&#x7684;&#x51FD;&#x6578;&#x5F80;&#x5F80;&#x90FD;&#x662F;&#x7528;&#x4F86;&#x50B3;&#x7D66;&#x5176;&#x4ED6;&#x51FD;&#x6578;&#x547C;&#x53EB;&#xFF0C;&#x65BC;&#x662F;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x767C;&#x63EE; Curried functions &#x7684;&#x512A;&#x52E2;&#xFF0C;&#x9810;&#x5148;&#x60F3;&#x597D;&#x767C;&#x751F;&#x5B8C;&#x5168;&#x547C;&#x53EB;&#x7684;&#x60C5;&#x666F;&#x4E26;&#x8655;&#x7406;&#x597D;&#x56DE;&#x50B3;&#x503C;.</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; flip&apos; zip [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>] <span class="hljs-string">&quot;hello&quot;</span>  
+[(&apos;h&apos;,<span class="hljs-number">1</span>),(&apos;e&apos;,<span class="hljs-number">2</span>),(&apos;l&apos;,<span class="hljs-number">3</span>),(&apos;l&apos;,<span class="hljs-number">4</span>),(&apos;o&apos;,<span class="hljs-number">5</span>)]  
+<span class="hljs-title">ghci</span>&gt; zipWith (flip&apos; div) [<span class="hljs-number">2</span>,<span class="hljs-number">2.</span>.] [<span class="hljs-number">10</span>,<span class="hljs-number">8</span>,<span class="hljs-number">6</span>,<span class="hljs-number">4</span>,<span class="hljs-number">2</span>]  
+[<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]
+</code></pre>
+<h2 id="map-&#x8207;-filter">map &#x8207; filter</h2>
+<p><strong>map</strong> &#x53D6;&#x4E00;&#x500B;&#x51FD;&#x6578;&#x548C; List &#x505A;&#x53C3;&#x6578;&#xFF0C;&#x904D;&#x6B77;&#x8A72; List &#x7684;&#x6BCF;&#x500B;&#x5143;&#x7D20;&#x4F86;&#x547C;&#x53EB;&#x8A72;&#x51FD;&#x6578;&#x7522;&#x751F;&#x4E00;&#x500B;&#x65B0;&#x7684; List&#x3002; &#x770B;&#x4E0B;&#x5B83;&#x7684;&#x578B;&#x5225;&#x8072;&#x660E;&#x548C;&#x5BE6;&#x73FE;:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">map</span> :: (a -&gt; b) -&gt; [a] -&gt; [b]  
+<span class="hljs-title">map</span> _ [] = []  
+<span class="hljs-title">map</span> f (x:xs) = f x : map f xs
+</code></pre>
+<p>&#x5F9E;&#x9019;&#x578B;&#x5225;&#x8072;&#x660E;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5B83;&#x53D6;&#x4E00;&#x500B;&#x53D6; <code>a</code> &#x56DE;&#x50B3; <code>b</code> &#x7684;&#x51FD;&#x6578;&#x548C;&#x4E00;&#x7D44; <code>a</code> &#x7684; List&#xFF0C;&#x4E26;&#x56DE;&#x50B3;&#x4E00;&#x7D44; <code>b</code>&#x3002; &#x9019;&#x5C31;&#x662F; Haskell &#x7684;&#x6709;&#x8DA3;&#x4E4B;&#x8655;&#xFF1A;&#x6709;&#x6642;&#x53EA;&#x770B;&#x578B;&#x5225;&#x8072;&#x660E;&#x5C31;&#x80FD;&#x5C0D;&#x51FD;&#x6578;&#x7684;&#x884C;&#x70BA;&#x731C;&#x500B;&#x5927;&#x81F4;&#x3002;<code>map</code> &#x51FD;&#x6578;&#x591A;&#x624D;&#x591A;&#x85DD;&#xFF0C;&#x6709;&#x4E00;&#x767E;&#x842C;&#x7A2E;&#x7528;&#x6CD5;&#x3002;&#x5982;&#x4E0B;&#x662F;&#x5176;&#x4E2D;&#x4E00;&#x5C0F;&#x90E8;&#x5206;:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; map (+<span class="hljs-number">3</span>) [<span class="hljs-number">1</span>,<span class="hljs-number">5</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">6</span>]  
+[<span class="hljs-number">4</span>,<span class="hljs-number">8</span>,<span class="hljs-number">6</span>,<span class="hljs-number">4</span>,<span class="hljs-number">9</span>]  
+<span class="hljs-title">ghci</span>&gt; map (++ <span class="hljs-string">&quot;!&quot;</span>) [<span class="hljs-string">&quot;BIFF&quot;</span>&#xFF0C;<span class="hljs-string">&quot;BANG&quot;</span>&#xFF0C;<span class="hljs-string">&quot;POW&quot;</span>]  
+[<span class="hljs-string">&quot;BIFF!&quot;</span>,<span class="hljs-string">&quot;BANG!&quot;</span>,<span class="hljs-string">&quot;POW!&quot;</span>]  
+<span class="hljs-title">ghci</span>&gt; map (replicate <span class="hljs-number">3</span>) [<span class="hljs-number">3.</span><span class="hljs-number">.6</span>]  
+[[<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>],[<span class="hljs-number">5</span>,<span class="hljs-number">5</span>,<span class="hljs-number">5</span>],[<span class="hljs-number">6</span>,<span class="hljs-number">6</span>,<span class="hljs-number">6</span>]]  
+<span class="hljs-title">ghci</span>&gt; map (map (^<span class="hljs-number">2</span>)) [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>],[<span class="hljs-number">7</span>,<span class="hljs-number">8</span>]]  
+[[<span class="hljs-number">1</span>,<span class="hljs-number">4</span>],[<span class="hljs-number">9</span>,<span class="hljs-number">16</span>,<span class="hljs-number">25</span>,<span class="hljs-number">36</span>],[<span class="hljs-number">49</span>,<span class="hljs-number">64</span>]]  
+<span class="hljs-title">ghci</span>&gt; map fst [(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>),(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>),(<span class="hljs-number">6</span>,<span class="hljs-number">3</span>),(<span class="hljs-number">2</span>,<span class="hljs-number">6</span>),(<span class="hljs-number">2</span>,<span class="hljs-number">5</span>)]  
+[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">6</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>]
+</code></pre>
+<p>&#x4F60;&#x53EF;&#x80FD;&#x6703;&#x767C;&#x73FE;&#xFF0C;&#x4EE5;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x7A0B;&#x5F0F;&#x78BC;&#x90FD;&#x53EF;&#x4EE5;&#x7528; List Comprehension &#x4F86;&#x66FF;&#x4EE3;&#x3002;<code>map (+3) [1,5,3,1,6]</code> &#x8207; <code>[x+3 | x &lt;- [1,5,3,1,6]</code> &#x5B8C;&#x5168;&#x7B49;&#x50F9;&#x3002;</p>
+<p><strong>filter</strong> &#x51FD;&#x6578;&#x53D6;&#x4E00;&#x500B;&#x9650;&#x5236;&#x689D;&#x4EF6;&#x548C;&#x4E00;&#x500B; List&#xFF0C;&#x56DE;&#x50B3;&#x8A72; List &#x4E2D;&#x6240;&#x6709;&#x7B26;&#x5408;&#x8A72;&#x689D;&#x4EF6;&#x7684;&#x5143;&#x7D20;&#x3002;&#x5B83;&#x7684;&#x578B;&#x5225;&#x8072;&#x660E;&#x53CA;&#x5BE6;&#x73FE;&#x5927;&#x81F4;&#x5982;&#x4E0B;:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">filter</span> :: (a -&gt; <span class="hljs-type">Bool</span>) -&gt; [a] -&gt; [a]  
+<span class="hljs-title">filter</span> _ [] = []  
+<span class="hljs-title">filter</span> p (x:xs)   
+    | p x       = x : filter p xs  
+    | otherwise = filter p xs
+</code></pre>
+<p>&#x5F88;&#x7C21;&#x55AE;&#x3002;&#x53EA;&#x8981; <code>p x</code> &#x6240;&#x5F97;&#x7684;&#x7D50;&#x679C;&#x70BA;&#x771F;&#xFF0C;&#x5C31;&#x5C07;&#x9019;&#x4E00;&#x5143;&#x7D20;&#x52A0;&#x5165;&#x65B0; List&#xFF0C;&#x5426;&#x5247;&#x5C31;&#x7121;&#x8996;&#x4E4B;&#x3002;&#x5E7E;&#x500B;&#x4F7F;&#x7528;&#x7BC4;&#x4F8B;:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; filter (&gt;<span class="hljs-number">3</span>) [<span class="hljs-number">1</span>,<span class="hljs-number">5</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">6</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]  
+[<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">4</span>]  
+<span class="hljs-title">ghci</span>&gt; filter (==<span class="hljs-number">3</span>) [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]  
+[<span class="hljs-number">3</span>]  
+<span class="hljs-title">ghci</span>&gt; filter even [<span class="hljs-number">1.</span><span class="hljs-number">.10</span>]  
+[<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">6</span>,<span class="hljs-number">8</span>,<span class="hljs-number">10</span>]  
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> notNull x = not (null x) <span class="hljs-keyword">in</span> filter notNull [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[],[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">2</span>],[],[],[]]  
+[[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">2</span>]]  
+<span class="hljs-title">ghci</span>&gt; filter (`elem` [&apos;a&apos;..&apos;z&apos;]) <span class="hljs-string">&quot;u LaUgH aT mE BeCaUsE I aM diFfeRent&quot;</span>  
+<span class="hljs-string">&quot;uagameasadifeent&quot;</span>  
+<span class="hljs-title">ghci</span>&gt; filter (`elem` [&apos;<span class="hljs-type">A&apos;</span>..&apos;<span class="hljs-type">Z&apos;</span>]) <span class="hljs-string">&quot;i lauGh At You BecAuse u r aLL the Same&quot;</span>  
+<span class="hljs-string">&quot;GAYBALLS&quot;</span>
+</code></pre>
+<p>&#x540C;&#x6A23;&#xFF0C;&#x4EE5;&#x4E0A;&#x90FD;&#x53EF;&#x4EE5;&#x7528; List Comprehension &#x7684;&#x9650;&#x5236;&#x689D;&#x4EF6;&#x4F86;&#x5BE6;&#x73FE;&#x3002;&#x4E26;&#x6C92;&#x6709;&#x6559;&#x689D;&#x898F;&#x5B9A;&#x4F60;&#x5FC5;&#x9808;&#x5728;&#x4EC0;&#x9EBC;&#x60C5;&#x6CC1;&#x4E0B;&#x7528; <code>map</code> &#x548C; <code>filter</code> &#x9084;&#x662F; List Comprehension&#xFF0C;&#x9078;&#x64C7;&#x6B0A;&#x6B78;&#x4F60;&#xFF0C;&#x770B;&#x8AB0;&#x8212;&#x670D;&#x7528;&#x8AB0;&#x5C31;&#x662F;&#x3002; &#x5982;&#x679C;&#x6709;&#x591A;&#x500B;&#x9650;&#x5236;&#x689D;&#x4EF6;&#xFF0C;&#x53EA;&#x80FD;&#x9023;&#x7740;&#x5957;&#x597D;&#x5E7E;&#x500B; <code>filter</code> &#x6216;&#x7528; <code>&amp;&amp;</code> &#x7B49;&#x908F;&#x8F2F;&#x51FD;&#x6578;&#x7684;&#x7D44;&#x5408;&#x4E4B;&#xFF0C;&#x9019;&#x6642;&#x5C31;&#x4E0D;&#x5982; List comprehension &#x4F86;&#x5F97;&#x723D;&#x4E86;&#x3002;</p>
+<p>&#x9084;&#x8A18;&#x5F97;&#x4E0A;&#x4E00;&#x7AE0;&#x7684;&#x90A3;&#x500B; <code>quicksort</code> &#x51FD;&#x6578;&#x9EBC;? &#x6211;&#x5011;&#x7528;&#x5230;&#x4E86; List Comprehension &#x4F86;&#x904E;&#x6FFE;&#x5927;&#x65BC;&#x6216;&#x5C0F;&#x65BC;&#x9328;&#x7684;&#x5143;&#x7D20;&#x3002; &#x63DB;&#x505A; <code>filter</code> &#x4E5F;&#x53EF;&#x4EE5;&#x5BE6;&#x73FE;&#xFF0C;&#x800C;&#x4E14;&#x66F4;&#x52A0;&#x6613;&#x8B80;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">quicksort</span> :: (<span class="hljs-type">Ord</span> a) =&gt; [a] -&gt; [a]    
+<span class="hljs-title">quicksort</span> [] = []    
+<span class="hljs-title">quicksort</span> (x:xs) =     
+    <span class="hljs-keyword">let</span> smallerSorted = quicksort (filter (&lt;=x) xs)
+        biggerSorted = quicksort (filter (&gt;x) xs)   
+    <span class="hljs-keyword">in</span>  smallerSorted ++ [x] ++ biggerSorted
+</code></pre>
+<p><img src="img/map.png" alt=""></p>
+<p><code>map</code> &#x548C; <code>filter</code> &#x662F;&#x6BCF;&#x500B;&#x51FD;&#x6578;&#x5F0F;&#x7A0B;&#x5E8F;&#x54E1;&#x7684;&#x9EB5;&#x5305;&#x9EC3;&#x6CB9;(&#x5443;&#xFF0C;<code>map</code> &#x548C; <code>filter</code> &#x9084;&#x662F; List Comprehension &#x4E26;&#x4E0D;&#x91CD;&#x8981;)&#x3002; &#x60F3;&#x60F3;&#x524D;&#x9762;&#x6211;&#x5011;&#x5982;&#x4F55;&#x89E3;&#x6C7A;&#x7D66;&#x5B9A;&#x5468;&#x9577;&#x5C0B;&#x627E;&#x5408;&#x9069;&#x76F4;&#x89D2;&#x4E09;&#x89D2;&#x5F62;&#x7684;&#x554F;&#x984C;&#x7684;? &#x5728;&#x547D;&#x4EE4;&#x5F0F;&#x7DE8;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x5957;&#x4E0A;&#x4E09;&#x500B;&#x5FAA;&#x74B0;&#x9010;&#x500B;&#x6E2C;&#x8A66;&#x7576;&#x524D;&#x7684;&#x7D44;&#x5408;&#x662F;&#x5426;&#x6EFF;&#x8DB3;&#x689D;&#x4EF6;&#xFF0C;&#x82E5;&#x6EFF;&#x8DB3;&#xFF0C;&#x5C31;&#x6253;&#x5370;&#x5230;&#x5C4F;&#x5E55;&#x6216;&#x5176;&#x4ED6;&#x985E;&#x4F3C;&#x7684;&#x8F38;&#x51FA;&#x3002; &#x800C;&#x5728;&#x51FD;&#x6578;&#x5F0F;&#x7DE8;&#x7A0B;&#x4E2D;&#xFF0C;&#x9019;&#x884C;&#x5C31;&#x90FD;&#x4EA4;&#x7D66; <code>map</code> &#x548C; <code>filter</code>&#x3002; &#x4F60;&#x5F04;&#x500B;&#x53D6;&#x4E00;&#x53C3;&#x6578;&#x7684;&#x51FD;&#x6578;&#xFF0C;&#x628A;&#x5B83;&#x4EA4;&#x7D66; <code>map</code> &#x904E;&#x4E00;&#x904D; List&#xFF0C;&#x518D; <code>filter</code> &#x4E4B;&#x627E;&#x5230;&#x5408;&#x9069;&#x7684;&#x7D50;&#x679C;&#x3002; &#x611F;&#x8B1D; Haskell &#x7684;&#x60F0;&#x6027;&#xFF0C;&#x5373;&#x4FBF;&#x662F;&#x4F60;&#x591A;&#x6B21; <code>map</code> &#x4E00;&#x500B; <code>`List</code> &#x4E5F;&#x53EA;&#x6703;&#x904D;&#x6B77;&#x4E00;&#x904D;&#x8A72; List&#xFF0C;&#x8981;&#x627E;&#x51FA;&#x5C0F;&#x65BC; 100000 &#x7684;&#x6578;&#x4E2D;&#x6700;&#x5927;&#x7684; 3829 &#x7684;&#x500D;&#x6578;&#xFF0C;&#x53EA;&#x9700;&#x904E;&#x6FFE;&#x7D50;&#x679C;&#x6240;&#x5728;&#x7684; List &#x5C31;&#x884C;&#x4E86;.</p>
+<p>&#x8981;&#x627E;&#x51FA;<em>&#x5C0F;&#x65BC; 100000 &#x7684; 3829 &#x7684;&#x6240;&#x6709;&#x500D;&#x6578;</em>&#xFF0C;&#x6211;&#x5011;&#x61C9;&#x7576;&#x904E;&#x6FFE;&#x4E00;&#x500B;&#x5DF2;&#x77E5;&#x7D50;&#x679C;&#x6240;&#x5728;&#x7684; List.</p>
+<pre><code class="lang-haskell"><span class="hljs-title">largestDivisible</span> :: (<span class="hljs-type">Integral</span> a) =&gt; a  
+<span class="hljs-title">largestDivisible</span> = head (filter p [<span class="hljs-number">100000</span>,<span class="hljs-number">99999.</span>.])  
+    <span class="hljs-keyword">where</span> p x = x `mod` <span class="hljs-number">3829</span> == <span class="hljs-number">0</span>
+</code></pre>
+<p>&#x9996;&#x5148;&#xFF0C;&#x53D6;&#x4E00;&#x500B;&#x964D;&#x5E8F;&#x7684;&#x5C0F;&#x65BC; 100000 &#x6240;&#x6709;&#x6578;&#x7684; List&#xFF0C;&#x7136;&#x5F8C;&#x6309;&#x7167;&#x9650;&#x5236;&#x689D;&#x4EF6;&#x904E;&#x6FFE;&#x5B83;&#x3002; &#x7531;&#x65BC;&#x9019;&#x500B; List &#x662F;&#x964D;&#x5E8F;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x7D50;&#x679C; List &#x4E2D;&#x7684;&#x9996;&#x500B;&#x5143;&#x7D20;&#x5C31;&#x662F;&#x6700;&#x5927;&#x7684;&#x90A3;&#x500B;&#x6578;&#x3002;&#x60F0;&#x6027;&#x518D;&#x6B21;&#x884C;&#x52D5;! &#x7531;&#x65BC;&#x6211;&#x5011;&#x53EA;&#x53D6;&#x9019;&#x7D50;&#x679C; List &#x7684;&#x9996;&#x500B;&#x5143;&#x7D20;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4E26;&#x4E0D;&#x95DC;&#x5FC3;&#x9019; List &#x662F;&#x6709;&#x9650;&#x9084;&#x662F;&#x7121;&#x9650;&#x7684;&#xFF0C;&#x5728;&#x627E;&#x5230;&#x9996;&#x500B;&#x5408;&#x9069;&#x7684;&#x7D50;&#x679C;&#x8655;&#x904B;&#x7B97;&#x5C31;&#x505C;&#x6B62;&#x4E86;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x4F86;&#xFF0C;&#x6211;&#x5011;&#x5C31;&#x8981;<em>&#x627E;&#x51FA;&#x6240;&#x6709;&#x5C0F;&#x65BC; 10000 &#x4E14;&#x4E3A;&#x5947;&#x7684;&#x5E73;&#x65B9;&#x7684;&#x548C;</em>&#xFF0C;&#x5F97;&#x5148;&#x63D0;&#x4E0B; <strong>takeWhile</strong> &#x51FD;&#x6578;&#xFF0C;&#x5B83;&#x53D6;&#x4E00;&#x500B;&#x9650;&#x5236;&#x689D;&#x4EF6;&#x548C; List &#x4F5C;&#x53C3;&#x6578;&#xFF0C;&#x7136;&#x5F8C;&#x5F9E;&#x982D;&#x958B;&#x59CB;&#x904D;&#x6B77;&#x9019;&#x4E00; List&#xFF0C;&#x4E26;&#x56DE;&#x50B3;&#x7B26;&#x5408;&#x9650;&#x5236;&#x689D;&#x4EF6;&#x7684;&#x5143;&#x7D20;&#x3002; &#x800C;&#x4E00;&#x65E6;&#x9047;&#x5230;&#x4E0D;&#x7B26;&#x5408;&#x689D;&#x4EF6;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5B83;&#x5C31;&#x505C;&#x6B62;&#x4E86;&#x3002; &#x5982;&#x679C;&#x6211;&#x5011;&#x8981;&#x53D6;&#x51FA;&#x5B57;&#x4E32; <code>&quot;elephants know how to party&quot;</code> &#x4E2D;&#x7684;&#x9996;&#x500B;&#x55AE;&#x8A5E;&#xFF0C;&#x53EF;&#x4EE5; <code>takeWhile (/=&apos; &apos;) &quot;elephants know how to party&quot;</code>&#xFF0C;&#x56DE;&#x50B3; <code>&quot;elephants&quot;</code>&#x3002;okay&#xFF0C;&#x8981;&#x6C42;&#x6240;&#x6709;&#x5C0F;&#x65BC; 10000 &#x7684;&#x5947;&#x6578;&#x7684;&#x5E73;&#x65B9;&#x7684;&#x548C;&#xFF0C;&#x9996;&#x5148;&#x5C31;&#x7528; <code>(^2)</code> &#x51FD;&#x6578; <code>map</code> &#x6389;&#x9019;&#x500B;&#x7121;&#x9650;&#x7684; List <code>[1..]</code> &#x3002;&#x7136;&#x5F8C;&#x904E;&#x6FFE;&#x4E4B;&#xFF0C;&#x53EA;&#x53D6;&#x5947;&#x6578;&#x5C31;&#x662F;&#x4E86;&#x3002; &#x5728;&#x5927;&#x65BC; 10000 &#x8655;&#x5C07;&#x5B83;&#x65B7;&#x958B;&#xFF0C;&#x6700;&#x5F8C;&#x524D;&#x9762;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x52A0;&#x5230;&#x4E00;&#x8D77;&#x3002; &#x9019;&#x4E00;&#x5207;&#x9023;&#x5BEB;&#x51FD;&#x6578;&#x90FD;&#x4E0D;&#x7528;&#xFF0C;&#x5728; ghci &#x4E0B;&#x76F4;&#x63A5;&#x641E;&#x5B9A;.</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; sum (takeWhile (&lt;<span class="hljs-number">10000</span>) (filter odd (map (^<span class="hljs-number">2</span>) [<span class="hljs-number">1.</span>.])))  
+<span class="hljs-number">166650</span>
+</code></pre>
+<p>&#x4E0D;&#x932F;! &#x5148;&#x5F9E;&#x5E7E;&#x500B;&#x521D;&#x59CB;&#x6578;&#x64DA;(&#x8868;&#x793A;&#x6240;&#x6709;&#x81EA;&#x7136;&#x6578;&#x7684;&#x7121;&#x9650; List)&#xFF0C;&#x518D; <code>map</code> &#x5B83;&#xFF0C;<code>filter</code> &#x5B83;&#xFF0C;&#x5207;&#x5B83;&#xFF0C;&#x76F4;&#x5230;&#x5B83;&#x7B26;&#x5408;&#x6211;&#x5011;&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x518D;&#x5C07;&#x5176;&#x52A0;&#x8D77;&#x4F86;&#x3002; &#x9019;&#x7528; List comprehension &#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;&#x800C;&#x54EA;&#x7A2E;&#x65B9;&#x5F0F;&#x5C31;&#x5168;&#x770B;&#x4F60;&#x7684;&#x500B;&#x4EBA;&#x53E3;&#x5473;.</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; sum (takeWhile (&lt;<span class="hljs-number">10000</span>) [m | m &lt;- [n^<span class="hljs-number">2</span> | n &lt;- [<span class="hljs-number">1.</span>.]], odd m])  
+<span class="hljs-number">166650</span>
+</code></pre>
+<p>&#x611F;&#x8B1D; Haskell &#x7684;&#x60F0;&#x6027;&#x7279;&#x8CEA;&#xFF0C;&#x9019;&#x4E00;&#x5207;&#x624D;&#x5F97;&#x4EE5;&#x5BE6;&#x73FE;&#x3002; &#x6211;&#x5011;&#x4E4B;&#x6240;&#x4EE5;&#x53EF;&#x4EE5; <code>map</code> &#x6216; <code>filter</code> &#x4E00;&#x500B;&#x7121;&#x9650; List&#xFF0C;&#x662F;&#x56E0;&#x70BA;&#x5B83;&#x7684;&#x64CD;&#x4F5C;&#x4E0D;&#x6703;&#x88AB;&#x7ACB;&#x5373;&#x57F7;&#x884C;&#xFF0C;&#x800C;&#x662F;&#x62D6;&#x5EF6;&#x4E00;&#x4E0B;&#x3002;&#x53EA;&#x6709;&#x6211;&#x5011;&#x8981;&#x6C42; Haskell &#x4EA4;&#x7D66;&#x6211;&#x5011; <code>sum</code> &#x7684;&#x7D50;&#x679C;&#x7684;&#x6642;&#x5019;&#xFF0C;<code>sum</code> &#x51FD;&#x6578;&#x624D;&#x6703;&#x8DDF; <code>takeWhile</code> &#x8AAA;&#xFF0C;&#x5B83;&#x8981;&#x9019;&#x4E9B;&#x6578;&#x3002;<code>takeWhile</code> &#x5C31;&#x518D;&#x53BB;&#x8981;&#x6C42; <code>filter</code> &#x548C; <code>map</code> &#x884C;&#x52D5;&#x8D77;&#x4F86;&#xFF0C;&#x4E26;&#x5728;&#x9047;&#x5230;&#x5927;&#x65BC;&#x7B49;&#x65BC; 10000 &#x6642;&#x5019;&#x505C;&#x6B62;. &#x4E0B;&#x500B;&#x554F;&#x984C;&#x8207; Collatz &#x5E8F;&#x5217;&#x6709;&#x95DC;&#xFF0C;&#x53D6;&#x4E00;&#x500B;&#x81EA;&#x7136;&#x6578;&#xFF0C;&#x82E5;&#x70BA;&#x5076;&#x6578;&#x5C31;&#x9664;&#x4EE5; 2&#x3002; &#x82E5;&#x70BA;&#x5947;&#x6578;&#x5C31;&#x4E58;&#x4EE5; 3 &#x518D;&#x52A0; 1&#x3002; &#x518D;&#x7528;&#x76F8;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#x8655;&#x7406;&#x6240;&#x5F97;&#x7684;&#x7D50;&#x679C;&#xFF0C;&#x5F97;&#x5230;&#x4E00;&#x7D44;&#x6578;&#x5B57;&#x69CB;&#x6210;&#x7684;&#x7684;&#x93C8;&#x3002;&#x5B83;&#x6709;&#x500B;&#x6027;&#x8CEA;&#xFF0C;&#x7121;&#x8AD6;&#x4EFB;&#x4F55;&#x4EE5;&#x4EFB;&#x4F55;&#x6578;&#x5B57;&#x958B;&#x59CB;&#xFF0C;&#x6700;&#x7D42;&#x7684;&#x7D50;&#x679C;&#x90FD;&#x6703;&#x6B78; 1&#x3002;&#x6240;&#x4EE5;&#x82E5;&#x62FF; 13 &#x7576;&#x4F5C;&#x8D77;&#x59CB;&#x6578;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x9019;&#x6A23;&#x4E00;&#x500B;&#x5E8F;&#x5217; <code>13&#xFF0C;40&#xFF0C;20&#xFF0C;10&#xFF0C;5&#xFF0C;16&#xFF0C;8&#xFF0C;4&#xFF0C;2&#xFF0C;1</code>&#x3002;<code>13*3+1</code> &#x5F97; 40&#xFF0C;40 &#x9664; 2 &#x5F97; 20&#xFF0C;&#x5982;&#x662F;&#x7E7C;&#x7E8C;&#xFF0C;&#x5F97;&#x5230;&#x4E00;&#x500B; 10 &#x500B;&#x5143;&#x7D20;&#x7684;&#x93C8;&#x3002;</p>
+<p>&#x597D;&#x7684;&#xFF0C;&#x6211;&#x5011;&#x60F3;&#x77E5;&#x9053;&#x7684;&#x662F;: &#x4EE5; 1 &#x5230; 100 &#x4E4B;&#x9593;&#x7684;&#x6240;&#x6709;&#x6578;&#x4F5C;&#x70BA;&#x8D77;&#x59CB;&#x6578;&#xFF0C;&#x6703;&#x6709;&#x591A;&#x5C11;&#x500B;&#x93C8;&#x7684;&#x9577;&#x5EA6;&#x5927;&#x65BC; 15?</p>
+<pre><code class="lang-haskell"><span class="hljs-title">chain</span> :: (<span class="hljs-type">Integral</span> a) =&gt; a -&gt; [a]  
+<span class="hljs-title">chain</span> <span class="hljs-number">1</span> = [<span class="hljs-number">1</span>]  
+<span class="hljs-title">chain</span> n  
+    | even n =  n:chain (n `div` <span class="hljs-number">2</span>)  
+    | odd n  =  n:chain (n*<span class="hljs-number">3</span> + <span class="hljs-number">1</span>)
+</code></pre>
+<p>&#x8A72;&#x93C8;&#x6B62;&#x65BC; 1&#xFF0C;&#x9019;&#x4FBF;&#x662F;&#x908A;&#x754C;&#x689D;&#x4EF6;&#x3002;&#x6A19;&#x6E96;&#x7684;&#x905E;&#x6B78;&#x51FD;&#x6578;:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; chain <span class="hljs-number">10</span>  
+[<span class="hljs-number">10</span>,<span class="hljs-number">5</span>,<span class="hljs-number">16</span>,<span class="hljs-number">8</span>,<span class="hljs-number">4</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]  
+<span class="hljs-title">ghci</span>&gt; chain <span class="hljs-number">1</span>  
+[<span class="hljs-number">1</span>]  
+<span class="hljs-title">ghci</span>&gt; chain <span class="hljs-number">30</span>  
+[<span class="hljs-number">30</span>,<span class="hljs-number">15</span>,<span class="hljs-number">46</span>,<span class="hljs-number">23</span>,<span class="hljs-number">70</span>,<span class="hljs-number">35</span>,<span class="hljs-number">106</span>,<span class="hljs-number">53</span>,<span class="hljs-number">160</span>,<span class="hljs-number">80</span>,<span class="hljs-number">40</span>,<span class="hljs-number">20</span>,<span class="hljs-number">10</span>,<span class="hljs-number">5</span>,<span class="hljs-number">16</span>,<span class="hljs-number">8</span>,<span class="hljs-number">4</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]
+</code></pre>
+<p>yay! &#x8C8C;&#x4F3C;&#x5DE5;&#x4F5C;&#x826F;&#x597D;&#x3002; &#x73FE;&#x5728;&#x7531;&#x9019;&#x500B;&#x51FD;&#x6578;&#x4F86;&#x544A;&#x8A34;&#x6211;&#x5011;&#x7D50;&#x679C;:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">numLongChains</span> :: <span class="hljs-type">Int</span>  
+<span class="hljs-title">numLongChains</span> = length (filter isLong (map chain [<span class="hljs-number">1.</span><span class="hljs-number">.100</span>]))  
+    <span class="hljs-keyword">where</span> isLong xs = length xs &gt; <span class="hljs-number">15</span>
+</code></pre>
+<p>&#x6211;&#x5011;&#x628A; <code>chain</code> &#x51FD;&#x6578; <code>map</code> &#x5230; <code>[1..100]</code>&#xFF0C;&#x5F97;&#x5230;&#x4E00;&#x7D44;&#x93C8;&#x7684; List&#xFF0C;&#x7136;&#x5F8C;&#x7528;&#x500B;&#x9650;&#x5236;&#x689D;&#x4EF6;&#x904E;&#x6FFE;&#x9577;&#x5EA6;&#x5927;&#x65BC; 15 &#x7684;&#x93C8;&#x3002;&#x904E;&#x6FFE;&#x5B8C;&#x7562;&#x5F8C;&#x5C31;&#x53EF;&#x4EE5;&#x5F97;&#x51FA;&#x7D50;&#x679C;list&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x500B;&#x6578;.</p>
+<pre><code class="lang-text">*Note*: &#x9019;&#x51FD;&#x6578;&#x7684;&#x578B;&#x5225;&#x70BA; ``numLongChains :: Int``&#x3002;&#x9019;&#x662F;&#x7531;&#x65BC;&#x6B77;&#x53F2;&#x539F;&#x56E0;&#xFF0C;``length`` &#x56DE;&#x50B3;&#x4E00;&#x500B; ``Int`` &#x800C;&#x975E; ``Num`` &#x7684;&#x6210;&#x54E1;&#x578B;&#x5225;&#xFF0C;&#x82E5;&#x8981;&#x5F97;&#x5230;&#x4E00;&#x500B;&#x66F4;&#x901A;&#x7528;&#x7684; ``Num a``&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; ``fromIntegral`` &#x51FD;&#x6578;&#x4F86;&#x8655;&#x7406;&#x6240;&#x5F97;&#x7D50;&#x679C;.
+</code></pre>
+<p>&#x7528; <code>map</code>&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x5BEB;&#x51FA;&#x985E;&#x4F3C; <code>map (*) [0..]</code> &#x4E4B;&#x985E;&#x7684;&#x7A0B;&#x5F0F;&#x78BC;&#x3002; &#x5982;&#x679C;&#x53EA;&#x662F;&#x70BA;&#x4E86;&#x4F8B;&#x8B49; Curried functions &#x548C;&#x4E0D;&#x5168;&#x547C;&#x53EB;&#x7684;&#x51FD;&#x6578;&#x662F;&#x771F;&#x6B63;&#x7684;&#x503C;&#x53CA;&#x5176;&#x539F;&#x7406;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x51FD;&#x6578;&#x50B3;&#x905E;&#x6216;&#x628A;&#x51FD;&#x6578;&#x88DD;&#x5728; List &#x4E2D;(&#x53EA;&#x662F;&#x4F60;&#x9084;&#x4E0D;&#x80FD;&#x5C07;&#x5B83;&#x5011;&#x8F49;&#x63DB;&#x70BA;&#x5B57;&#x4E32;)&#x3002; &#x8FC4;&#x4ECA;&#x70BA;&#x6B62;&#xFF0C;&#x6211;&#x5011;&#x9084;&#x53EA;&#x662F; <code>map</code> &#x55AE;&#x53C3;&#x6578;&#x7684;&#x51FD;&#x6578;&#x5230; List&#xFF0C;&#x5982; <code>map (*2) [0..]</code> &#x53EF;&#x5F97;&#x4E00;&#x7D44;&#x578B;&#x5225;&#x70BA; <code>(Num a) =&gt; [a]</code> &#x7684; List&#xFF0C;&#x800C; <code>map (*) [0..]</code> &#x4E5F;&#x662F;&#x5B8C;&#x5168;&#x6C92;&#x554F;&#x984C;&#x7684;&#x3002;<code>*</code> &#x7684;&#x578B;&#x5225;&#x70BA; <code>(Num a) =&gt; a -&gt; a -&gt; a</code>&#xFF0C;&#x7528;&#x55AE;&#x500B;&#x53C3;&#x6578;&#x547C;&#x53EB;&#x4E8C;&#x5143;&#x51FD;&#x6578;&#x6703;&#x56DE;&#x50B3;&#x4E00;&#x500B;&#x4E00;&#x5143;&#x51FD;&#x6578;&#x3002;&#x5982;&#x679C;&#x7528; <code>*</code> &#x4F86; <code>map</code> &#x4E00;&#x500B; <code>[0..]</code> &#x7684; List&#xFF0C;&#x5C31;&#x6703;&#x5F97;&#x5230;&#x4E00;&#x7D44;&#x4E00;&#x5143;&#x51FD;&#x6578;&#x7D44;&#x6210;&#x7684; List&#xFF0C;&#x5373; <code>(Num a) =&gt; [a-&gt;a]</code>&#x3002;<code>map (*) [0..]</code> &#x6240;&#x5F97;&#x7684;&#x7D50;&#x679C;&#x5BEB;&#x8D77;&#x4F86;&#x5927;&#x7D04;&#x5C31;&#x662F; <code>[(0*),(1*),(2*)..]</code>.</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> listOfFuns = map (*) [<span class="hljs-number">0.</span>.]  
+<span class="hljs-title">ghci</span>&gt; (listOfFuns !! <span class="hljs-number">4</span>) <span class="hljs-number">5</span>  
+<span class="hljs-number">20</span>
+</code></pre>
+<p>&#x53D6;&#x6240;&#x5F97; List &#x7684;&#x7B2C;&#x4E94;&#x500B;&#x5143;&#x7D20;&#x53EF;&#x5F97;&#x4E00;&#x51FD;&#x6578;&#xFF0C;&#x8207; <code>(*4)</code> &#x7B49;&#x50F9;&#x3002; &#x7136;&#x5F8C;&#x7528; <code>5</code> &#x547C;&#x53EB;&#x5B83;&#xFF0C;&#x8207; <code>(* 4) 5</code> &#x6216; <code>4*5</code> &#x90FD;&#x662F;&#x7B49;&#x50F9;&#x7684;.</p>
+<h2 id="lambda">lambda</h2>
+<p><img src="img/lamb.png" alt=""></p>
+<p>lambda &#x5C31;&#x662F;&#x533F;&#x540D;&#x51FD;&#x6578;&#x3002;&#x6709;&#x4E9B;&#x6642;&#x5019;&#x6211;&#x5011;&#x9700;&#x8981;&#x50B3;&#x7D66;&#x9AD8;&#x968E;&#x51FD;&#x6578;&#x4E00;&#x500B;&#x51FD;&#x6578;&#xFF0C;&#x800C;&#x9019;&#x51FD;&#x6578;&#x6211;&#x5011;&#x53EA;&#x6703;&#x7528;&#x9019;&#x4E00;&#x6B21;&#xFF0C;&#x9019;&#x5C31;&#x5F04;&#x500B;&#x7279;&#x5B9A;&#x529F;&#x80FD;&#x7684; lambda&#x3002;&#x7DE8;&#x5BEB; lambda&#xFF0C;&#x5C31;&#x5BEB;&#x500B; <code>\</code> (&#x56E0;&#x70BA;&#x5B83;&#x770B;&#x8D77;&#x4F86;&#x50CF;&#x662F;&#x5E0C;&#x81D8;&#x5B57;&#x6BCD;&#x7684; lambda -- &#x5982;&#x679C;&#x4F60;&#x659C;&#x8996;&#x7684;&#x53B2;&#x5BB3;)&#xFF0C;&#x5F8C;&#x9762;&#x662F;&#x7528;&#x7A7A;&#x683C;&#x5206;&#x9694;&#x7684;&#x53C3;&#x6578;&#xFF0C;<code>-&gt;</code> &#x5F8C;&#x9762;&#x5C31;&#x662F;&#x51FD;&#x6578;&#x9AD4;&#x3002;&#x901A;&#x5E38;&#x6211;&#x5011;&#x90FD;&#x662F;&#x7528;&#x62EC;&#x865F;&#x5C07;&#x5176;&#x62EC;&#x8D77;&#xFF0C;&#x8981;&#x4E0D;&#x7136;&#x5B83;&#x5C31;&#x6703;&#x4F54;&#x64DA;&#x6574;&#x500B;&#x53F3;&#x908A;&#x90E8;&#x5206;&#x3002;</p>
+<p>&#x5411;&#x4E0A; 5 &#x82F1;&#x540B;&#x5DE6;&#x53F3;&#xFF0C;&#x4F60;&#x6703;&#x770B;&#x5230;&#x6211;&#x5011;&#x5728; <code>numLongChain</code> &#x51FD;&#x6578;&#x4E2D;&#x7528; <code>where</code> &#x8A9E;&#x53E5;&#x8072;&#x660E;&#x4E86;&#x500B; <code>isLong</code> &#x51FD;&#x6578;&#x50B3;&#x905E;&#x7D66;&#x4E86; <code>filter</code>&#x3002;&#x597D;&#x7684;&#xFF0C;&#x7528; lambda &#x4EE3;&#x66FF;&#x5B83;&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">numLongChains</span> :: <span class="hljs-type">Int</span>  
+<span class="hljs-title">numLongChains</span> = length (filter (\xs -&gt; length xs &gt; <span class="hljs-number">15</span>) (map chain [<span class="hljs-number">1.</span><span class="hljs-number">.100</span>]))
+</code></pre>
+<p><img src="img/lambda.png" alt=""></p>
+<p>lambda &#x662F;&#x500B;&#x8868;&#x9054;&#x5F0F;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x4EFB;&#x610F;&#x50B3;&#x905E;&#x3002;&#x8868;&#x9054;&#x5F0F; <code>(\xs -&gt; length xs &gt; 15)</code> &#x56DE;&#x50B3;&#x4E00;&#x500B;&#x51FD;&#x6578;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x544A;&#x8A34;&#x6211;&#x5011;&#x4E00;&#x500B; List &#x7684;&#x9577;&#x5EA6;&#x662F;&#x5426;&#x5927;&#x65BC; 15&#x3002;</p>
+<p>&#x4E0D;&#x719F;&#x6089; Curried functions &#x8207;&#x4E0D;&#x5168;&#x547C;&#x53EB;&#x7684;&#x4EBA;&#x5011;&#x5F80;&#x5F80;&#x6703;&#x5BEB;&#x51FA;&#x5F88;&#x591A; lambda&#xFF0C;&#x800C;&#x5BE6;&#x969B;&#x4E0A;&#x5927;&#x90E8;&#x5206;&#x90FD;&#x662F;&#x6C92;&#x5FC5;&#x8981;&#x7684;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8868;&#x9054;&#x5F0F; <code>map (+3) [1,6,3,2]</code> &#x8207; <code>map (\x -&gt; x+3) [1,6,3,2]</code> &#x7B49;&#x50F9;&#xFF0C;<code>(+3)</code> &#x548C; <code>(\x -&gt; x+3)</code> &#x90FD;&#x662F;&#x7D66;&#x4E00;&#x500B;&#x6578;&#x52A0;&#x4E0A; 3&#x3002;&#x4E0D;&#x7528;&#x8AAA;&#xFF0C;&#x5728;&#x9019;&#x7A2E;&#x60C5;&#x6CC1;&#x4E0B;&#x4E0D;&#x7528; lambda &#x8981;&#x6E05;&#x723D;&#x7684;&#x591A;&#x3002;</p>
+<p>&#x548C;&#x666E;&#x901A;&#x51FD;&#x6578;&#x4E00;&#x6A23;&#xFF0C;lambda &#x4E5F;&#x53EF;&#x4EE5;&#x53D6;&#x591A;&#x500B;&#x53C3;&#x6578;&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; zipWith (\a b -&gt; (a * <span class="hljs-number">30</span> + <span class="hljs-number">3</span>) / b) [<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>] [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]  
+[<span class="hljs-number">153.0</span>,<span class="hljs-number">61.5</span>,<span class="hljs-number">31.0</span>,<span class="hljs-number">15.75</span>,<span class="hljs-number">6.6</span>]
+</code></pre>
+<p>&#x540C;&#x666E;&#x901A;&#x51FD;&#x6578;&#x4E00;&#x6A23;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728; lambda &#x4E2D;&#x4F7F;&#x7528;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#xFF0C;&#x53EA;&#x662F;&#x4F60;&#x7121;&#x6CD5;&#x70BA;&#x4E00;&#x500B;&#x53C3;&#x6578;&#x8A2D;&#x7F6E;&#x591A;&#x500B;&#x6A21;&#x5F0F;&#xFF0C;&#x5982; <code>[]</code> &#x548C; <code>(x:xs)</code>&#x3002;lambda &#x7684;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x82E5;&#x5931;&#x6557;&#xFF0C;&#x5C31;&#x6703;&#x5F15;&#x767C;&#x4E00;&#x500B;&#x904B;&#x884C;&#x6642;&#x932F;&#x8AA4;&#xFF0C;&#x6240;&#x4EE5;&#x614E;&#x7528;&#xFF01;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; map (\(a,b) -&gt; a + b) [(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>),(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>),(<span class="hljs-number">6</span>,<span class="hljs-number">3</span>),(<span class="hljs-number">2</span>,<span class="hljs-number">6</span>),(<span class="hljs-number">2</span>,<span class="hljs-number">5</span>)]  
+[<span class="hljs-number">3</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">8</span>,<span class="hljs-number">7</span>]
+</code></pre>
+<p>&#x4E00;&#x822C;&#x60C5;&#x6CC1;&#x4E0B;&#xFF0C;lambda &#x90FD;&#x662F;&#x62EC;&#x5728;&#x62EC;&#x865F;&#x4E2D;&#xFF0C;&#x9664;&#x975E;&#x6211;&#x5011;&#x60F3;&#x8981;&#x5F8C;&#x9762;&#x7684;&#x6574;&#x500B;&#x8A9E;&#x53E5;&#x90FD;&#x4F5C;&#x70BA; lambda &#x7684;&#x51FD;&#x6578;&#x9AD4;&#x3002;&#x5F88;&#x6709;&#x8DA3;&#xFF0C;&#x7531;&#x65BC;&#x6709;&#x67EF;&#x88E1;&#x5316;&#xFF0C;&#x5982;&#x4E0B;&#x7684;&#x5169;&#x6BB5;&#x662F;&#x7B49;&#x50F9;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">addThree</span> :: (<span class="hljs-type">Num</span> a) =&gt; a -&gt; a -&gt; a -&gt; a  
+<span class="hljs-title">addThree</span> x y z = x + y + z
+</code></pre>
+<pre><code class="lang-haskell"><span class="hljs-title">addThree</span> :: (<span class="hljs-type">Num</span> a) =&gt; a -&gt; a -&gt; a -&gt; a  
+<span class="hljs-title">addThree</span> = \x -&gt; \y -&gt; \z -&gt; x + y + z
+</code></pre>
+<p>&#x9019;&#x6A23;&#x7684;&#x51FD;&#x6578;&#x8072;&#x660E;&#x8207;&#x51FD;&#x6578;&#x9AD4;&#x4E2D;&#x90FD;&#x6709; <code>-&gt;</code>&#xFF0C;&#x9019;&#x4E00;&#x4F86;&#x578B;&#x5225;&#x8072;&#x660E;&#x7684;&#x5BEB;&#x6CD5;&#x5C31;&#x5F88;&#x660E;&#x767D;&#x4E86;&#x3002;&#x7576;&#x7136;&#x7B2C;&#x4E00;&#x6BB5;&#x7A0B;&#x5F0F;&#x78BC;&#x66F4;&#x6613;&#x8B80;&#xFF0C;&#x4E0D;&#x904E;&#x7B2C;&#x4E8C;&#x500B;&#x51FD;&#x6578;&#x4F7F;&#x5F97;&#x67EF;&#x88E1;&#x5316;&#x66F4;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x3002;</p>
+<p>&#x6709;&#x4E9B;&#x6642;&#x5019;&#x7528;&#x9019;&#x7A2E;&#x8A9E;&#x53E5;&#x5BEB;&#x9084;&#x662F;&#x633A;&#x9177;&#x7684;&#xFF0C;&#x6211;&#x89BA;&#x5F97;&#x9019;&#x61C9;&#x8A72;&#x662F;&#x6700;&#x6613;&#x8B80;&#x7684; <code>flip</code> &#x51FD;&#x6578;&#x5BE6;&#x73FE;&#x4E86;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">flip&apos;</span> :: (a -&gt; b -&gt; c) -&gt; b -&gt; a -&gt; c  
+<span class="hljs-title">flip&apos;</span> f = \x y -&gt; f y x
+</code></pre>
+<p>&#x5118;&#x7BA1;&#x9019;&#x8207; <code>flip&apos; f x y = f y x</code> &#x7B49;&#x50F9;&#xFF0C;&#x4F46;&#x5B83;&#x53EF;&#x4EE5;&#x66F4;&#x660E;&#x767D;&#x5730;&#x8868;&#x793A;&#x51FA;&#x5B83;&#x6703;&#x7522;&#x751F;&#x4E00;&#x500B;&#x65B0;&#x7684;&#x51FD;&#x6578;&#x3002;<code>flip</code> &#x5E38;&#x7528;&#x4F86;&#x8655;&#x7406;&#x4E00;&#x500B;&#x51FD;&#x6578;&#xFF0C;&#x518D;&#x5C07;&#x56DE;&#x50B3;&#x7684;&#x65B0;&#x51FD;&#x6578;&#x50B3;&#x905E;&#x7D66; <code>map</code> &#x6216; <code>filter</code>&#x3002;&#x6240;&#x4EE5;&#x5982;&#x6B64;&#x4F7F;&#x7528; lambda &#x53EF;&#x4EE5;&#x66F4;&#x660E;&#x78BA;&#x5730;&#x8868;&#x73FE;&#x51FA;&#x56DE;&#x50B3;&#x503C;&#x662F;&#x500B;&#x51FD;&#x6578;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4F86;&#x50B3;&#x905E;&#x7D66;&#x5176;&#x4ED6;&#x51FD;&#x6578;&#x4F5C;&#x53C3;&#x6578;&#x3002;</p>
+<h2 id="&#x95DC;&#x9375;&#x5B57;-fold">&#x95DC;&#x9375;&#x5B57; fold</h2>
+<p><img src="img/origami.png" alt=""></p>
+<p>&#x56DE;&#x5230;&#x7576;&#x521D;&#x6211;&#x5011;&#x5B78;&#x7FD2;&#x905E;&#x6B78;&#x7684;&#x60C5;&#x666F;&#x3002;&#x6211;&#x5011;&#x6703;&#x767C;&#x73FE;&#x8655;&#x7406; List &#x7684;&#x8A31;&#x591A;&#x51FD;&#x6578;&#x90FD;&#x6709;&#x56FA;&#x5B9A;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x901A;&#x5E38;&#x6211;&#x5011;&#x6703;&#x5C07;&#x908A;&#x754C;&#x689D;&#x4EF6;&#x8A2D;&#x7F6E;&#x70BA;&#x7A7A; List&#xFF0C;&#x518D;&#x5F15;&#x5165; <code>(x:xs)</code> &#x6A21;&#x5F0F;&#xFF0C;&#x5C0D;&#x55AE;&#x500B;&#x5143;&#x7D20;&#x548C;&#x9918;&#x4E0B;&#x7684; List &#x505A;&#x4E9B;&#x4E8B;&#x60C5;&#x3002;&#x9019;&#x4E00;&#x6A21;&#x5F0F;&#x662F;&#x5982;&#x6B64;&#x5E38;&#x898B;&#xFF0C;&#x56E0;&#x6B64; Haskell &#x5F15;&#x5165;&#x4E86;&#x4E00;&#x7D44;&#x51FD;&#x6578;&#x4F86;&#x4F7F;&#x4E4B;&#x7C21;&#x5316;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; <code>fold</code>&#x3002;&#x5B83;&#x5011;&#x8207;map&#x6709;&#x9EDE;&#x50CF;&#xFF0C;&#x53EA;&#x662F;&#x5B83;&#x5011;&#x56DE;&#x50B3;&#x7684;&#x662F;&#x55AE;&#x500B;&#x503C;&#x3002;</p>
+<p>&#x4E00;&#x500B; <code>fold</code> &#x53D6;&#x4E00;&#x500B;&#x4E8C;&#x5143;&#x51FD;&#x6578;&#xFF0C;&#x4E00;&#x500B;&#x521D;&#x59CB;&#x503C;(&#x6211;&#x559C;&#x6B61;&#x7BA1;&#x5B83;&#x53EB;&#x7D2F;&#x52A0;&#x503C;)&#x548C;&#x4E00;&#x500B;&#x9700;&#x8981;&#x647A;&#x758A;&#x7684; List&#x3002;&#x9019;&#x500B;&#x4E8C;&#x5143;&#x51FD;&#x6578;&#x6709;&#x5169;&#x500B;&#x53C3;&#x6578;&#xFF0C;&#x5373;&#x7D2F;&#x52A0;&#x503C;&#x548C; List &#x7684;&#x9996;&#x9805;(&#x6216;&#x5C3E;&#x9805;)&#xFF0C;&#x56DE;&#x50B3;&#x503C;&#x662F;&#x65B0;&#x7684;&#x7D2F;&#x52A0;&#x503C;&#x3002;&#x7136;&#x5F8C;&#xFF0C;&#x4EE5;&#x65B0;&#x7684;&#x7D2F;&#x52A0;&#x503C;&#x548C;&#x65B0;&#x7684; List &#x9996;&#x9805;&#x547C;&#x53EB;&#x8A72;&#x51FD;&#x6578;&#xFF0C;&#x5982;&#x662F;&#x7E7C;&#x7E8C;&#x3002;&#x5230; List &#x904D;&#x6B77;&#x5B8C;&#x7562;&#x6642;&#xFF0C;&#x53EA;&#x5269;&#x4E0B;&#x4E00;&#x500B;&#x7D2F;&#x52A0;&#x503C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6700;&#x7D42;&#x7684;&#x7D50;&#x679C;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x770B;&#x4E0B; <strong>foldl</strong> &#x51FD;&#x6578;&#xFF0C;&#x4E5F;&#x53EB;&#x505A;&#x5DE6;&#x647A;&#x758A;&#x3002;&#x5B83;&#x5F9E; List &#x7684;&#x5DE6;&#x7AEF;&#x958B;&#x59CB;&#x647A;&#x758A;&#xFF0C;&#x7528;&#x521D;&#x59CB;&#x503C;&#x548C; List &#x7684;&#x982D;&#x90E8;&#x547C;&#x53EB;&#x9019;&#x4E8C;&#x5143;&#x51FD;&#x6578;&#xFF0C;&#x5F97;&#x4E00;&#x65B0;&#x7684;&#x7D2F;&#x52A0;&#x503C;&#xFF0C;&#x4E26;&#x7528;&#x65B0;&#x7684;&#x7D2F;&#x52A0;&#x503C;&#x8207; List &#x7684;&#x4E0B;&#x4E00;&#x500B;&#x5143;&#x7D20;&#x547C;&#x53EB;&#x4E8C;&#x5143;&#x51FD;&#x6578;&#x3002;&#x5982;&#x662F;&#x7E7C;&#x7E8C;&#x3002;</p>
+<p>&#x6211;&#x5011;&#x518D;&#x5BE6;&#x73FE;&#x4E0B; <code>sum</code>&#xFF0C;&#x9019;&#x6B21;&#x7528; <code>fold</code> &#x66FF;&#x4EE3;&#x90A3;&#x8907;&#x96DC;&#x7684;&#x905E;&#x6B78;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">sum&apos;</span> :: (<span class="hljs-type">Num</span> a) =&gt; [a] -&gt; a  
+<span class="hljs-title">sum&apos;</span> xs = foldl (\acc x -&gt; acc + x) <span class="hljs-number">0</span> xs
+</code></pre>
+<p>&#x6E2C;&#x8A66;&#x4E0B;&#xFF0C;&#x4E00;&#x4E8C;&#x4E09;&#xFF5E;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; sum&apos; [<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]  
+<span class="hljs-number">11</span>
+</code></pre>
+<p><img src="img/foldl.png" alt=""></p>
+<p>&#x6211;&#x5011;&#x6DF1;&#x5165;&#x770B;&#x4E0B; <code>fold</code> &#x7684;&#x57F7;&#x884C;&#x904E;&#x7A0B;&#xFF1A;<code>\acc x-&gt; acc + x</code> &#x662F;&#x500B;&#x4E8C;&#x5143;&#x51FD;&#x6578;&#xFF0C;<code>0</code> &#x662F;&#x521D;&#x59CB;&#x503C;&#xFF0C;<code>xs</code> &#x662F;&#x5F85;&#x647A;&#x758A;&#x7684; List&#x3002;&#x4E00;&#x958B;&#x59CB;&#xFF0C;&#x7D2F;&#x52A0;&#x503C;&#x70BA; <code>0</code>&#xFF0C;&#x7576;&#x524D;&#x9805;&#x70BA; <code>3</code>&#xFF0C;&#x547C;&#x53EB;&#x4E8C;&#x5143;&#x51FD;&#x6578; <code>0+3</code> &#x5F97; <code>3</code>&#xFF0C;&#x4F5C;&#x65B0;&#x7684;&#x7D2F;&#x52A0;&#x503C;&#x3002;&#x63A5;&#x7740;&#x4F86;&#xFF0C;&#x7D2F;&#x52A0;&#x503C;&#x70BA; <code>3</code>&#xFF0C;&#x7576;&#x524D;&#x9805;&#x70BA; <code>5</code>&#xFF0C;&#x5F97;&#x65B0;&#x7D2F;&#x52A0;&#x503C; <code>8</code>&#x3002;&#x518D;&#x5F80;&#x5F8C;&#xFF0C;&#x7D2F;&#x52A0;&#x503C;&#x70BA; <code>8</code>&#xFF0C;&#x7576;&#x524D;&#x9805;&#x70BA; <code>2</code>&#xFF0C;&#x5F97;&#x65B0;&#x7D2F;&#x52A0;&#x503C; <code>10</code>&#x3002;&#x6700;&#x5F8C;&#x7D2F;&#x52A0;&#x503C;&#x70BA; <code>10</code>&#xFF0C;&#x7576;&#x524D;&#x9805;&#x70BA; <code>1</code>&#xFF0C;&#x5F97; <code>11</code>&#x3002;&#x606D;&#x559C;&#xFF0C;&#x4F60;&#x5B8C;&#x6210;&#x4E86;&#x4E00;&#x6B21;&#x647A;&#x758A; <code>(fold)</code>&#xFF01;</p>
+<p>&#x5DE6;&#x908A;&#x7684;&#x9019;&#x500B;&#x5716;&#x8868;&#x793A;&#x4E86;&#x647A;&#x758A;&#x7684;&#x57F7;&#x884C;&#x904E;&#x7A0B;&#xFF0C;&#x4E00;&#x6B65;&#x53C8;&#x4E00;&#x6B65;(&#x4E00;&#x5929;&#x53C8;&#x4E00;&#x5929;!)&#x3002;&#x6DFA;&#x68D5;&#x8272;&#x7684;&#x6578;&#x5B57;&#x90FD;&#x662F;&#x7D2F;&#x52A0;&#x503C;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5F9E;&#x4E2D;&#x770B;&#x51FA; List &#x662F;&#x5982;&#x4F55;&#x5F9E;&#x5DE6;&#x7AEF;&#x4E00;&#x9EDE;&#x9EDE;&#x52A0;&#x5230;&#x7D2F;&#x52A0;&#x503C;&#x4E0A;&#x7684;&#x3002;&#x5514;&#x5C0D;&#x5C0D;&#x5C0D;&#xFF01;&#x5982;&#x679C;&#x6211;&#x5011;&#x8003;&#x616E;&#x5230;&#x51FD;&#x6578;&#x7684;&#x67EF;&#x88E1;&#x5316;&#xFF0C;&#x53EF;&#x4EE5;&#x5BEB;&#x51FA;&#x66F4;&#x7C21;&#x55AE;&#x7684;&#x5BE6;&#x73FE;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">sum&apos;</span> :: (<span class="hljs-type">Num</span> a) =&gt; [a] -&gt; a  
+<span class="hljs-title">sum&apos;</span> = foldl (+) <span class="hljs-number">0</span>
+</code></pre>
+<p>&#x9019;&#x500B; lambda &#x51FD;&#x6578; <code>(\acc x -&gt; acc + x )</code> &#x8207; <code>(+)</code> &#x7B49;&#x50F9;&#x3002;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x628A; <code>xs</code> &#x7B49;&#x4E00;&#x61C9;&#x53C3;&#x6578;&#x7701;&#x7565;&#x6389;&#xFF0C;&#x53CD;&#x6B63;&#x547C;&#x53EB; <code>foldl (+) 0</code> &#x6703;&#x56DE;&#x50B3;&#x4E00;&#x500B;&#x53D6; List &#x4F5C;&#x53C3;&#x6578;&#x7684;&#x51FD;&#x6578;&#x3002;&#x901A;&#x5E38;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684;&#x51FD;&#x6578;&#x985E;&#x4F3C; <code>foo a = bar b a</code>&#xFF0C; &#x5927;&#x53EF;&#x6539;&#x70BA; <code>foo = bar b</code>&#x3002;&#x6709;&#x67EF;&#x88E1;&#x5316;&#x561B;&#x3002;</p>
+<p>&#x547C;&#x547C;&#xFF0C;&#x9032;&#x5165;&#x53F3;&#x647A;&#x758A;&#x524D;&#x6211;&#x5011;&#x518D;&#x5BE6;&#x73FE;&#x500B;&#x7528;&#x5230;&#x5DE6;&#x647A;&#x758A;&#x7684;&#x51FD;&#x6578;&#x3002;&#x5927;&#x5BB6;&#x80AF;&#x5B9A;&#x90FD;&#x77E5;&#x9053; <code>elem</code> &#x662F;&#x6AA2;&#x67E5;&#x67D0;&#x5143;&#x7D20;&#x662F;&#x5426;&#x5C6C;&#x65BC;&#x67D0; List &#x7684;&#x51FD;&#x6578;&#x5427;&#xFF0C;&#x6211;&#x5C31;&#x4E0D;&#x518D;&#x63D0;&#x4E86;(&#x5514;&#xFF0C;&#x525B;&#x63D0;&#x4E86;)&#x3002;&#x7528;&#x5DE6;&#x647A;&#x758A;&#x5BE6;&#x73FE;&#x5B83;:</p>
+<pre><code class="lang-haskell"><span class="hljs-title">elem&apos;</span> :: (<span class="hljs-type">Eq</span> a) =&gt; a -&gt; [a] -&gt; <span class="hljs-type">Bool</span>  
+<span class="hljs-title">elem&apos;</span> y ys = foldl (\acc x -&gt; <span class="hljs-keyword">if</span> x == y <span class="hljs-keyword">then</span> <span class="hljs-type">True</span> <span class="hljs-keyword">else</span> acc) <span class="hljs-type">False</span> ys
+</code></pre>
+<p>&#x597D;&#x597D;&#x597D;&#xFF0C;&#x9019;&#x88E1;&#x6211;&#x5011;&#x6709;&#x4EC0;&#x9EBC;&#xFF1F;&#x8D77;&#x59CB;&#x503C;&#x8207;&#x7D2F;&#x52A0;&#x503C;&#x90FD;&#x662F;&#x5E03;&#x723E;&#x503C;&#x3002;&#x5728;&#x8655;&#x7406; <code>fold</code> &#x6642;&#xFF0C;&#x7D2F;&#x52A0;&#x503C;&#x8207;&#x6700;&#x7D42;&#x7D50;&#x679C;&#x7684;&#x578B;&#x5225;&#x7E3D;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x77E5;&#x9053;&#x600E;&#x6A23;&#x5C0D;&#x5F85;&#x8D77;&#x59CB;&#x503C;&#xFF0C;&#x90A3;&#x6211;&#x544A;&#x8A34;&#x4F60;&#xFF0C;&#x6211;&#x5011;&#x5148;&#x5047;&#x8A2D;&#x5B83;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x4EE5; <code>False</code> &#x958B;&#x59CB;&#x3002;&#x6211;&#x5011;&#x8981;&#x662F; <code>fold</code> &#x4E00;&#x500B;&#x7A7A; List&#xFF0C;&#x7D50;&#x679C;&#x5C31;&#x662F; <code>False</code>&#x3002;&#x7136;&#x5F8C;&#x6211;&#x5011;&#x6AA2;&#x67E5;&#x7576;&#x524D;&#x5143;&#x7D20;&#x662F;&#x5426;&#x70BA;&#x6211;&#x5011;&#x5C0B;&#x627E;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x662F;&#xFF0C;&#x5C31;&#x4EE4;&#x7D2F;&#x52A0;&#x503C;&#x70BA; <code>True</code>&#xFF0C;&#x5982;&#x679C;&#x5426;&#xFF0C;&#x5C31;&#x4FDD;&#x7559;&#x539F;&#x503C;&#x4E0D;&#x8B8A;&#x3002;&#x82E5; <code>False</code>&#xFF0C;&#x53CA;&#x8868;&#x660E;&#x7576;&#x524D;&#x5143;&#x7D20;&#x4E0D;&#x662F;&#x3002;&#x82E5; <code>True</code>&#xFF0C;&#x5C31;&#x8868;&#x660E;&#x5DF2;&#x7D93;&#x627E;&#x5230;&#x4E86;&#x3002;</p>
+<p>&#x53F3;&#x647A;&#x758A; <strong>foldr</strong> &#x7684;&#x884C;&#x70BA;&#x8207;&#x5DE6;&#x647A;&#x758A;&#x76F8;&#x4F3C;&#xFF0C;&#x53EA;&#x662F;&#x7D2F;&#x52A0;&#x503C;&#x662F;&#x5F9E; List &#x7684;&#x53F3;&#x908A;&#x958B;&#x59CB;&#x3002;&#x540C;&#x6A23;&#xFF0C;&#x5DE6;&#x647A;&#x758A;&#x7684;&#x4E8C;&#x5143;&#x51FD;&#x6578;&#x53D6;&#x7D2F;&#x52A0;&#x503C;&#x4F5C;&#x9996;&#x500B;&#x53C3;&#x6578;&#xFF0C;&#x7576;&#x524D;&#x503C;&#x70BA;&#x7B2C;&#x4E8C;&#x500B;&#x53C3;&#x6578;(&#x5373; <code>\acc x -&gt; ...</code>)&#xFF0C;&#x800C;&#x53F3;&#x647A;&#x758A;&#x7684;&#x4E8C;&#x5143;&#x51FD;&#x6578;&#x53C3;&#x6578;&#x7684;&#x9806;&#x5E8F;&#x6B63;&#x597D;&#x76F8;&#x53CD;(&#x5373; <code>\x acc -&gt; ...</code>)&#x3002;&#x9019;&#x5012;&#x4E5F;&#x6B63;&#x5E38;&#xFF0C;&#x7562;&#x7ADF;&#x662F;&#x5F9E;&#x53F3;&#x7AEF;&#x958B;&#x59CB;&#x647A;&#x758A;&#x3002;</p>
+<p>&#x7D2F;&#x52A0;&#x503C;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x578B;&#x5225;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x6578;&#x503C;&#xFF0C;&#x5E03;&#x723E;&#x503C;&#xFF0C;&#x751A;&#x81F3;&#x4E00;&#x500B;&#x65B0;&#x7684; List&#x3002;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x7528;&#x53F3; <code>fold</code> &#x5BE6;&#x73FE; <code>map</code> &#x51FD;&#x6578;&#xFF0C;&#x7D2F;&#x52A0;&#x503C;&#x5C31;&#x662F;&#x500B; List&#x3002;&#x5C07; <code>map</code> &#x8655;&#x7406;&#x904E;&#x7684;&#x5143;&#x7D20;&#x4E00;&#x500B;&#x4E00;&#x500B;&#x9023;&#x5230;&#x4E00;&#x8D77;&#x3002;&#x5F88;&#x5BB9;&#x6613;&#x60F3;&#x5230;&#xFF0C;&#x8D77;&#x59CB;&#x503C;&#x5C31;&#x662F;&#x7A7A; List&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">map&apos;</span> :: (a -&gt; b) -&gt; [a] -&gt; [b]  
+<span class="hljs-title">map&apos;</span> f xs = foldr (\x acc -&gt; f x : acc) [] xs
+</code></pre>
+<p>&#x5982;&#x679C;&#x6211;&#x5011;&#x7528; <code>(+3)</code> &#x4F86;&#x6620;&#x5C04; <code>[1,2,3]</code>&#xFF0C;&#x5B83;&#x5C31;&#x6703;&#x5148;&#x5230;&#x9054; List &#x7684;&#x53F3;&#x7AEF;&#xFF0C;&#x6211;&#x5011;&#x53D6;&#x6700;&#x5F8C;&#x90A3;&#x500B;&#x5143;&#x7D20;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; <code>3</code> &#x4F86;&#x547C;&#x53EB; <code>(+3)</code>&#xFF0C;&#x5F97; <code>6</code>&#x3002;&#x8FFD;&#x52A0; <code>(:)</code> &#x5230;&#x7D2F;&#x52A0;&#x503C;&#x4E0A;&#xFF0C;<code>6:[]</code> &#x5F97; <code>[6]</code> &#x4E26;&#x6210;&#x70BA;&#x65B0;&#x7684;&#x7D2F;&#x52A0;&#x503C;&#x3002;&#x7528; <code>2</code> &#x547C;&#x53EB; <code>(+3)</code>&#xFF0C;&#x5F97; <code>5</code>&#xFF0C;&#x8FFD;&#x52A0;&#x5230;&#x7D2F;&#x52A0;&#x503C;&#xFF0C;&#x65BC;&#x662F;&#x7D2F;&#x52A0;&#x503C;&#x6210;&#x4E86; <code>[5,6]</code>&#x3002;&#x518D;&#x5C0D; <code>1</code> &#x547C;&#x53EB; <code>(+3)</code>&#xFF0C;&#x4E26;&#x5C07;&#x7D50;&#x679C; 4 &#x8FFD;&#x52A0;&#x5230;&#x7D2F;&#x52A0;&#x503C;&#xFF0C;&#x6700;&#x7D42;&#x5F97;&#x7D50;&#x679C; <code>[4,5,6]</code>&#x3002;</p>
+<p>&#x7576;&#x7136;&#xFF0C;&#x6211;&#x5011;&#x4E5F;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x7528;&#x5DE6;&#x647A;&#x758A;&#x4F86;&#x5BE6;&#x73FE;&#x5B83;&#xFF0C;<code>map&apos; f xs = foldl (\acc x -&gt; acc ++ [f x]) [] xs</code> &#x5C31;&#x884C;&#x4E86;&#x3002;&#x4E0D;&#x904E;&#x554F;&#x984C;&#x662F;&#xFF0C;&#x4F7F;&#x7528; <code>(++)</code> &#x5F80; List &#x5F8C;&#x9762;&#x8FFD;&#x52A0;&#x5143;&#x7D20;&#x7684;&#x6548;&#x7387;&#x8981;&#x6BD4;&#x4F7F;&#x7528; <code>(:)</code> &#x4F4E;&#x5F97;&#x591A;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x751F;&#x6210;&#x65B0; List &#x7684;&#x6642;&#x5019;&#x4EBA;&#x5011;&#x4E00;&#x822C;&#x90FD;&#x662F;&#x4F7F;&#x7528;&#x53F3;&#x647A;&#x758A;&#x3002;</p>
+<p><img src="img/washmachine.png" alt=""></p>
+<p>&#x53CD;&#x8F49;&#x4E00;&#x500B; List&#xFF0C;&#x65E2;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x904E;&#x53F3;&#x647A;&#x758A;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x904E;&#x5DE6;&#x647A;&#x758A;&#x3002;&#x6709;&#x6642;&#x751A;&#x81F3;&#x4E0D;&#x9700;&#x8981;&#x7BA1;&#x5B83;&#x5011;&#x7684;&#x5206;&#x5225;&#xFF0C;&#x5982; <code>sum</code> &#x51FD;&#x6578;&#x7684;&#x5DE6;&#x53F3;&#x647A;&#x758A;&#x5BE6;&#x73FE;&#x90FD;&#x662F;&#x5341;&#x5206;&#x76F8;&#x4F3C;&#x3002;&#x4E0D;&#x904E;&#x6709;&#x500B;&#x5927;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x53F3;&#x647A;&#x758A;&#x53EF;&#x4EE5;&#x8655;&#x7406;&#x7121;&#x9650;&#x9577;&#x5EA6;&#x7684;&#x8CC7;&#x6599;&#x7D50;&#x69CB;&#xFF0C;&#x800C;&#x5DE6;&#x647A;&#x758A;&#x4E0D;&#x53EF;&#x4EE5;&#x3002;&#x5C07;&#x7121;&#x9650; List &#x5F9E;&#x4E2D;&#x65B7;&#x958B;&#x57F7;&#x884C;&#x5DE6;&#x647A;&#x758A;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;&#x4E0D;&#x904E;&#x82E5;&#x662F;&#x5411;&#x53F3;&#xFF0C;&#x5C31;&#x6C38;&#x9060;&#x5230;&#x4E0D;&#x4E86;&#x982D;&#x4E86;&#x3002;</p>
+<p><em>&#x6240;&#x6709;&#x904D;&#x6B77; List &#x4E2D;&#x5143;&#x7D20;&#x4E26;&#x64DA;&#x6B64;&#x56DE;&#x50B3;&#x4E00;&#x500B;&#x503C;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x53EF;&#x4EE5;&#x4EA4;&#x7D66; <code>fold</code> &#x5BE6;&#x73FE;</em>&#x3002;&#x7121;&#x8AD6;&#x4F55;&#x6642;&#x9700;&#x8981;&#x904D;&#x6B77; List &#x4E26;&#x56DE;&#x50B3;&#x67D0;&#x503C;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x5617;&#x8A66;&#x4E0B; <code>fold</code>&#x3002;&#x56E0;&#x6B64;&#xFF0C;<code>fold</code>&#x7684;&#x5730;&#x4F4D;&#x53EF;&#x4EE5;&#x8AAA;&#x8207; <code>map</code>&#x548C; <code>filter</code>&#x4E26;&#x99D5;&#x9F4A;&#x9A45;&#xFF0C;&#x540C;&#x70BA;&#x51FD;&#x6578;&#x5F0F;&#x7DE8;&#x7A0B;&#x4E2D;&#x6700;&#x5E38;&#x7528;&#x7684;&#x51FD;&#x6578;&#x4E4B;&#x4E00;&#x3002;</p>
+<p><strong>foldl1</strong> &#x8207; <strong>foldr1</strong> &#x7684;&#x884C;&#x70BA;&#x8207; <code>foldl</code> &#x548C; <code>foldr</code> &#x76F8;&#x4F3C;&#xFF0C;&#x53EA;&#x662F;&#x4F60;&#x7121;&#x9700;&#x660E;&#x78BA;&#x63D0;&#x4F9B;&#x521D;&#x59CB;&#x503C;&#x3002;&#x4ED6;&#x5011;&#x5047;&#x5B9A; List &#x7684;&#x9996;&#x500B;(&#x6216;&#x672B;&#x5C3E;)&#x5143;&#x7D20;&#x4F5C;&#x70BA;&#x8D77;&#x59CB;&#x503C;&#xFF0C;&#x4E26;&#x5F9E;&#x65C1;&#x908A;&#x7684;&#x5143;&#x7D20;&#x958B;&#x59CB;&#x647A;&#x758A;&#x3002;&#x9019;&#x4E00;&#x4F86;&#xFF0C;<code>sum</code> &#x51FD;&#x6578;&#x5927;&#x53EF;&#x9019;&#x6A23;&#x5BE6;&#x73FE;&#xFF1A;<code>sum = foldl1 (+)</code>&#x3002;&#x9019;&#x88E1;&#x5F85;&#x647A;&#x758A;&#x7684; List &#x4E2D;&#x81F3;&#x5C11;&#x8981;&#x6709;&#x4E00;&#x500B;&#x5143;&#x7D20;&#xFF0C;&#x82E5;&#x4F7F;&#x7528;&#x7A7A; List &#x5C31;&#x6703;&#x7522;&#x751F;&#x4E00;&#x500B;&#x904B;&#x884C;&#x6642;&#x932F;&#x8AA4;&#x3002;&#x4E0D;&#x904E; <code>foldl</code> &#x548C; <code>foldr</code> &#x8207;&#x7A7A; List &#x76F8;&#x8655;&#x7684;&#x5C31;&#x5F88;&#x597D;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x4F7F;&#x7528; <code>fold</code> &#x524D;&#xFF0C;&#x61C9;&#x8A72;&#x5148;&#x60F3;&#x4E0B;&#x5B83;&#x6703;&#x4E0D;&#x6703;&#x9047;&#x5230;&#x7A7A; List&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x6703;&#x9047;&#x5230;&#xFF0C;&#x5927;&#x53EF;&#x653E;&#x5FC3;&#x4F7F;&#x7528; <code>foldr1</code> &#x548C; <code>foldl1</code>&#x3002;</p>
+<p>&#x70BA;&#x4E86;&#x9AD4;&#x6703; <code>fold</code> &#x7684;&#x5A01;&#x529B;&#xFF0C;&#x6211;&#x5011;&#x5C31;&#x7528;&#x5B83;&#x5BE6;&#x73FE;&#x5E7E;&#x500B;&#x5EAB;&#x51FD;&#x6578;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">maximum&apos;</span> :: (<span class="hljs-type">Ord</span> a) =&gt; [a] -&gt; a  
+<span class="hljs-title">maximum&apos;</span> = foldr1 (\x acc -&gt; <span class="hljs-keyword">if</span> x &gt; acc <span class="hljs-keyword">then</span> x <span class="hljs-keyword">else</span> acc)  
+
+<span class="hljs-title">reverse&apos;</span> :: [a] -&gt; [a]  
+<span class="hljs-title">reverse&apos;</span> = foldl (\acc x -&gt; x : acc) []  
+
+<span class="hljs-title">product&apos;</span> :: (<span class="hljs-type">Num</span> a) =&gt; [a] -&gt; a  
+<span class="hljs-title">product&apos;</span> = foldr1 (*)  
+
+<span class="hljs-title">filter&apos;</span> :: (a -&gt; <span class="hljs-type">Bool</span>) -&gt; [a] -&gt; [a]  
+<span class="hljs-title">filter&apos;</span> p = foldr (\x acc -&gt; <span class="hljs-keyword">if</span> p x <span class="hljs-keyword">then</span> x : acc <span class="hljs-keyword">else</span> acc) []  
+
+<span class="hljs-title">head&apos;</span> :: [a] -&gt; a  
+<span class="hljs-title">head&apos;</span> = foldr1 (\x _ -&gt; x)  
+
+<span class="hljs-title">last&apos;</span> :: [a] -&gt; a  
+<span class="hljs-title">last&apos;</span> = foldl1 (\_ x -&gt; x)
+</code></pre>
+<p>&#x50C5;&#x9760;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x5C31;&#x53EF;&#x4EE5;&#x5BE6;&#x73FE; <code>head</code> &#x51FD;&#x6578;&#x548C; <code>last</code> &#x51FD;&#x6578;&#xFF0C;&#x800C;&#x4E14;&#x6548;&#x7387;&#x4E5F;&#x5F88;&#x9AD8;&#x3002;&#x9019;&#x88E1;&#x53EA;&#x662F;&#x70BA;&#x4E86;&#x6F14;&#x793A;&#xFF0C;&#x7528; <code>fold</code> &#x7684;&#x5BE6;&#x73FE;&#x65B9;&#x6CD5;&#x3002;&#x6211;&#x89BA;&#x5F97;&#x6211;&#x5011;&#x9019;&#x500B; <code>reverse&apos;</code> &#x5B9A;&#x7FA9;&#x7684;&#x76F8;&#x7576;&#x8070;&#x660E;&#xFF0C;&#x7528;&#x4E00;&#x500B;&#x7A7A; List &#x505A;&#x521D;&#x59CB;&#x503C;&#xFF0C;&#x4E26;&#x5411;&#x5DE6;&#x5C55;&#x958B; List&#xFF0C;&#x5F9E;&#x5DE6;&#x8FFD;&#x52A0;&#x5230;&#x7D2F;&#x52A0;&#x503C;&#xFF0C;&#x6700;&#x5F8C;&#x5F97;&#x5230;&#x4E00;&#x500B;&#x53CD;&#x8F49;&#x7684;&#x65B0; List&#x3002;<code>\acc x -&gt; x : acc</code> &#x6709;&#x9EDE;&#x50CF; <code>:</code> &#x51FD;&#x6578;&#xFF0C;&#x53EA;&#x662F;&#x53C3;&#x6578;&#x9806;&#x5E8F;&#x76F8;&#x53CD;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x6539;&#x6210; <code>foldl (flip (:)) []</code>&#x3002;</p>
+<p>&#x6709;&#x500B;&#x7406;&#x89E3;&#x647A;&#x758A;&#x7684;&#x601D;&#x8DEF;&#xFF1A;&#x5047;&#x8A2D;&#x6211;&#x5011;&#x6709;&#x500B;&#x4E8C;&#x5143;&#x51FD;&#x6578; <code>f</code>&#xFF0C;&#x8D77;&#x59CB;&#x503C; <code>z</code>&#xFF0C;&#x5982;&#x679C;&#x5F9E;&#x53F3;&#x647A;&#x758A; <code>[3,4,5,6]</code>&#xFF0C;&#x5BE6;&#x969B;&#x4E0A;&#x57F7;&#x884C;&#x7684;&#x5C31;&#x662F; <code>f 3 (f 4 (f 5 (f 6 z)))</code>&#x3002;<code>f</code> &#x6703;&#x88AB; List &#x7684;&#x5C3E;&#x9805;&#x548C;&#x7D2F;&#x52A0;&#x503C;&#x547C;&#x53EB;&#xFF0C;&#x6240;&#x5F97;&#x7684;&#x7D50;&#x679C;&#x6703;&#x4F5C;&#x70BA;&#x65B0;&#x7684;&#x7D2F;&#x52A0;&#x503C;&#x50B3;&#x5165;&#x4E0B;&#x4E00;&#x500B;&#x547C;&#x53EB;&#x3002;&#x5047;&#x8A2D; <code>f</code> &#x662F; <code>(+)</code>&#xFF0C;&#x8D77;&#x59CB;&#x503C; <code>z</code> &#x662F; <code>0</code>&#xFF0C;&#x90A3;&#x9EBC;&#x5C31;&#x662F; <code>3 + (4 + (5 + (6 + 0)))</code>&#xFF0C;&#x6216;&#x7B49;&#x50F9;&#x7684;&#x9996;&#x78BC;&#x5F62;&#x5F0F;&#xFF1A;<code>(+) 3 ((+) 4 ((+) 5 ((+) 6 0)))</code>&#x3002;&#x76F8;&#x4F3C;&#xFF0C;&#x5DE6;&#x647A;&#x758A;&#x4E00;&#x500B; List&#xFF0C;&#x4EE5; <code>g</code> &#x70BA;&#x4E8C;&#x5143;&#x51FD;&#x6578;&#xFF0C;<code>z</code> &#x70BA;&#x7D2F;&#x52A0;&#x503C;&#xFF0C;&#x5B83;&#x5C31;&#x8207; <code>g (g (g (g z 3) 4) 5) 6</code> &#x7B49;&#x50F9;&#x3002;&#x5982;&#x679C;&#x7528; <code>flip (:)</code> &#x4F5C;&#x4E8C;&#x5143;&#x51FD;&#x6578;&#xFF0C;<code>[]</code> &#x70BA;&#x7D2F;&#x52A0;&#x503C;(&#x770B;&#x5F97;&#x51FA;&#xFF0C;&#x6211;&#x5011;&#x662F;&#x8981;&#x53CD;&#x8F49;&#x4E00;&#x500B; List)&#xFF0C;&#x9019;&#x5C31;&#x8207; <code>flip (:) (flip (:) (flip (:) (flip (:) [] 3) 4) 5) 6</code> &#x7B49;&#x50F9;&#x3002;&#x986F;&#x800C;&#x6613;&#x898B;&#xFF0C;&#x57F7;&#x884C;&#x8A72;&#x8868;&#x9054;&#x5F0F;&#x7684;&#x7D50;&#x679C;&#x70BA; <code>[6,5,4,3]</code>&#x3002;</p>
+<p><strong>scanl</strong> &#x548C; <strong>scanr</strong> &#x8207; <code>foldl</code> &#x548C; <code>foldr</code> &#x76F8;&#x4F3C;&#xFF0C;&#x53EA;&#x662F;&#x5B83;&#x5011;&#x6703;&#x8A18;&#x9304;&#x4E0B;&#x7D2F;&#x52A0;&#x503C;&#x7684;&#x6240;&#x6709;&#x72C0;&#x614B;&#x5230;&#x4E00;&#x500B; List&#x3002;&#x4E5F;&#x6709; <strong>scanl1</strong> &#x548C; <strong>scanr1</strong>&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; scanl (+) <span class="hljs-number">0</span> [<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]  
+[<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,<span class="hljs-number">8</span>,<span class="hljs-number">10</span>,<span class="hljs-number">11</span>]  
+<span class="hljs-title">ghci</span>&gt; scanr (+) <span class="hljs-number">0</span> [<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]  
+[<span class="hljs-number">11</span>,<span class="hljs-number">8</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>]  
+<span class="hljs-title">ghci</span>&gt; scanl1 (\acc x -&gt; <span class="hljs-keyword">if</span> x &gt; acc <span class="hljs-keyword">then</span> x <span class="hljs-keyword">else</span> acc) [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">3</span>,<span class="hljs-number">7</span>,<span class="hljs-number">9</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]  
+[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">5</span>,<span class="hljs-number">7</span>,<span class="hljs-number">9</span>,<span class="hljs-number">9</span>,<span class="hljs-number">9</span>]  
+<span class="hljs-title">ghci</span>&gt; scanl (flip (:)) [] [<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]  
+[[],[<span class="hljs-number">3</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]]
+</code></pre>
+<p>&#x7576;&#x4F7F;&#x7528; <code>scanl</code> &#x6642;&#xFF0C;&#x6700;&#x7D42;&#x7D50;&#x679C;&#x5C31;&#x662F; List &#x7684;&#x6700;&#x5F8C;&#x4E00;&#x500B;&#x5143;&#x7D20;&#x3002;&#x800C;&#x5728; <code>scanr</code> &#x4E2D;&#x5247;&#x662F;&#x7B2C;&#x4E00;&#x500B;&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">sqrtSums</span> :: <span class="hljs-type">Int</span>  
+<span class="hljs-title">sqrtSums</span> = length (takeWhile (&lt;<span class="hljs-number">1000</span>) (scanl1 (+) (map sqrt [<span class="hljs-number">1.</span>.]))) + <span class="hljs-number">1</span>
+</code></pre>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; sqrtSums  
+<span class="hljs-number">131</span>  
+<span class="hljs-title">ghci</span>&gt; sum (map sqrt [<span class="hljs-number">1.</span><span class="hljs-number">.131</span>])  
+<span class="hljs-number">1005.0942035344083</span>  
+<span class="hljs-title">ghci</span>&gt; sum (map sqrt [<span class="hljs-number">1.</span><span class="hljs-number">.130</span>])  
+<span class="hljs-number">993.6486803921487</span>
+</code></pre>
+<p><code>scan</code> &#x53EF;&#x4EE5;&#x7528;&#x4F86;&#x8DDF;&#x8E64; <code>fold</code> &#x51FD;&#x6578;&#x7684;&#x57F7;&#x884C;&#x904E;&#x7A0B;&#x3002;&#x60F3;&#x60F3;&#x9019;&#x500B;&#x554F;&#x984C;&#xFF0C;<em>&#x53D6;&#x6240;&#x6709;&#x81EA;&#x7136;&#x6578;&#x7684;&#x5E73;&#x65B9;&#x6839;&#x7684;&#x548C;&#xFF0C;&#x5C0B;&#x627E;&#x5728;&#x4F55;&#x8655;&#x8D85;&#x904E; 1000</em>&#xFF1F; &#x5148;<code>map sqrt [1..]</code>&#xFF0C;&#x7136;&#x5F8C;&#x7528;&#x500B; <code>fold</code> &#x4F86;&#x6C42;&#x5B83;&#x5011;&#x7684;&#x548C;&#x3002;&#x4F46;&#x5728;&#x9019;&#x88E1;&#x6211;&#x5011;&#x60F3;&#x77E5;&#x9053;&#x6C42;&#x548C;&#x7684;&#x904E;&#x7A0B;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528; <code>scan</code>&#xFF0C;<code>scan</code> &#x5B8C;&#x7562;&#x6642;&#x5C31;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x5C0F;&#x65BC; 1000 &#x7684;&#x6240;&#x6709;&#x548C;&#x3002;&#x6240;&#x5F97;&#x7D50;&#x679C; List &#x7684;&#x7B2C;&#x4E00;&#x500B;&#x5143;&#x7D20;&#x70BA; 1&#xFF0C;&#x7B2C;&#x4E8C;&#x500B;&#x5C31;&#x662F; 1+&#x6839;2&#xFF0C;&#x7B2C;&#x4E09;&#x500B;&#x5C31;&#x662F; 1+&#x6839;2+&#x6839;3&#x3002;&#x82E5;&#x6709; <code>x</code> &#x500B;&#x548C;&#x5C0F;&#x65BC; 1000&#xFF0C;&#x90A3;&#x7D50;&#x679C;&#x5C31;&#x662F; <code>x+1</code>&#x3002;</p>
+<h2 id="&#x6709;&#x7684;&#x51FD;&#x6578;&#x547C;&#x53EB;">&#x6709;$&#x7684;&#x51FD;&#x6578;&#x547C;&#x53EB;</h2>
+<p>&#x597D;&#x7684;&#xFF0C;&#x63A5;&#x4E0B;&#x4F86;&#x770B;&#x770B; <strong>$</strong> &#x51FD;&#x6578;&#x3002;&#x5B83;&#x4E5F;&#x53EB;&#x4F5C;<em>&#x51FD;&#x6578;&#x547C;&#x53EB;&#x7B26;</em>&#x3002;&#x5148;&#x770B;&#x4E0B;&#x5B83;&#x7684;&#x5B9A;&#x7FA9;&#xFF1A;</p>
+<pre><code class="lang-haskell">($) :: (a -&gt; b) -&gt; a -&gt; b  
+<span class="hljs-title">f</span> $ x = f x
+</code></pre>
+<p><img src="img/dollar.png" alt=""></p>
+<p>&#x4EC0;&#x9EBC;&#x9B3C;&#x6771;&#x897F;&#xFF1F;&#x9019;&#x6C92;&#x5565;&#x610F;&#x7FA9;&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#xFF1F;&#x5B83;&#x53EA;&#x662F;&#x500B;&#x51FD;&#x6578;&#x547C;&#x53EB;&#x7B26;&#x7F77;&#x4E86;&#xFF1F;&#x597D;&#x5427;&#xFF0C;&#x4E0D;&#x5168;&#x662F;&#xFF0C;&#x4F46;&#x5DEE;&#x4E0D;&#x591A;&#x3002;&#x666E;&#x901A;&#x7684;&#x51FD;&#x6578;&#x547C;&#x53EB;&#x7B26;&#x6709;&#x6700;&#x9AD8;&#x7684;&#x512A;&#x5148;&#x9806;&#x5E8F;&#xFF0C;&#x800C; <code>$</code> &#x7684;&#x512A;&#x5148;&#x9806;&#x5E8F;&#x5247;&#x6700;&#x4F4E;&#x3002;&#x7528;&#x7A7A;&#x683C;&#x7684;&#x51FD;&#x6578;&#x547C;&#x53EB;&#x7B26;&#x662F;&#x5DE6;&#x7D50;&#x5408;&#x7684;&#xFF0C;&#x5982; <code>f a b c</code> &#x8207; <code>((f a) b) c</code> &#x7B49;&#x50F9;&#xFF0C;&#x800C; <code>$</code> &#x5247;&#x662F;&#x53F3;&#x7D50;&#x5408;&#x7684;&#x3002;</p>
+<p>&#x807D;&#x8457;&#x4E0D;&#x932F;&#x3002;&#x4F46;&#x6709;&#x4EC0;&#x9EBC;&#x7528;&#xFF1F;&#x5B83;&#x53EF;&#x4EE5;&#x6E1B;&#x5C11;&#x6211;&#x5011;&#x7A0B;&#x5F0F;&#x78BC;&#x4E2D;&#x62EC;&#x865F;&#x7684;&#x6578;&#x76EE;&#x3002;&#x8A66;&#x60F3;&#x6709;&#x9019;&#x500B;&#x8868;&#x9054;&#x5F0F;&#xFF1A; <code>sum (map sqrt [1..130])</code>&#x3002;&#x7531;&#x65BC;&#x4F4E;&#x512A;&#x5148;&#x9806;&#x5E8F;&#x7684; <code>$</code>&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x5C07;&#x5176;&#x6539;&#x70BA; <code>sum $ map sqrt [1..130]</code>&#xFF0C;&#x53EF;&#x4EE5;&#x7701;&#x6572;&#x4E0D;&#x5C11;&#x9375;&#xFF01;<code>sqrt 3 + 4 + 9</code> &#x6703;&#x600E;&#x6A23;&#xFF1F;&#x9019;&#x6703;&#x5F97;&#x5230; 9&#xFF0C;4 &#x548C;&#x6839;3 &#x7684;&#x548C;&#x3002;&#x82E5;&#x8981;&#x53D6; <code>(3+4+9)</code> &#x7684;&#x5E73;&#x65B9;&#x6839;&#xFF0C;&#x5C31;&#x5F97; <code>sqrt (3+4+9)</code> &#x6216;&#x7528; <code>$</code>&#xFF1A;<code>sqrt $ 3+4+9</code>&#x3002;&#x56E0;&#x70BA; <code>$</code> &#x6709;&#x6700;&#x4F4E;&#x7684;&#x512A;&#x5148;&#x9806;&#x5E8F;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x53EF;&#x4EE5;&#x628A;$&#x770B;&#x4F5C;&#x662F;&#x5728;&#x53F3;&#x9762;&#x5BEB;&#x4E00;&#x5C0D;&#x62EC;&#x865F;&#x7684;&#x7B49;&#x50F9;&#x5F62;&#x5F0F;&#x3002;</p>
+<p><code>sum (filter (&gt; 10) (map (*2) [2..10]))</code> &#x8A72;&#x5982;&#x4F55;&#xFF1F;&#x55EF;&#xFF0C;<code>$</code> &#x662F;&#x53F3;&#x7D50;&#x5408;&#xFF0C;<code>f (g (z x))</code> &#x8207; <code>f $ g $ z x</code> &#x7B49;&#x50F9;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x9EBC;&#x53EF;&#x4EE5;&#x5C07; <code>sum (filter (&gt; 10) (map (*2) [2..10])</code> &#x91CD;&#x5BEB;&#x70BA; <code>sum $ filter (&gt; 10) $ map (*2) [2..10]</code>&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x6E1B;&#x5C11;&#x62EC;&#x865F;&#x5916;&#xFF0C;<code>$</code> &#x9084;&#x53EF;&#x4EE5;&#x5C07;&#x6578;&#x64DA;&#x4F5C;&#x70BA;&#x51FD;&#x6578;&#x4F7F;&#x7528;&#x3002;&#x4F8B;&#x5982;&#x6620;&#x5C04;&#x4E00;&#x500B;&#x51FD;&#x6578;&#x547C;&#x53EB;&#x7B26;&#x5230;&#x4E00;&#x7D44;&#x51FD;&#x6578;&#x7D44;&#x6210;&#x7684; List&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; map ($ <span class="hljs-number">3</span>) [(<span class="hljs-number">4</span>+),(<span class="hljs-number">10</span>*),(^<span class="hljs-number">2</span>),sqrt]  
+[<span class="hljs-number">7.0</span>,<span class="hljs-number">30.0</span>,<span class="hljs-number">9.0</span>,<span class="hljs-number">1.7320508075688772</span>]
+</code></pre>
+<h2 id="function-composition">Function composition</h2>
+<p>&#x5728;&#x6578;&#x5B78;&#x4E2D;&#xFF0C;&#x51FD;&#x6578;&#x7D44;&#x5408;&#x662F;&#x9019;&#x6A23;&#x5B9A;&#x7FA9;&#x7684;&#xFF1A; <img src="img/composition.png" alt="">&#xFF0C;&#x8868;&#x793A;&#x7D44;&#x5408;&#x5169;&#x500B;&#x51FD;&#x6578;&#x6210;&#x70BA;&#x4E00;&#x500B;&#x51FD;&#x6578;&#x3002;&#x4EE5; <code>x</code> &#x547C;&#x53EB;&#x9019;&#x4E00;&#x51FD;&#x6578;&#xFF0C;&#x5C31;&#x8207;&#x7528; <code>x</code> &#x547C;&#x53EB; <code>g</code> &#x518D;&#x7528;&#x6240;&#x5F97;&#x7684;&#x7D50;&#x679C;&#x547C;&#x53EB; <code>f</code> &#x7B49;&#x50F9;&#x3002;</p>
+<p>Haskell &#x4E2D;&#x7684;&#x51FD;&#x6578;&#x7D44;&#x5408;&#x8207;&#x4E4B;&#x5F88;&#x50CF;&#xFF0C;&#x5373; <strong>.</strong> &#x51FD;&#x6578;&#x3002;&#x5176;&#x5B9A;&#x7FA9;&#x70BA;&#xFF1A;</p>
+<pre><code class="lang-haskell">(.) :: (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c  
+<span class="hljs-title">f</span> . g = \x -&gt; f (g x)
+</code></pre>
+<p><img src="img/notes.png" alt=""></p>
+<p>&#x6CE8;&#x610F;&#x4E0B;&#x9019;&#x578B;&#x5225;&#x8072;&#x660E;&#xFF0C;<code>f</code> &#x7684;&#x53C3;&#x6578;&#x578B;&#x5225;&#x5FC5;&#x9808;&#x8207; <code>g</code> &#x7684;&#x56DE;&#x50B3;&#x578B;&#x5225;&#x76F8;&#x540C;&#x3002;&#x6240;&#x4EE5;&#x5F97;&#x5230;&#x7684;&#x7D44;&#x5408;&#x51FD;&#x6578;&#x7684;&#x53C3;&#x6578;&#x578B;&#x5225;&#x8207; <code>g</code> &#x76F8;&#x540C;&#xFF0C;&#x56DE;&#x50B3;&#x578B;&#x5225;&#x8207; <code>f</code> &#x76F8;&#x540C;&#x3002;&#x8868;&#x9054;&#x5F0F; <code>negate . (*3)</code> &#x56DE;&#x50B3;&#x4E00;&#x500B;&#x6C42;&#x4E00;&#x6578;&#x5B57;&#x4E58;&#x4EE5; 3 &#x5F8C;&#x7684;&#x8CA0;&#x6578;&#x7684;&#x51FD;&#x6578;&#x3002;</p>
+<p>&#x51FD;&#x6578;&#x7D44;&#x5408;&#x7684;&#x7528;&#x8655;&#x4E4B;&#x4E00;&#x5C31;&#x662F;&#x751F;&#x6210;&#x65B0;&#x51FD;&#x6578;&#xFF0C;&#x4E26;&#x50B3;&#x905E;&#x7D66;&#x5176;&#x5B83;&#x51FD;&#x6578;&#x3002;&#x7576;&#x7136;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x7528; lambda &#x5BE6;&#x73FE;&#xFF0C;&#x4F46;&#x5927;&#x591A;&#x6578;&#x60C5;&#x6CC1;&#x4E0B;&#xFF0C;&#x4F7F;&#x7528;&#x51FD;&#x6578;&#x7D44;&#x5408;&#x7121;&#x7591;&#x66F4;&#x6E05;&#x695A;&#x3002;&#x5047;&#x8A2D;&#x6211;&#x5011;&#x6709;&#x4E00;&#x7D44;&#x7531;&#x6578;&#x5B57;&#x7D44;&#x6210;&#x7684; List&#xFF0C;&#x8981;&#x5C07;&#x5176;&#x5168;&#x90E8;&#x8F49;&#x70BA;&#x8CA0;&#x6578;&#xFF0C;&#x5F88;&#x5BB9;&#x6613;&#x5C31;&#x60F3;&#x5230;&#x61C9;&#x5148;&#x53D6;&#x5176;&#x7D76;&#x5C0D;&#x503C;&#xFF0C;&#x518D;&#x53D6;&#x8CA0;&#x6578;&#xFF0C;&#x50CF;&#x9019;&#x6A23;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; map (\x -&gt; negate (abs x)) [<span class="hljs-number">5</span>,<span class="hljs-number">-3</span>,<span class="hljs-number">-6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">-3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">-19</span>,<span class="hljs-number">24</span>]  
+[<span class="hljs-number">-5</span>,<span class="hljs-number">-3</span>,<span class="hljs-number">-6</span>,<span class="hljs-number">-7</span>,<span class="hljs-number">-3</span>,<span class="hljs-number">-2</span>,<span class="hljs-number">-19</span>,<span class="hljs-number">-24</span>]
+</code></pre>
+<p>&#x6CE8;&#x610F;&#x4E0B;&#x9019;&#x500B; lambda &#x8207;&#x90A3;&#x51FD;&#x6578;&#x7D44;&#x5408;&#x662F;&#x591A;&#x9EBC;&#x7684;&#x76F8;&#x50CF;&#x3002;&#x7528;&#x51FD;&#x6578;&#x7D44;&#x5408;&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x5C07;&#x7A0B;&#x5F0F;&#x78BC;&#x6539;&#x70BA;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; map (negate . abs) [<span class="hljs-number">5</span>,<span class="hljs-number">-3</span>,<span class="hljs-number">-6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">-3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">-19</span>,<span class="hljs-number">24</span>]  
+[<span class="hljs-number">-5</span>,<span class="hljs-number">-3</span>,<span class="hljs-number">-6</span>,<span class="hljs-number">-7</span>,<span class="hljs-number">-3</span>,<span class="hljs-number">-2</span>,<span class="hljs-number">-19</span>,<span class="hljs-number">-24</span>]
+</code></pre>
+<p>&#x6F02;&#x4EAE;&#xFF01;&#x51FD;&#x6578;&#x7D44;&#x5408;&#x662F;&#x53F3;&#x7D50;&#x5408;&#x7684;&#xFF0C;&#x6211;&#x5011;&#x540C;&#x6642;&#x7D44;&#x5408;&#x591A;&#x500B;&#x51FD;&#x6578;&#x3002;&#x8868;&#x9054;&#x5F0F; <code>f (g (z x))</code>&#x8207; <code>(f . g . z) x</code> &#x7B49;&#x50F9;&#x3002;&#x6309;&#x7167;&#x9019;&#x500B;&#x601D;&#x8DEF;&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x5C07;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; map (\xs -&gt; negate (sum (tail xs))) [[<span class="hljs-number">1.</span><span class="hljs-number">.5</span>],[<span class="hljs-number">3.</span><span class="hljs-number">.6</span>],[<span class="hljs-number">1.</span><span class="hljs-number">.7</span>]]  
+[<span class="hljs-number">-14</span>,<span class="hljs-number">-15</span>,<span class="hljs-number">-27</span>]
+</code></pre>
+<p>&#x6539;&#x70BA;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; map (negate . sum . tail) [[<span class="hljs-number">1.</span><span class="hljs-number">.5</span>],[<span class="hljs-number">3.</span><span class="hljs-number">.6</span>],[<span class="hljs-number">1.</span><span class="hljs-number">.7</span>]]  
+[<span class="hljs-number">-14</span>,<span class="hljs-number">-15</span>,<span class="hljs-number">-27</span>]
+</code></pre>
+<p>&#x4E0D;&#x904E;&#x542B;&#x591A;&#x500B;&#x53C3;&#x6578;&#x7684;&#x51FD;&#x6578;&#x8A72;&#x600E;&#x9EBC;&#x8FA6;&#xFF1F;&#x597D;&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0D;&#x5168;&#x547C;&#x53EB;&#x4F7F;&#x6BCF;&#x500B;&#x51FD;&#x6578;&#x90FD;&#x53EA;&#x5269;&#x4E0B;&#x4E00;&#x500B;&#x53C3;&#x6578;&#x3002;<code>sum (replicate 5 (max 6.7 8.9))</code> &#x53EF;&#x4EE5;&#x91CD;&#x5BEB;&#x70BA; <code>(sum . replicate 5 . max 6.7) 8.9</code> &#x6216; <code>sum . replicate 5 . max 6.7 $ 8.9</code>&#x3002;&#x5728;&#x9019;&#x88E1;&#x6703;&#x7522;&#x751F;&#x4E00;&#x500B;&#x51FD;&#x6578;&#xFF0C;&#x5B83;&#x53D6;&#x8207; <code>max 6.7</code> &#x540C;&#x6A23;&#x7684;&#x53C3;&#x6578;&#xFF0C;&#x4E26;&#x4F7F;&#x7528;&#x7D50;&#x679C;&#x547C;&#x53EB; <code>replicate 5</code> &#x518D;&#x7528; <code>sum</code> &#x6C42;&#x548C;&#x3002;&#x6700;&#x5F8C;&#x7528; <code>8.9</code> &#x547C;&#x53EB;&#x8A72;&#x51FD;&#x6578;&#x3002;&#x4E0D;&#x904E;&#x4E00;&#x822C;&#x4F60;&#x53EF;&#x4EE5;&#x9019;&#x9EBC;&#x8B80;&#xFF0C;&#x7528; 8.9 &#x547C;&#x53EB; <code>max 6.7</code>&#xFF0C;&#x7136;&#x5F8C;&#x4F7F;&#x5B83; <code>replicate 5</code>&#xFF0C;&#x518D; <code>sum</code> &#x4E4B;&#x3002;&#x5982;&#x679C;&#x4F60;&#x6253;&#x7B97;&#x7528;&#x51FD;&#x6578;&#x7D44;&#x5408;&#x4F86;&#x66FF;&#x6389;&#x90A3;&#x5806;&#x62EC;&#x865F;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x5728;&#x6700;&#x9760;&#x8FD1;&#x53C3;&#x6578;&#x7684;&#x51FD;&#x6578;&#x5F8C;&#x9762;&#x52A0;&#x4E00;&#x500B; <code>$</code>&#xFF0C;&#x63A5;&#x7740;&#x5C31;&#x7528; <code>.</code> &#x7D44;&#x5408;&#x5176;&#x6240;&#x6709;&#x51FD;&#x6578;&#x547C;&#x53EB;&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x7BA1;&#x6700;&#x5F8C;&#x90A3;&#x500B;&#x53C3;&#x6578;&#x3002;&#x5982;&#x679C;&#x6709;&#x9019;&#x6A23;&#x4E00;&#x6BB5;&#x7A0B;&#x5F0F;&#x78BC;&#xFF1A;<code>replicate 100 (product (map (*3) (zipWith max [1,2,3,4,5] [4,5,6,7,8])))</code>&#xFF0C;&#x53EF;&#x4EE5;&#x6539;&#x70BA;&#xFF1A;<code>replicate 100 . product . map (*3) . zipWith max [1,2,3,4,5] $ [4,5,6,7,8]</code>&#x3002;&#x5982;&#x679C;&#x8868;&#x9054;&#x5F0F;&#x4EE5; 3 &#x500B;&#x62EC;&#x865F;&#x7D50;&#x5C3E;&#xFF0C;&#x5C31;&#x8868;&#x793A;&#x4F60;&#x53EF;&#x4EE5;&#x5C07;&#x5176;&#x4FEE;&#x6539;&#x70BA;&#x51FD;&#x6578;&#x7D44;&#x5408;&#x7684;&#x5F62;&#x5F0F;&#x3002;</p>
+<p>&#x51FD;&#x6578;&#x7D44;&#x5408;&#x7684;&#x53E6;&#x4E00;&#x7528;&#x9014;&#x5C31;&#x662F;&#x5B9A;&#x7FA9; point free style (&#x4E5F;&#x7A31;&#x4F5C; pointless style) &#x7684;&#x51FD;&#x6578;&#x3002;&#x5C31;&#x62FF;&#x6211;&#x5011;&#x4E4B;&#x524D;&#x5BEB;&#x7684;&#x51FD;&#x6578;&#x4F5C;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">sum&apos;</span> :: (<span class="hljs-type">Num</span> a) =&gt; [a] -&gt; a     
+<span class="hljs-title">sum&apos;</span> xs = foldl (+) <span class="hljs-number">0</span> xs
+</code></pre>
+<p>&#x7B49;&#x865F;&#x7684;&#x5169;&#x7AEF;&#x90FD;&#x6709;&#x500B; <code>xs</code>&#x3002;&#x7531;&#x65BC;&#x6709;&#x67EF;&#x88E1;&#x5316; (Currying)&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x7701;&#x6389;&#x5169;&#x7AEF;&#x7684; <code>xs</code>&#x3002;<code>foldl (+) 0</code> &#x56DE;&#x50B3;&#x7684;&#x5C31;&#x662F;&#x4E00;&#x500B;&#x53D6;&#x4E00; List &#x4F5C;&#x53C3;&#x6578;&#x7684;&#x51FD;&#x6578;&#xFF0C;&#x6211;&#x5011;&#x628A;&#x5B83;&#x4FEE;&#x6539;&#x70BA; <code>sum&apos; = foldl (+) 0</code>&#xFF0C;&#x9019;&#x5C31;&#x662F; point free style&#x3002;&#x4E0B;&#x9762;&#x9019;&#x500B;&#x51FD;&#x6578;&#x53C8;&#x8A72;&#x5982;&#x4F55;&#x6539;&#x6210; point free style &#x5462;&#xFF1F;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">fn</span> x = ceiling (negate (tan (cos (max <span class="hljs-number">50</span> x))))
+</code></pre>
+<p>&#x50CF;&#x525B;&#x624D;&#x90A3;&#x6A23;&#x7C21;&#x55AE;&#x53BB;&#x6389;&#x5169;&#x7AEF;&#x7684; <code>x</code> &#x662F;&#x4E0D;&#x884C;&#x7684;&#xFF0C;&#x51FD;&#x6578;&#x5B9A;&#x7FA9;&#x4E2D; <code>x</code> &#x7684;&#x53F3;&#x908A;&#x9084;&#x6709;&#x62EC;&#x865F;&#x3002;<code>cos (max 50)</code> &#x662F;&#x6709;&#x932F;&#x8AA4;&#x7684;&#xFF0C;&#x4F60;&#x4E0D;&#x80FD;&#x6C42;&#x4E00;&#x500B;&#x51FD;&#x6578;&#x7684;&#x9918;&#x5F26;&#x3002;&#x6211;&#x5011;&#x7684;&#x89E3;&#x6C7A;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#xFF0C;&#x4F7F;&#x7528;&#x51FD;&#x6578;&#x7D44;&#x5408;&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">fn</span> = ceiling . negate . tan . cos . max <span class="hljs-number">50</span>
+</code></pre>
+<p>&#x6F02;&#x4EAE;&#xFF01;point free style &#x6703;&#x4EE4;&#x4F60;&#x53BB;&#x601D;&#x8003;&#x51FD;&#x6578;&#x7684;&#x7D44;&#x5408;&#x65B9;&#x5F0F;&#xFF0C;&#x800C;&#x975E;&#x6578;&#x64DA;&#x7684;&#x50B3;&#x905E;&#x65B9;&#x5F0F;&#xFF0C;&#x66F4;&#x52A0;&#x7C21;&#x6F54;&#x660E;&#x77AD;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5C07;&#x4E00;&#x7D44;&#x7C21;&#x55AE;&#x7684;&#x51FD;&#x6578;&#x7D44;&#x5408;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x4F7F;&#x4E4B;&#x5F62;&#x6210;&#x4E00;&#x500B;&#x8907;&#x96DC;&#x7684;&#x51FD;&#x6578;&#x3002;&#x4E0D;&#x904E;&#x51FD;&#x6578;&#x82E5;&#x904E;&#x4E8E;&#x8907;&#x96DC;&#xFF0C;&#x518D;&#x4F7F;&#x7528; point free style &#x5F80;&#x5F80;&#x6703;&#x9069;&#x5F97;&#x5176;&#x53CD;&#xFF0C;&#x56E0;&#x6B64;&#x69CB;&#x9020;&#x8F03;&#x9577;&#x7684;&#x51FD;&#x6578;&#x7D44;&#x5408;&#x93C8;&#x662F;&#x4E0D;&#x88AB;&#x9F13;&#x52F5;&#x7684;(&#x96D6;&#x7136;&#x6211;&#x672C;&#x4EBA;&#x71B1;&#x8877;&#x4E8E;&#x51FD;&#x6578;&#x7D44;&#x5408;)&#x3002;&#x66F4;&#x597D;&#x7684;&#x89E3;&#x6C7A;&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x662F;&#x4F7F;&#x7528; <code>let</code> &#x8A9E;&#x53E5;&#x7D66;&#x4E2D;&#x9593;&#x7684;&#x904B;&#x7B97;&#x7D50;&#x679C;&#x7D81;&#x5B9A;&#x4E00;&#x500B;&#x540D;&#x5B57;&#xFF0C;&#x6216;&#x8005;&#x8AAA;&#x628A;&#x554F;&#x984C;&#x5206;&#x89E3;&#x6210;&#x5E7E;&#x500B;&#x5C0F;&#x554F;&#x984C;&#x518D;&#x7D44;&#x5408;&#x5230;&#x4E00;&#x8D77;&#x3002;&#x9019;&#x6A23;&#x4E00;&#x4F86;&#x6211;&#x5011;&#x7A0B;&#x5F0F;&#x78BC;&#x7684;&#x8B80;&#x8005;&#x5C31;&#x53EF;&#x4EE5;&#x8F15;&#x9B06;&#x4E9B;&#xFF0C;&#x4E0D;&#x5FC5;&#x8981;&#x7CFE;&#x7D50;&#x90A3;&#x5DE8;&#x9577;&#x7684;&#x51FD;&#x6578;&#x7D44;&#x5408;&#x93C8;&#x4E86;&#x3002;</p>
+<p>&#x5728; <code>map</code> &#x548C; <code>filter</code> &#x90A3;&#x7BC0;&#x4E2D;&#xFF0C;&#x6211;&#x5011;&#x6C42;&#x4E86;&#x5C0F;&#x65BC; 10000 &#x7684;&#x6240;&#x6709;&#x5947;&#x6578;&#x7684;&#x5E73;&#x65B9;&#x7684;&#x548C;&#x3002;&#x5982;&#x4E0B;&#x5C31;&#x662F;&#x5C07;&#x5176;&#x7F6E;&#x65BC;&#x4E00;&#x500B;&#x51FD;&#x6578;&#x4E2D;&#x7684;&#x6A23;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">oddSquareSum</span> :: <span class="hljs-type">Integer</span>  
+<span class="hljs-title">oddSquareSum</span> = sum (takeWhile (&lt;<span class="hljs-number">10000</span>) (filter odd (map (^<span class="hljs-number">2</span>) [<span class="hljs-number">1.</span>.])))
+</code></pre>
+<p>&#x8EAB;&#x70BA;&#x51FD;&#x6578;&#x7D44;&#x5408;&#x72C2;&#x4EBA;&#xFF0C;&#x6211;&#x53EF;&#x80FD;&#x6703;&#x9019;&#x9EBC;&#x5BEB;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">oddSquareSum</span> :: <span class="hljs-type">Integer</span>  
+<span class="hljs-title">oddSquareSum</span> = sum . takeWhile (&lt;<span class="hljs-number">10000</span>) . filter odd . map (^<span class="hljs-number">2</span>) $ [<span class="hljs-number">1.</span>.]
+</code></pre>
+<p>&#x4E0D;&#x904E;&#x82E5;&#x662F;&#x7D66;&#x5225;&#x4EBA;&#x770B;&#xFF0C;&#x6211;&#x53EF;&#x80FD;&#x5C31;&#x9019;&#x9EBC;&#x5BEB;&#x4E86;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">oddSquareSum</span> :: <span class="hljs-type">Integer</span>  
+<span class="hljs-title">oddSquareSum</span> =   
+    <span class="hljs-keyword">let</span> oddSquares = filter odd $ map (^<span class="hljs-number">2</span>) [<span class="hljs-number">1.</span>.]  
+        belowLimit = takeWhile (&lt;<span class="hljs-number">10000</span>) oddSquares  
+    <span class="hljs-keyword">in</span>  sum belowLimit
+</code></pre>
+<p>&#x9019;&#x6BB5;&#x7A0B;&#x5F0F;&#x78BC;&#x53EF;&#x8D0F;&#x4E0D;&#x4E86;&#x7A0B;&#x5F0F;&#x78BC;&#x82B1;&#x6A23;&#x5927;&#x8CFD;&#xFF0C;&#x4E0D;&#x904E;&#x6211;&#x5011;&#x7684;&#x8B80;&#x8005;&#x53EF;&#x80FD;&#x6703;&#x89BA;&#x5F97;&#x5B83;&#x6BD4;&#x51FD;&#x6578;&#x7D44;&#x5408;&#x93C8;&#x66F4;&#x597D;&#x770B;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="5-recursion.html" class="navigation navigation-prev " aria-label="Previous page: Recursion">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="7-module.html" class="navigation navigation-next " aria-label="Next page: Module">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"High Order Function","level":"1.7","depth":1,"next":{"title":"Module","level":"1.8","depth":1,"path":"7-module.md","ref":"7-module.md","articles":[]},"previous":{"title":"Recursion","level":"1.6","depth":1,"path":"5-recursion.md","ref":"5-recursion.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-tw","gitbook":"*"},"file":{"path":"6-high-order-function.md","mtime":"2019-11-07T09:17:12.708Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-07T09:30:46.419Z"},"basePath":".","book":{"language":"zh-tw"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

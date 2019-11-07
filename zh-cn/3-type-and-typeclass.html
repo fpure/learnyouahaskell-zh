@@ -1,0 +1,626 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-cn" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Type And Typeclass · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4-syntax-in-function.html" />
+    
+    
+    <link rel="prev" href="2-ready-go.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    HASKELL 趣学指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1-introduction.html">
+            
+                <a href="1-introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2-ready-go.html">
+            
+                <a href="2-ready-go.html">
+            
+                    
+                    Ready Go
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="3-type-and-typeclass.html">
+            
+                <a href="3-type-and-typeclass.html">
+            
+                    
+                    Type And Typeclass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4-syntax-in-function.html">
+            
+                <a href="4-syntax-in-function.html">
+            
+                    
+                    Syntax in Function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5-recursion.html">
+            
+                <a href="5-recursion.html">
+            
+                    
+                    Recursion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6-high-order-function.html">
+            
+                <a href="6-high-order-function.html">
+            
+                    
+                    High Order Function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="7-module.html">
+            
+                <a href="7-module.html">
+            
+                    
+                    Module
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="8-build-our-own-type-and-typeclass.html">
+            
+                <a href="8-build-our-own-type-and-typeclass.html">
+            
+                    
+                    Build Our Own Type and Typeclass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="9-input-and-output.html">
+            
+                <a href="9-input-and-output.html">
+            
+                    
+                    Input and Output
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="10-functionally-solving-problems.html">
+            
+                <a href="10-functionally-solving-problems.html">
+            
+                    
+                    Functionally Solving Problems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="11-functors-applicative-functors-and-monoids.html">
+            
+                <a href="11-functors-applicative-functors-and-monoids.html">
+            
+                    
+                    Functors, Applicative Functors 与 Monoids
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="12-a-fistful-of-monads.html">
+            
+                <a href="12-a-fistful-of-monads.html">
+            
+                    
+                    A Fistful of Monad
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="13-for-a-few-monads-more.html">
+            
+                <a href="13-for-a-few-monads-more.html">
+            
+                    
+                    For a Few Monad More
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="14-zippers.html">
+            
+                <a href="14-zippers.html">
+            
+                    
+                    Zippers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="resource.html">
+            
+                <a href="resource.html">
+            
+                    
+                    Resource
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Type And Typeclass</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="types-and-typeclasses">Types and Typeclasses</h1>
+<h2 id="type">Type</h2>
+<p><img src="img/cow.png" alt=""></p>
+<p>&#x4E4B;&#x524D;&#x6211;&#x4EEC;&#x6709;&#x8BF4;&#x8FC7; Haskell &#x662F; Static Type&#xFF0C;&#x8FD9;&#x8868;&#x793A;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x671F;&#x6BCF;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x578B;&#x522B;&#x90FD;&#x5DF2;&#x7ECF;&#x786E;&#x5B9A;&#x4E0B;&#x6765;&#xFF0C;&#x8FD9;&#x63D0;&#x9AD8;&#x4E86;&#x4EE3;&#x7801;&#x7684;&#x5B89;&#x5168;&#x6027;&#x3002;&#x82E5;&#x4EE3;&#x7801;&#x4E2D;&#x6709;&#x8BA9;&#x5E03;&#x6797;&#x503C;&#x4E0E;&#x6570;&#x5B57;&#x76F8;&#x9664;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x901A;&#x8FC7;&#x7F16;&#x8BD1;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x597D;&#x5904;&#x5C31;&#x662F;&#x4E0E;&#x5176;&#x8BA9;&#x8FDB;&#x7A0B;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x5D29;&#x6E83;&#xFF0C;&#x4E0D;&#x5982;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x5C31;&#x627E;&#x51FA;&#x53EF;&#x80FD;&#x7684;&#x9519;&#x8BEF;&#x3002;Haskell &#x4E2D;&#x6240;&#x6709;&#x4E1C;&#x897F;&#x90FD;&#x6709;&#x578B;&#x522B;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x7F16;&#x8BD1;&#x7684;&#x65F6;&#x5019;&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#x5F88;&#x591A;&#x4E8B;&#x60C5;&#x3002;</p>
+<p>&#x4E0E; Java &#x548C; Pascal &#x4E0D;&#x540C;&#xFF0C;Haskell &#x652F;&#x6301;&#x578B;&#x522B;&#x63A8;&#x5BFC;&#x3002;&#x5199;&#x4E0B;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x4F60;&#x5C31;&#x6CA1;&#x5FC5;&#x8981;&#x53E6;&#x544A;&#x8BC9; Haskell &#x8BF4;&quot;&#x5B83;&#x662F;&#x4E2A;&#x6570;&#x5B57;&quot;&#xFF0C;&#x5B83;&#x81EA;&#x5DF1;&#x80FD;&#x63A8;&#x5BFC;&#x51FA;&#x6765;&#x3002;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x4E0D;&#x5FC5;&#x5728;&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#x6216;&#x8868;&#x8FBE;&#x5F0F;&#x4E0A;&#x90FD;&#x6807;&#x660E;&#x5176;&#x578B;&#x522B;&#x4E86;&#x3002;&#x5728;&#x524D;&#x9762;&#x6211;&#x4EEC;&#x53EA;&#x7B80;&#x5355;&#x6D89;&#x53CA;&#x4E00;&#x4E0B; Haskell &#x7684;&#x578B;&#x522B;&#x65B9;&#x9762;&#x7684;&#x77E5;&#x8BC6;&#xFF0C;&#x4F46;&#x662F;&#x7406;&#x89E3;&#x8FD9;&#x4E00;&#x578B;&#x522B;&#x7CFB;&#x7EDF;&#x5BF9;&#x4E8E; Haskell &#x7684;&#x5B66;&#x4E60;&#x662F;&#x81F3;&#x5173;&#x91CD;&#x8981;&#x7684;&#x3002;</p>
+<p>&#x578B;&#x522B;&#x662F;&#x6BCF;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x90FD;&#x6709;&#x7684;&#x67D0;&#x79CD;&#x6807;&#x7B7E;&#xFF0C;&#x5B83;&#x6807;&#x660E;&#x4E86;&#x8FD9;&#x4E00;&#x8868;&#x8FBE;&#x5F0F;&#x6240;&#x5C5E;&#x7684;&#x8303;&#x7574;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8868;&#x8FBE;&#x5F0F; <code>True</code> &#x662F; <code>boolean</code> &#x578B;&#xFF0C;<code>&quot;hello&quot;</code>&#x662F;&#x4E2A;&#x5B57;&#x4E32;&#xFF0C;&#x7B49;&#x7B49;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; ghci &#x6765;&#x68C0;&#x6D4B;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x578B;&#x522B;&#x3002;&#x4F7F;&#x7528; <code>:t</code> &#x547D;&#x4EE4;&#x540E;&#x8DDF;&#x4EFB;&#x4F55;&#x53EF;&#x7528;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5373;&#x53EF;&#x5F97;&#x5230;&#x8BE5;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x578B;&#x522B;&#xFF0C;&#x5148;&#x8BD5;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; :t &apos;a&apos;  
+&apos;a&apos; :: <span class="hljs-type">Char</span>  
+<span class="hljs-title">ghci</span>&gt; :t <span class="hljs-type">True</span>  
+<span class="hljs-type">True</span> :: <span class="hljs-type">Bool</span>  
+<span class="hljs-title">ghci</span>&gt; :t <span class="hljs-string">&quot;HELLO!&quot;</span>  
+<span class="hljs-string">&quot;HELLO!&quot;</span> :: [<span class="hljs-type">Char</span>]  
+<span class="hljs-title">ghci</span>&gt; :t (<span class="hljs-type">True</span>, &apos;a&apos;)  
+(<span class="hljs-type">True</span>, &apos;a&apos;) :: (<span class="hljs-type">Bool</span>, <span class="hljs-type">Char</span>)  
+<span class="hljs-title">ghci</span>&gt; :t <span class="hljs-number">4</span> == <span class="hljs-number">5</span>  
+<span class="hljs-number">4</span> == <span class="hljs-number">5</span> :: <span class="hljs-type">Bool</span>
+</code></pre>
+<p><img src="img/bomb.png" alt=""></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;<code>:t</code> &#x547D;&#x4EE4;&#x5904;&#x7406;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4E3A;&#x8868;&#x8FBE;&#x5F0F;&#x540E;&#x8DDF; <code>::</code> &#x53CA;&#x5176;&#x578B;&#x522B;&#xFF0C;<code>::</code> &#x8BFB;&#x4F5C;&quot;&#x5B83;&#x7684;&#x578B;&#x522B;&#x4E3A;&quot;&#x3002;&#x51E1;&#x662F;&#x660E;&#x786E;&#x7684;&#x578B;&#x522B;&#xFF0C;&#x5176;&#x9996;&#x5B57;&#x6BCD;&#x5FC5;&#x4E3A;&#x5927;&#x5199;&#x3002;<code>&apos;a&apos;</code>, &#x5982;&#x5B83;&#x7684;&#x6837;&#x5B50;&#xFF0C;&#x662F; <code>Char</code> &#x578B;&#x522B;&#xFF0C;&#x6613;&#x77E5;&#x662F;&#x4E2A;&#x5B57;&#x7B26; (character)&#x3002;<code>True</code> &#x662F; <code>Bool</code> &#x578B;&#x522B;&#xFF0C;&#x4E5F;&#x9760;&#x8C31;&#x3002;&#x4E0D;&#x8FC7;&#x8FD9;&#x53C8;&#x662F;&#x5565;&#xFF0C;&#x68C0;&#x6D4B; <code>&quot;hello&quot;</code> &#x5F97;&#x4E00;&#x4E2A; <code>[Char]</code> &#x8FD9;&#x65B9;&#x62EC;&#x53F7;&#x8868;&#x793A;&#x4E00;&#x4E2A; List&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x8BFB;&#x4F5C;&quot;&#x4E00;&#x7EC4;&#x5B57;&#x7B26;&#x7684; List&quot;&#x3002;&#x800C;&#x4E0E; List &#x4E0D;&#x540C;&#xFF0C;&#x6BCF;&#x4E2A; Tuple &#x90FD;&#x662F;&#x72EC;&#x7ACB;&#x7684;&#x578B;&#x522B;&#xFF0C;&#x4E8E;&#x662F; <code>(True,&apos;a&apos;)</code> &#x7684;&#x578B;&#x522B;&#x662F; <code>(Bool,Char)</code>&#xFF0C;&#x800C; <code>(&apos;a&apos;,&apos;b&apos;,&apos;c&apos;)</code> &#x7684;&#x578B;&#x522B;&#x4E3A; <code>(Char,Char,Char)</code>&#x3002;<code>4==5</code> &#x4E00;&#x5B9A;&#x56DE;&#x4F20; <code>False</code>&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x7684;&#x578B;&#x522B;&#x4E3A; Bool&#x3002;</p>
+<p>&#x540C;&#x6837;&#xFF0C;&#x51FD;&#x6570;&#x4E5F;&#x6709;&#x578B;&#x522B;&#x3002;&#x7F16;&#x5199;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x7ED9;&#x5B83;&#x4E00;&#x4E2A;&#x660E;&#x786E;&#x7684;&#x578B;&#x522B;&#x58F0;&#x660E;&#x662F;&#x4E2A;&#x597D;&#x4E60;&#x60EF;&#xFF0C;&#x6BD4;&#x8F83;&#x77ED;&#x7684;&#x51FD;&#x6570;&#x5C31;&#x4E0D;&#x7528;&#x591A;&#x6B64;&#x4E00;&#x4E3E;&#x4E86;&#x3002;&#x8FD8;&#x8BB0;&#x5F97;&#x524D;&#x9762;&#x90A3;&#x4E2A;&#x8FC7;&#x6EE4;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; List Comprehension &#x5417;&#xFF1F;&#x7ED9;&#x5B83;&#x52A0;&#x4E0A;&#x578B;&#x522B;&#x58F0;&#x660E;&#x4FBF;&#x662F;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">removeNonUppercase</span> :: [<span class="hljs-type">Char</span>] -&gt; [<span class="hljs-type">Char</span>]  
+<span class="hljs-title">removeNonUppercase</span> st = [ c | c &lt;- st, c `elem` [&apos;<span class="hljs-type">A&apos;</span>..&apos;<span class="hljs-type">Z&apos;</span>]]
+</code></pre>
+<p><code>removeNonUppercase</code> &#x7684;&#x578B;&#x522B;&#x4E3A; <code>[Char]-&gt;[Char]</code>&#xFF0C;&#x4ECE;&#x5B83;&#x7684;&#x53C2;&#x6570;&#x548C;&#x56DE;&#x4F20;&#x503C;&#x7684;&#x578B;&#x522B;&#x4E0A;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5B83;&#x5C06;&#x4E00;&#x4E2A;&#x5B57;&#x4E32;&#x6620;&#x5C04;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x5B57;&#x4E32;&#x3002;<code>[Char]</code> &#x4E0E; <code>String</code> &#x662F;&#x7B49;&#x4EF7;&#x7684;&#xFF0C;&#x4F46;&#x4F7F;&#x7528; <code>String</code> &#x4F1A;&#x66F4;&#x6E05;&#x6670;&#xFF1A;<code>removeNonUppercase :: String -&gt; String</code>&#x3002;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x81EA;&#x52A8;&#x68C0;&#x6D4B;&#x51FA;&#x5B83;&#x7684;&#x578B;&#x522B;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x6807;&#x660E;&#x4E86;&#x5B83;&#x7684;&#x578B;&#x522B;&#x58F0;&#x660E;&#x3002;&#x8981;&#x662F;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;&#x8BE5;&#x600E;&#x6837;&#xFF1F;&#x5982;&#x4E0B;&#x4FBF;&#x662F;&#x4E00;&#x4E2A;&#x5C06;&#x4E09;&#x4E2A;&#x6574;&#x6570;&#x76F8;&#x52A0;&#x7684;&#x7B80;&#x5355;&#x51FD;&#x6570;&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">addThree</span> :: <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span>  
+<span class="hljs-title">addThree</span> x y z = x + y + z
+</code></pre>
+<p>&#x53C2;&#x6570;&#x4E4B;&#x95F4;&#x7531; <code>-&gt;</code> &#x5206;&#x9694;&#xFF0C;&#x800C;&#x4E0E;&#x56DE;&#x4F20;&#x503C;&#x4E4B;&#x95F4;&#x5E76;&#x65E0;&#x7279;&#x6B8A;&#x5DEE;&#x5F02;&#x3002;&#x56DE;&#x4F20;&#x503C;&#x662F;&#x6700;&#x540E;&#x4E00;&#x9879;&#xFF0C;&#x53C2;&#x6570;&#x5C31;&#x662F;&#x524D;&#x4E09;&#x9879;&#x3002;&#x7A0D;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8BB2;&#x89E3;&#x4E3A;&#x4F55;&#x53EA;&#x7528; <code>-&gt;</code> &#x800C;&#x4E0D;&#x662F; <code>Int,Int,Int-&gt;Int</code> &#x4E4B;&#x7C7B;&quot;&#x66F4;&#x597D;&#x770B;&quot;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5206;&#x9694;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x6253;&#x7B97;&#x7ED9;&#x4F60;&#x7F16;&#x5199;&#x7684;&#x51FD;&#x6570;&#x52A0;&#x4E0A;&#x4E2A;&#x578B;&#x522B;&#x58F0;&#x660E;&#x5374;&#x62FF;&#x4E0D;&#x51C6;&#x5B83;&#x7684;&#x578B;&#x522B;&#x662F;&#x5565;&#xFF0C;&#x53EA;&#x8981;&#x5148;&#x4E0D;&#x5199;&#x578B;&#x522B;&#x58F0;&#x660E;&#xFF0C;&#x628A;&#x51FD;&#x6570;&#x4F53;&#x5199;&#x51FA;&#x6765;&#xFF0C;&#x518D;&#x4F7F;&#x7528; <code>:t</code> &#x547D;&#x4EE4;&#x6D4B;&#x4E00;&#x4E0B;&#x5373;&#x53EF;&#x3002;&#x51FD;&#x6570;&#x4E5F;&#x662F;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5; <code>:t</code> &#x5BF9;&#x51FD;&#x6570;&#x4E5F;&#x662F;&#x540C;&#x6837;&#x53EF;&#x7528;&#x7684;&#x3002;</p>
+<p>&#x5982;&#x4E0B;&#x662F;&#x51E0;&#x4E2A;&#x5E38;&#x89C1;&#x7684;&#x578B;&#x522B;&#xFF1A;</p>
+<p><strong>Int</strong> &#x8868;&#x793A;&#x6574;&#x6570;&#x3002;7 &#x53EF;&#x4EE5;&#x662F; Int&#xFF0C;&#x4F46; 7.2 &#x4E0D;&#x53EF;&#x4EE5;&#x3002;Int &#x662F;&#x6709;&#x754C;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5B83;&#x7531;&#x4E0A;&#x9650;&#x548C;&#x4E0B;&#x9650;&#x3002;&#x5BF9; 32 &#x4F4D;&#x7684;&#x673A;&#x5668;&#x800C;&#x8A00;&#xFF0C;&#x4E0A;&#x9650;&#x4E00;&#x822C;&#x662F; <code>2147483647</code>&#xFF0C;&#x4E0B;&#x9650;&#x662F; <code>-2147483648</code>&#x3002;</p>
+<p><strong>Integer</strong> &#x8868;&#x793A;...&#x5384;...&#x4E5F;&#x662F;&#x6574;&#x6570;&#xFF0C;&#x4F46;&#x5B83;&#x662F;&#x65E0;&#x754C;&#x7684;&#x3002;&#x8FD9;&#x5C31;&#x610F;&#x5473;&#x7740;&#x53EF;&#x4EE5;&#x7528;&#x5B83;&#x5B58;&#x653E;&#x975E;&#x5E38;&#x975E;&#x5E38;&#x5927;&#x7684;&#x6570;&#xFF0C;&#x6211;&#x662F;&#x8BF4;&#x975E;&#x5E38;&#x5927;&#x3002;&#x5B83;&#x7684;&#x6548;&#x7387;&#x4E0D;&#x5982; Int &#x9AD8;&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">factorial</span> :: <span class="hljs-type">Integer</span> -&gt; <span class="hljs-type">Integer</span>  
+<span class="hljs-title">factorial</span> n = product [<span class="hljs-number">1.</span>.n]
+</code></pre>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; factorial <span class="hljs-number">50</span>  
+<span class="hljs-number">30414093201713378043612608166064768844377641568960512000000000000</span>
+</code></pre>
+<p><strong>Float</strong> &#x8868;&#x793A;&#x5355;&#x7CBE;&#x5EA6;&#x7684;&#x6D6E;&#x70B9;&#x6570;&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">circumference</span> :: <span class="hljs-type">Float</span> -&gt; <span class="hljs-type">Float</span>  
+<span class="hljs-title">circumference</span> r = <span class="hljs-number">2</span> * pi * r
+</code></pre>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; circumference <span class="hljs-number">4.0</span>  
+<span class="hljs-number">25.132742</span>
+</code></pre>
+<p><strong>Double</strong> &#x8868;&#x793A;&#x53CC;&#x7CBE;&#x5EA6;&#x7684;&#x6D6E;&#x70B9;&#x6570;&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">circumference&apos;</span> :: <span class="hljs-type">Double</span> -&gt; <span class="hljs-type">Double</span>  
+<span class="hljs-title">circumference&apos;</span> r = <span class="hljs-number">2</span> * pi * r
+</code></pre>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; circumference&apos; <span class="hljs-number">4.0</span>  
+<span class="hljs-number">25.132741228718345</span>
+</code></pre>
+<p><strong>Bool</strong> &#x8868;&#x793A;&#x5E03;&#x6797;&#x503C;&#xFF0C;&#x5B83;&#x53EA;&#x6709;&#x4E24;&#x79CD;&#x503C;&#xFF1A;<code>True</code> &#x548C; <code>False</code>&#x3002;</p>
+<p><strong>Char</strong> &#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x3002;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x7531;&#x5355;&#x5F15;&#x53F7;&#x62EC;&#x8D77;&#xFF0C;&#x4E00;&#x7EC4;&#x5B57;&#x7B26;&#x7684; List &#x5373;&#x4E3A;&#x5B57;&#x4E32;&#x3002;</p>
+<p>Tuple &#x7684;&#x578B;&#x522B;&#x53D6;&#x51B3;&#x4E8E;&#x5B83;&#x7684;&#x957F;&#x5EA6;&#x53CA;&#x5176;&#x4E2D;&#x9879;&#x7684;&#x578B;&#x522B;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x7A7A; Tuple &#x540C;&#x6837;&#x4E5F;&#x662F;&#x4E2A;&#x578B;&#x522B;&#xFF0C;&#x5B83;&#x53EA;&#x6709;&#x4E00;&#x79CD;&#x503C;&#xFF1A;<code>()</code>&#x3002;</p>
+<h2 id="type-variables">Type variables</h2>
+<p>&#x4F60;&#x89C9;&#x5F97; <code>head</code> &#x51FD;&#x6570;&#x7684;&#x578B;&#x522B;&#x662F;&#x5565;&#xFF1F;&#x5B83;&#x53EF;&#x4EE5;&#x53D6;&#x4EFB;&#x610F;&#x578B;&#x522B;&#x7684; List &#x7684;&#x9996;&#x9879;&#xFF0C;&#x662F;&#x600E;&#x4E48;&#x505A;&#x5230;&#x7684;&#x5462;&#xFF1F;&#x6211;&#x4EEC;&#x67E5;&#x4E00;&#x4E0B;&#xFF01;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; :t head  
+<span class="hljs-title">head</span> :: [a] -&gt; a
+</code></pre>
+<p><img src="img/box.png" alt=""></p>
+<p>&#x55EF;! <code>a</code> &#x662F;&#x5565;&#xFF1F;&#x578B;&#x522B;&#x5417;&#xFF1F;&#x60F3;&#x60F3;&#x6211;&#x4EEC;&#x5728;&#x524D;&#x9762;&#x8BF4;&#x8FC7;&#xFF0C;&#x51E1;&#x662F;&#x578B;&#x522B;&#x5176;&#x9996;&#x5B57;&#x6BCD;&#x5FC5;&#x5927;&#x5199;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4E0D;&#x4F1A;&#x662F;&#x4E2A;&#x578B;&#x522B;&#x3002;&#x5B83;&#x662F;&#x4E2A;&#x578B;&#x522B;&#x53D8;&#x91CF;&#xFF0C;&#x610F;&#x5473;&#x7740; a &#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x7684;&#x578B;&#x522B;&#x3002;&#x8FD9;&#x4E00;&#x70B9;&#x4E0E;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x6CDB;&#x578B; (generic) &#x5F88;&#x76F8;&#x4F3C;&#xFF0C;&#x4F46;&#x5728; Haskell &#x4E2D;&#x8981;&#x66F4;&#x4E3A;&#x5F3A;&#x5927;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x8BA9;&#x6211;&#x4EEC;&#x8F7B;&#x800C;&#x6613;&#x4E3E;&#x5730;&#x5199;&#x51FA;&#x578B;&#x522B;&#x65E0;&#x5173;&#x7684;&#x51FD;&#x6570;&#x3002;&#x4F7F;&#x7528;&#x5230;&#x578B;&#x522B;&#x53D8;&#x91CF;&#x7684;&#x51FD;&#x6570;&#x88AB;&#x79F0;&#x4F5C;&quot;&#x591A;&#x6001;&#x51FD;&#x6570; &quot;&#xFF0C;<code>head</code> &#x51FD;&#x6570;&#x7684;&#x578B;&#x522B;&#x58F0;&#x660E;&#x91CC;&#x6807;&#x660E;&#x4E86;&#x5B83;&#x53EF;&#x4EE5;&#x53D6;&#x4EFB;&#x610F;&#x578B;&#x522B;&#x7684; List &#x5E76;&#x56DE;&#x4F20;&#x5176;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3002;</p>
+<p>&#x5728;&#x547D;&#x540D;&#x4E0A;&#xFF0C;&#x578B;&#x522B;&#x53D8;&#x91CF;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x5B57;&#x7B26;&#x662F;&#x5408;&#x6CD5;&#x7684;&#xFF0C;&#x4E0D;&#x8FC7;&#x7EA6;&#x5B9A;&#x4FD7;&#x6210;&#xFF0C;&#x901A;&#x5E38;&#x90FD;&#x662F;&#x4F7F;&#x7528;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x5982; <code>a</code>, <code>b</code> ,<code>c</code> ,<code>d</code>...</p>
+<p>&#x8FD8;&#x8BB0;&#x5F97; <code>fst</code>&#xFF1F;&#x6211;&#x4EEC;&#x67E5;&#x4E00;&#x4E0B;&#x5B83;&#x7684;&#x578B;&#x522B;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; :t fst  
+<span class="hljs-title">fst</span> :: (a, b) -&gt; a
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;<code>fst</code>&#x53D6;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x578B;&#x522B;&#x7684; Tuple &#x4F5C;&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x4EE5;&#x7B2C;&#x4E00;&#x4E2A;&#x9879;&#x7684;&#x578B;&#x522B;&#x4F5C;&#x4E3A;&#x56DE;&#x4F20;&#x503C;&#x3002;&#x8FD9;&#x4FBF;&#x662F; <code>fst</code> &#x53EF;&#x4EE5;&#x5904;&#x7406;&#x4E00;&#x4E2A;&#x542B;&#x6709;&#x4E24;&#x79CD;&#x578B;&#x522B;&#x9879;&#x7684; pair &#x7684;&#x539F;&#x56E0;&#x3002;&#x6CE8;&#x610F;&#xFF0C;<code>a</code> &#x548C; <code>b</code> &#x662F;&#x4E0D;&#x540C;&#x7684;&#x578B;&#x522B;&#x53D8;&#x91CF;&#xFF0C;&#x4F46;&#x5B83;&#x4EEC;&#x4E0D;&#x4E00;&#x5B9A;&#x975E;&#x5F97;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x578B;&#x522B;&#xFF0C;&#x5B83;&#x53EA;&#x662F;&#x6807;&#x660E;&#x4E86;&#x9996;&#x9879;&#x7684;&#x578B;&#x522B;&#x4E0E;&#x56DE;&#x4F20;&#x503C;&#x7684;&#x578B;&#x522B;&#x76F8;&#x540C;&#x3002;</p>
+<h2 id="typeclasses&#x5165;&#x95E8;">Typeclasses&#x5165;&#x95E8;</h2>
+<p><img src="img/classes.png" alt=""></p>
+<p>&#x578B;&#x522B;&#x5B9A;&#x4E49;&#x884C;&#x4E3A;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x578B;&#x522B;&#x5C5E;&#x4E8E;&#x67D0; Typeclass&#xFF0C;&#x90A3;&#x5B83;&#x5FC5;&#x5B9E;&#x73B0;&#x4E86;&#x8BE5; Typeclass &#x6240;&#x63CF;&#x8FF0;&#x7684;&#x884C;&#x4E3A;&#x3002;&#x5F88;&#x591A;&#x4ECE; OOP &#x8D70;&#x8FC7;&#x6765;&#x7684;&#x4EBA;&#x4EEC;&#x5F80;&#x5F80;&#x4F1A;&#x628A; Typeclass &#x5F53;&#x6210;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x8BED;&#x8A00;&#x4E2D;&#x7684; <code>class</code> &#x800C;&#x611F;&#x5230;&#x7591;&#x60D1;&#xFF0C;&#x5384;&#xFF0C;&#x5B83;&#x4EEC;&#x4E0D;&#x662F;&#x4E00;&#x56DE;&#x4E8B;&#x3002;&#x6613;&#x4E8E;&#x7406;&#x89E3;&#x8D77;&#x89C1;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x5B83;&#x770B;&#x505A;&#x662F; Java &#x7684; interface&#x3002;</p>
+<p><code>==</code> &#x51FD;&#x6570;&#x7684;&#x578B;&#x522B;&#x58F0;&#x660E;&#x662F;&#x600E;&#x6837;&#x7684;&#xFF1F;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; :t (==)  
+(==) :: (<span class="hljs-type">Eq</span> a) =&gt; a -&gt; a -&gt; <span class="hljs-type">Bool</span>
+</code></pre>
+<pre><code class="lang-text">*Note*: &#x5224;&#x65AD;&#x76F8;&#x7B49;&#x7684;==&#x8FD0;&#x7B97;&#x5B50;&#x662F;&#x51FD;&#x6570;&#xFF0C;``+-*/``&#x4E4B;&#x7C7B;&#x7684;&#x8FD0;&#x7B97;&#x5B50;&#x4E5F;&#x662F;&#x540C;&#x6837;&#x3002;&#x5728;&#x7F3A;&#x7701;&#x6761;&#x4EF6;&#x4E0B;&#xFF0C;&#x5B83;&#x4EEC;&#x591A;&#x4E3A;&#x4E2D;&#x7F00;&#x51FD;&#x6570;&#x3002;&#x82E5;&#x8981;&#x68C0;&#x67E5;&#x5B83;&#x7684;&#x578B;&#x522B;&#xFF0C;&#x5C31;&#x5FC5;&#x987B;&#x5F97;&#x7528;&#x62EC;&#x53F7;&#x62EC;&#x8D77;&#x4F7F;&#x4E4B;&#x4F5C;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x4EE5;&#x9996;&#x7801;&#x51FD;&#x6570;&#x7684;&#x5F62;&#x5F0F;&#x8C03;&#x7528;&#x5B83;&#x3002;
+</code></pre>
+<p>&#x6709;&#x610F;&#x601D;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x89C1;&#x5230;&#x4E2A;&#x65B0;&#x4E1C;&#x897F;&#xFF1A;<code>=&gt;</code> &#x7B26;&#x53F7;&#x3002;&#x5B83;&#x5DE6;&#x8FB9;&#x7684;&#x90E8;&#x5206;&#x53EB;&#x505A;&#x578B;&#x522B;&#x7EA6;&#x675F;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x9605;&#x8BFB;&#x8FD9;&#x6BB5;&#x578B;&#x522B;&#x58F0;&#x660E;&#xFF1A;&quot;&#x76F8;&#x7B49;&#x51FD;&#x6570;&#x53D6;&#x4E24;&#x4E2A;&#x76F8;&#x540C;&#x578B;&#x522B;&#x7684;&#x503C;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x5E76;&#x56DE;&#x4F20;&#x4E00;&#x4E2A;&#x5E03;&#x6797;&#x503C;&#xFF0C;&#x800C;&#x8FD9;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x578B;&#x522B;&#x540C;&#x5728; Eq &#x7C7B;&#x4E4B;&#x4E2D;(&#x5373;&#x578B;&#x522B;&#x7EA6;&#x675F;)&quot;</p>
+<p><strong>Eq</strong> &#x8FD9;&#x4E00; Typeclass &#x63D0;&#x4F9B;&#x4E86;&#x5224;&#x65AD;&#x76F8;&#x7B49;&#x6027;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x51E1;&#x662F;&#x53EF;&#x6BD4;&#x8F83;&#x76F8;&#x7B49;&#x6027;&#x7684;&#x578B;&#x522B;&#x5FC5;&#x5C5E;&#x4E8E; <code>Eq</code> class&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; <span class="hljs-number">5</span> == <span class="hljs-number">5</span>   
+<span class="hljs-type">True</span>   
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-number">5</span> /= <span class="hljs-number">5</span>   
+<span class="hljs-type">False</span>   
+<span class="hljs-title">ghci</span>&gt; &apos;a&apos; == &apos;a&apos;   
+<span class="hljs-type">True</span>   
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-string">&quot;Ho Ho&quot;</span> == <span class="hljs-string">&quot;Ho Ho&quot;</span>   
+<span class="hljs-type">True</span>   
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-number">3.432</span> == <span class="hljs-number">3.432</span>   
+<span class="hljs-type">True</span>
+</code></pre>
+<p><code>elem</code> &#x51FD;&#x6570;&#x7684;&#x578B;&#x522B;&#x4E3A;: <code>(Eq a)=&gt;a-&gt;[a]-&gt;Bool</code>&#x3002;&#x8FD9;&#x662F;&#x5B83;&#x5728;&#x68C0;&#x6D4B;&#x503C;&#x662F;&#x5426;&#x5B58;&#x5728;&#x4E8E;&#x4E00;&#x4E2A; List &#x65F6;&#x4F7F;&#x7528;&#x5230;&#x4E86;==&#x7684;&#x7F18;&#x6545;&#x3002;</p>
+<p>&#x51E0;&#x4E2A;&#x57FA;&#x672C;&#x7684; Typeclass&#xFF1A;</p>
+<p><strong>Eq</strong> &#x5305;&#x542B;&#x53EF;&#x5224;&#x65AD;&#x76F8;&#x7B49;&#x6027;&#x7684;&#x578B;&#x522B;&#x3002;&#x63D0;&#x4F9B;&#x5B9E;&#x73B0;&#x7684;&#x51FD;&#x6570;&#x662F; <code>==</code> &#x548C; <code>/=</code>&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x53EA;&#x8981;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x6709;Eq&#x7C7B;&#x7684;&#x578B;&#x522B;&#x9650;&#x5236;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5C31;&#x5FC5;&#x5B9A;&#x5728;&#x5B9A;&#x4E49;&#x4E2D;&#x7528;&#x5230;&#x4E86; <code>==</code> &#x548C; <code>/=</code>&#x3002;&#x521A;&#x624D;&#x8BF4;&#x4E86;&#xFF0C;&#x9664;&#x51FD;&#x6570;&#x4EE5;&#x5916;&#x7684;&#x6240;&#x6709;&#x578B;&#x522B;&#x90FD;&#x5C5E;&#x4E8E; <code>Eq</code>&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4EEC;&#x90FD;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x76F8;&#x7B49;&#x6027;&#x3002;</p>
+<p><strong>Ord</strong> &#x5305;&#x542B;&#x53EF;&#x6BD4;&#x8F83;&#x5927;&#x5C0F;&#x7684;&#x578B;&#x522B;&#x3002;&#x9664;&#x4E86;&#x51FD;&#x6570;&#x4EE5;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x76EE;&#x524D;&#x6240;&#x8C08;&#x5230;&#x7684;&#x6240;&#x6709;&#x578B;&#x522B;&#x90FD;&#x5C5E;&#x4E8E; <code>Ord</code> &#x7C7B;&#x3002;<code>Ord</code> &#x5305;&#x4E2D;&#x5305;&#x542B;&#x4E86;<code>&lt;, &gt;, &lt;=, &gt;=</code> &#x4E4B;&#x7C7B;&#x7528;&#x4E8E;&#x6BD4;&#x8F83;&#x5927;&#x5C0F;&#x7684;&#x51FD;&#x6570;&#x3002;<code>compare</code> &#x51FD;&#x6570;&#x53D6;&#x4E24;&#x4E2A; <code>Ord</code> &#x7C7B;&#x4E2D;&#x7684;&#x76F8;&#x540C;&#x578B;&#x522B;&#x7684;&#x503C;&#x4F5C;&#x53C2;&#x6570;&#xFF0C;&#x56DE;&#x4F20;&#x6BD4;&#x8F83;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x8FD9;&#x4E2A;&#x7ED3;&#x679C;&#x662F;&#x5982;&#x4E0B;&#x4E09;&#x79CD;&#x578B;&#x522B;&#x4E4B;&#x4E00;&#xFF1A;<code>GT, LT, EQ</code>&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; :t (&gt;)  
+(&gt;) :: (<span class="hljs-type">Ord</span> a) =&gt; a -&gt; a -&gt; <span class="hljs-type">Bool</span>
+</code></pre>
+<p>&#x578B;&#x522B;&#x82E5;&#x8981;&#x6210;&#x4E3A;Ord&#x7684;&#x6210;&#x5458;&#xFF0C;&#x5FC5;&#x5148;&#x52A0;&#x5165;Eq&#x5BB6;&#x65CF;&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; <span class="hljs-string">&quot;Abrakadabra&quot;</span> &lt; <span class="hljs-string">&quot;Zebra&quot;</span>  
+<span class="hljs-type">True</span>  
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-string">&quot;Abrakadabra&quot;</span> `compare` <span class="hljs-string">&quot;Zebra&quot;</span>  
+<span class="hljs-type">LT</span>  
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-number">5</span> &gt;= <span class="hljs-number">2</span>  
+<span class="hljs-type">True</span>  
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-number">5</span> `compare` <span class="hljs-number">3</span>  
+<span class="hljs-type">GT</span>
+</code></pre>
+<p><strong>Show</strong> &#x7684;&#x6210;&#x5458;&#x4E3A;&#x53EF;&#x7528;&#x5B57;&#x4E32;&#x8868;&#x793A;&#x7684;&#x578B;&#x522B;&#x3002;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x9664;&#x51FD;&#x6570;&#x4EE5;&#x5916;&#x7684;&#x6240;&#x6709;&#x578B;&#x522B;&#x90FD;&#x662F; <code>Show</code> &#x7684;&#x6210;&#x5458;&#x3002;&#x64CD;&#x4F5C; Show Typeclass&#xFF0C;&#x6700;&#x5E38;&#x7528;&#x7684;&#x51FD;&#x6570;&#x8868;&#x793A; <code>show</code>&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x53D6;&#x4EFB;&#x4E00;Show&#x7684;&#x6210;&#x5458;&#x578B;&#x522B;&#x5E76;&#x5C06;&#x5176;&#x8F6C;&#x4E3A;&#x5B57;&#x4E32;&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; show <span class="hljs-number">3</span>  
+<span class="hljs-string">&quot;3&quot;</span>  
+<span class="hljs-title">ghci</span>&gt; show <span class="hljs-number">5.334</span>  
+<span class="hljs-string">&quot;5.334&quot;</span>  
+<span class="hljs-title">ghci</span>&gt; show <span class="hljs-type">True</span>  
+<span class="hljs-string">&quot;True&quot;</span>
+</code></pre>
+<p><strong>Read</strong> &#x662F;&#x4E0E; <code>Show</code> &#x76F8;&#x53CD;&#x7684; Typeclass&#x3002;<code>read</code> &#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5C06;&#x4E00;&#x4E2A;&#x5B57;&#x4E32;&#x8F6C;&#x4E3A; <code>Read</code> &#x7684;&#x67D0;&#x6210;&#x5458;&#x578B;&#x522B;&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; read <span class="hljs-string">&quot;True&quot;</span> || <span class="hljs-type">False</span>  
+<span class="hljs-type">True</span>  
+<span class="hljs-title">ghci</span>&gt; read <span class="hljs-string">&quot;8.2&quot;</span> + <span class="hljs-number">3.8</span>  
+<span class="hljs-number">12.0</span>  
+<span class="hljs-title">ghci</span>&gt; read <span class="hljs-string">&quot;5&quot;</span> - <span class="hljs-number">2</span>  
+<span class="hljs-number">3</span>  
+<span class="hljs-title">ghci</span>&gt; read <span class="hljs-string">&quot;[1,2,3,4]&quot;</span> ++ [<span class="hljs-number">3</span>]  
+[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>]
+</code></pre>
+<p>&#x4E00;&#x5207;&#x826F;&#x597D;&#xFF0C;&#x5982;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x578B;&#x522B;&#x90FD;&#x5C5E;&#x4E8E;&#x8FD9;&#x4E00; Typeclass&#x3002;&#x5C1D;&#x8BD5; <code>read &quot;4&quot;</code> &#x53C8;&#x4F1A;&#x600E;&#x6837;&#xFF1F;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; read <span class="hljs-string">&quot;4&quot;</span>  
+&lt; interactive &gt;:<span class="hljs-number">1</span>:<span class="hljs-number">0</span>:  
+    <span class="hljs-type">Ambiguous</span> <span class="hljs-class"><span class="hljs-keyword">type</span> variable `a&apos; in the constraint:  </span>
+      `<span class="hljs-type">Read</span> a&apos; arising from a use <span class="hljs-keyword">of</span> `read&apos; at &lt;interactive&gt;:<span class="hljs-number">1</span>:<span class="hljs-number">0</span><span class="hljs-number">-7</span>  
+    <span class="hljs-type">Probable</span> fix: add a <span class="hljs-class"><span class="hljs-keyword">type</span> signature that fixes these <span class="hljs-keyword">type</span> variable(<span class="hljs-title">s</span>)</span>
+</code></pre>
+<p>ghci &#x8DDF;&#x6211;&#x4EEC;&#x8BF4;&#x5B83;&#x641E;&#x4E0D;&#x6E05;&#x695A;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x56DE;&#x4F20;&#x503C;&#x3002;&#x6CE8;&#x610F;&#x8C03;&#x7528; <code>read</code> &#x540E;&#x8DDF;&#x7684;&#x90A3;&#x90E8;&#x5206;&#xFF0C;ghci &#x901A;&#x8FC7;&#x5B83;&#x6765;&#x8FA8;&#x8BA4;&#x5176;&#x578B;&#x522B;&#x3002;&#x82E5;&#x8981;&#x4E00;&#x4E2A; <code>boolean</code> &#x503C;&#xFF0C;&#x4ED6;&#x5C31;&#x77E5;&#x9053;&#x5FC5;&#x987B;&#x5F97;&#x56DE;&#x4F20;&#x4E00;&#x4E2A; <code>Bool</code> &#x578B;&#x522B;&#x7684;&#x503C;&#x3002;&#x4F46;&#x5728;&#x8FD9;&#x91CC;&#x5B83;&#x53EA;&#x77E5;&#x9053;&#x6211;&#x4EEC;&#x8981;&#x7684;&#x578B;&#x522B;&#x5C5E;&#x4E8E; Read Typeclass&#xFF0C;&#x800C;&#x4E0D;&#x80FD;&#x660E;&#x786E;&#x5230;&#x5E95;&#x662F;&#x54EA;&#x4E2A;&#x3002;&#x770B;&#x4E00;&#x4E0B; <code>read</code> &#x51FD;&#x6570;&#x7684;&#x578B;&#x522B;&#x58F0;&#x660E;&#x5427;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; :t read  
+<span class="hljs-title">read</span> :: (<span class="hljs-type">Read</span> a) =&gt; <span class="hljs-type">String</span> -&gt; a
+</code></pre>
+<p>&#x770B;&#xFF0C;&#x5B83;&#x7684;&#x56DE;&#x4F20;&#x503C;&#x5C5E;&#x4E8E; ReadTypeclass&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x82E5;&#x7528;&#x4E0D;&#x5230;&#x8FD9;&#x4E2A;&#x503C;&#xFF0C;&#x5B83;&#x5C31;&#x6C38;&#x8FDC;&#x90FD;&#x4E0D;&#x4F1A;&#x5F97;&#x77E5;&#x8BE5;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x578B;&#x522B;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x540E;&#x8DDF;<code>::</code> &#x7684;<em>&#x578B;&#x522B;&#x6CE8;&#x91CA;</em>&#xFF0C;&#x4EE5;&#x660E;&#x786E;&#x5176;&#x578B;&#x522B;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; read <span class="hljs-string">&quot;5&quot;</span> :: <span class="hljs-type">Int</span>  
+<span class="hljs-number">5</span>  
+<span class="hljs-title">ghci</span>&gt; read <span class="hljs-string">&quot;5&quot;</span> :: <span class="hljs-type">Float</span>  
+<span class="hljs-number">5.0</span>  
+<span class="hljs-title">ghci</span>&gt; (read <span class="hljs-string">&quot;5&quot;</span> :: <span class="hljs-type">Float</span>) * <span class="hljs-number">4</span>  
+<span class="hljs-number">20.0</span>  
+<span class="hljs-title">ghci</span>&gt; read <span class="hljs-string">&quot;[1,2,3,4]&quot;</span> :: [<span class="hljs-type">Int</span>]  
+[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]  
+<span class="hljs-title">ghci</span>&gt; read <span class="hljs-string">&quot;(3, &apos;a&apos;)&quot;</span> :: (<span class="hljs-type">Int</span>, <span class="hljs-type">Char</span>)  
+(<span class="hljs-number">3</span>, &apos;a&apos;)
+</code></pre>
+<p>&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x4EE5;&#x8FA8;&#x8BA4;&#x51FA;&#x5927;&#x90E8;&#x5206;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x578B;&#x522B;&#xFF0C;&#x4F46;&#x9047;&#x5230; <code>read &quot;5&quot;</code> &#x7684;&#x65F6;&#x5019;&#x5B83;&#x5C31;&#x641E;&#x4E0D;&#x6E05;&#x695A;&#x7A76;&#x7ADF;&#x8BE5;&#x662F; Int &#x8FD8;&#x662F; Float &#x4E86;&#x3002;&#x53EA;&#x6709;&#x7ECF;&#x8FC7;&#x8FD0;&#x7B97;&#xFF0C;Haskell &#x624D;&#x4F1A;&#x660E;&#x786E;&#x5176;&#x578B;&#x522B;&#xFF1B;&#x540C;&#x65F6;&#x7531;&#x4E8E; Haskell &#x662F;&#x9759;&#x6001;&#x7684;&#xFF0C;&#x5B83;&#x8FD8;&#x5FC5;&#x987B;&#x5F97;&#x5728; &#x7F16;&#x8BD1;&#x524D;&#x641E;&#x6E05;&#x695A;&#x6240;&#x6709;&#x503C;&#x7684;&#x578B;&#x522B;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5C31;&#x6700;&#x597D;&#x63D0;&#x524D;&#x7ED9;&#x5B83;&#x6253;&#x58F0;&#x62DB;&#x547C;&#xFF1A;&quot;&#x563F;&#xFF0C;&#x8FD9;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x5E94;&#x8BE5;&#x662F;&#x8FD9;&#x4E2A;&#x578B;&#x522B;&#xFF0C;&#x7701;&#x7684;&#x4F60;&#x8BA4;&#x4E0D;&#x51FA;&#x6765;&#xFF01;&quot;</p>
+<p><strong>Enum</strong> &#x7684;&#x6210;&#x5458;&#x90FD;&#x662F;&#x8FDE;&#x7EED;&#x7684;&#x578B;&#x522B; -- &#x4E5F;&#x5C31;&#x662F;&#x53EF;&#x679A;&#x4E3E;&#x3002;<code>Enum</code> &#x7C7B;&#x5B58;&#x5728;&#x7684;&#x4E3B;&#x8981;&#x597D;&#x5904;&#x5C31;&#x5728;&#x4E8E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728; <code>Range</code> &#x4E2D;&#x7528;&#x5230;&#x5B83;&#x7684;&#x6210;&#x5458;&#x578B;&#x522B;&#xFF1A;&#x6BCF;&#x4E2A;&#x503C;&#x90FD;&#x6709;&#x540E;&#x7EE7;&#x5B50; (successer) &#x548C;&#x524D;&#x7F6E;&#x5B50; (predecesor)&#xFF0C;&#x5206;&#x522B;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>succ</code> &#x51FD;&#x6570;&#x548C; <code>pred</code> &#x51FD;&#x6570;&#x5F97;&#x5230;&#x3002;&#x8BE5; Typeclass &#x5305;&#x542B;&#x7684;&#x578B;&#x522B;&#x6709;&#xFF1A;<code>()</code>, <code>Bool</code>, <code>Char</code>, <code>Ordering</code>, <code>Int</code>, <code>Integer</code>, <code>Float</code> &#x548C; <code>Double</code>&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; [&apos;a&apos;..&apos;e&apos;]  
+<span class="hljs-string">&quot;abcde&quot;</span>  
+<span class="hljs-title">ghci</span>&gt; [<span class="hljs-type">LT</span> .. <span class="hljs-type">GT</span>]  
+[<span class="hljs-type">LT</span>,<span class="hljs-type">EQ</span>,<span class="hljs-type">GT</span>]  
+<span class="hljs-title">ghci</span>&gt; [<span class="hljs-number">3</span> .. <span class="hljs-number">5</span>]  
+[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]  
+<span class="hljs-title">ghci</span>&gt; succ &apos;<span class="hljs-type">B&apos;</span>  
+&apos;<span class="hljs-type">C&apos;</span>
+</code></pre>
+<p><strong>Bounded</strong> &#x7684;&#x6210;&#x5458;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x4E0A;&#x9650;&#x548C;&#x4E0B;&#x9650;&#x3002;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; minBound :: <span class="hljs-type">Int</span>  
+<span class="hljs-number">-2147483648</span>  
+<span class="hljs-title">ghci</span>&gt; maxBound :: <span class="hljs-type">Char</span>  
+&apos;\<span class="hljs-number">1114111</span>&apos;  
+<span class="hljs-title">ghci</span>&gt; maxBound :: <span class="hljs-type">Bool</span>  
+<span class="hljs-type">True</span>  
+<span class="hljs-title">ghci</span>&gt; minBound :: <span class="hljs-type">Bool</span>  
+<span class="hljs-type">False</span>
+</code></pre>
+<p><code>minBound</code> &#x548C; <code>maxBound</code> &#x51FD;&#x6570;&#x5F88;&#x6709;&#x8DA3;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x578B;&#x522B;&#x90FD;&#x662F; <code>(Bounded a) =&gt; a</code>&#x3002;&#x53EF;&#x4EE5;&#x8BF4;&#xFF0C;&#x5B83;&#x4EEC;&#x90FD;&#x662F;&#x591A;&#x6001;&#x5E38;&#x91CF;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5176;&#x4E2D;&#x7684;&#x9879;&#x90FD;&#x5C5E;&#x4E8E; <code>Bounded</code> Typeclass&#xFF0C;&#x90A3;&#x4E48;&#x8BE5; Tuple &#x4E5F;&#x5C5E;&#x4E8E; <code>Bounded</code></p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; maxBound :: (<span class="hljs-type">Bool</span>, <span class="hljs-type">Int</span>, <span class="hljs-type">Char</span>)  
+(<span class="hljs-type">True</span>,<span class="hljs-number">2147483647</span>,&apos;\<span class="hljs-number">1114111</span>&apos;)
+</code></pre>
+<p><strong>Num</strong> &#x662F;&#x8868;&#x793A;&#x6570;&#x5B57;&#x7684; Typeclass&#xFF0C;&#x5B83;&#x7684;&#x6210;&#x5458;&#x578B;&#x522B;&#x90FD;&#x5177;&#x6709;&#x6570;&#x5B57;&#x7684;&#x7279;&#x5F81;&#x3002;&#x68C0;&#x67E5;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x7684;&#x578B;&#x522B;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; :t <span class="hljs-number">20</span>  
+<span class="hljs-number">20</span> :: (<span class="hljs-type">Num</span> t) =&gt; t
+</code></pre>
+<p>&#x770B;&#x6837;&#x5B50;&#x6240;&#x6709;&#x7684;&#x6570;&#x5B57;&#x90FD;&#x662F;&#x591A;&#x6001;&#x5E38;&#x91CF;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x6240;&#x6709; <code>Num</code> Typeclass&#x4E2D;&#x7684;&#x6210;&#x5458;&#x578B;&#x522B;&#x3002;&#x4EE5;&#x4E0A;&#x4FBF;&#x662F; <code>Num</code> Typeclass &#x4E2D;&#x5305;&#x542B;&#x7684;&#x6240;&#x6709;&#x578B;&#x522B;&#xFF0C;&#x68C0;&#x6D4B; <code>*</code> &#x8FD0;&#x7B97;&#x5B50;&#x7684;&#x578B;&#x522B;&#xFF0C;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x5B83;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x4E00;&#x5207;&#x7684;&#x6570;&#x5B57;&#xFF1A;</p>
+<pre><code class="lang-haskell"><span class="hljs-title">ghci</span>&gt; :t (*)  
+(*) :: (<span class="hljs-type">Num</span> a) =&gt; a -&gt; a -&gt; a
+</code></pre>
+<p>&#x5B83;&#x53EA;&#x53D6;&#x4E24;&#x4E2A;&#x76F8;&#x540C;&#x578B;&#x522B;&#x7684;&#x53C2;&#x6570;&#x3002;&#x6240;&#x4EE5; <code>(5 :: Int) * (6 :: Integer)</code> &#x4F1A;&#x5F15;&#x53D1;&#x4E00;&#x4E2A;&#x578B;&#x522B;&#x9519;&#x8BEF;&#xFF0C;&#x800C; <code>5 * (6 :: Integer)</code> &#x5C31;&#x4E0D;&#x4F1A;&#x6709;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x578B;&#x522B;&#x53EA;&#x6709;&#x4EB2;&#x8FD1; <code>Show</code> &#x548C; <code>Eq</code>&#xFF0C;&#x624D;&#x53EF;&#x4EE5;&#x52A0;&#x5165; <code>Num</code>&#x3002;</p>
+<p><strong>Integral</strong> &#x540C;&#x6837;&#x662F;&#x8868;&#x793A;&#x6570;&#x5B57;&#x7684; Typeclass&#x3002;<code>Num</code> &#x5305;&#x542B;&#x6240;&#x6709;&#x7684;&#x6570;&#x5B57;&#xFF1A;&#x5B9E;&#x6570;&#x548C;&#x6574;&#x6570;&#x3002;&#x800C; Integral &#x4EC5;&#x5305;&#x542B;&#x6574;&#x6570;&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x6210;&#x5458;&#x578B;&#x522B;&#x6709; <code>Int</code> &#x548C; <code>Integer</code>&#x3002;</p>
+<p><strong>Floating</strong> &#x4EC5;&#x5305;&#x542B;&#x6D6E;&#x70B9;&#x578B;&#x522B;&#xFF1A;<code>Float</code> &#x548C; <code>Double</code>&#x3002;</p>
+<p>&#x6709;&#x4E2A;&#x51FD;&#x6570;&#x5728;&#x5904;&#x7406;&#x6570;&#x5B57;&#x65F6;&#x4F1A;&#x975E;&#x5E38;&#x6709;&#x7528;&#xFF0C;&#x5B83;&#x4FBF;&#x662F; <strong>fromIntegral</strong>&#x3002;&#x5176;&#x578B;&#x522B;&#x58F0;&#x660E;&#x4E3A;&#xFF1A; <code>fromIntegral :: (Num b, Integral a) =&gt; a -&gt; b</code>&#x3002;&#x4ECE;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5B83;&#x53D6;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x505A;&#x53C2;&#x6570;&#x5E76;&#x56DE;&#x4F20;&#x4E00;&#x4E2A;&#x66F4;&#x52A0;&#x901A;&#x7528;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#x8FD9;&#x5728;&#x540C;&#x65F6;&#x5904;&#x7406;&#x6574;&#x6570;&#x548C;&#x6D6E;&#x70B9;&#x65F6;&#x4F1A;&#x5C24;&#x4E3A;&#x6709;&#x7528;&#x3002;&#x4E3E;&#x4F8B;&#x6765;&#x8BF4;&#xFF0C;<code>length</code> &#x51FD;&#x6570;&#x7684;&#x578B;&#x522B;&#x58F0;&#x660E;&#x4E3A;&#xFF1A;<code>length :: [a] -&gt; Int</code>&#xFF0C;&#x800C;&#x975E;&#x66F4;&#x901A;&#x7528;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x5982; <code>length :: (Num b) =&gt; [a] -&gt; b</code>&#x3002;&#x8FD9;&#x5E94;&#x8BE5;&#x662F;&#x5386;&#x53F2;&#x539F;&#x56E0;&#x5427;&#xFF0C;&#x53CD;&#x6B63;&#x6211;&#x89C9;&#x5F97;&#x633A;&#x8822;&#x3002;&#x5982;&#x679C;&#x53D6;&#x4E86;&#x4E00;&#x4E2A; List &#x957F;&#x5EA6;&#x7684;&#x503C;&#x518D;&#x7ED9;&#x5B83;&#x52A0; 3.2 &#x5C31;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x662F;&#x5C06;&#x6D6E;&#x70B9;&#x6570;&#x548C;&#x6574;&#x6570;&#x76F8;&#x52A0;&#x3002;&#x9762;&#x5BF9;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x7528; <code>fromIntegral (length [1,2,3,4]) + 3.2</code> &#x6765;&#x89E3;&#x51B3;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#x5230;&#xFF0C;<code>fromIntegral</code> &#x7684;&#x578B;&#x522B;&#x58F0;&#x660E;&#x4E2D;&#x7528;&#x5230;&#x4E86;&#x591A;&#x4E2A;&#x578B;&#x522B;&#x7EA6;&#x675F;&#x3002;&#x5982;&#x4F60;&#x6240;&#x89C1;&#xFF0C;&#x53EA;&#x8981;&#x5C06;&#x591A;&#x4E2A;&#x578B;&#x522B;&#x7EA6;&#x675F;&#x653E;&#x5230;&#x62EC;&#x53F7;&#x91CC;&#x7528;&#x9017;&#x53F7;&#x9694;&#x5F00;&#x5373;&#x53EF;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2-ready-go.html" class="navigation navigation-prev " aria-label="Previous page: Ready Go">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4-syntax-in-function.html" class="navigation navigation-next " aria-label="Next page: Syntax in Function">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Type And Typeclass","level":"1.4","depth":1,"next":{"title":"Syntax in Function","level":"1.5","depth":1,"path":"4-syntax-in-function.md","ref":"4-syntax-in-function.md","articles":[]},"previous":{"title":"Ready Go","level":"1.3","depth":1,"path":"2-ready-go.md","ref":"2-ready-go.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-cn","gitbook":"*"},"file":{"path":"3-type-and-typeclass.md","mtime":"2019-11-07T09:17:12.677Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-07T09:30:46.419Z"},"basePath":".","book":{"language":"zh-cn"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
