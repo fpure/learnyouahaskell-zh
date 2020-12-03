@@ -984,21 +984,21 @@
 <p>&#x5728;&#x6A21;&#x5757;&#x7684;&#x5F00;&#x5934;&#x5B9A;&#x4E49;&#x6A21;&#x5757;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5982;&#x679C;&#x6587;&#x4EF6;&#x540D;&#x53EB;&#x505A; <code>Geometry.hs</code> &#x90A3;&#x5B83;&#x7684;&#x540D;&#x5B57;&#x5C31;&#x5F97;&#x662F; <code>Geometry</code>&#x3002;&#x5728;&#x58F0;&#x660E;&#x51FA;&#x5B83;&#x542B;&#x6709;&#x7684;&#x51FD;&#x6570;&#x540D;&#x4E4B;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x7F16;&#x5199;&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;&#x5566;&#xFF0C;&#x5C31;&#x8FD9;&#x6837;&#x5199;:</p>
 <pre><code class="lang-haskell"><span class="hljs-keyword">module</span> Geometry  
 ( <span class="hljs-title">sphereVolume</span>  
-&#xFF0C;<span class="hljs-title">sphereArea</span>  
-&#xFF0C;<span class="hljs-title">cubeVolume</span>  
-&#xFF0C;<span class="hljs-title">cubeArea</span>  
-&#xFF0C;<span class="hljs-title">cuboidArea</span>  
-&#xFF0C;<span class="hljs-title">cuboidVolume</span>  
+, <span class="hljs-title">sphereArea</span>  
+, <span class="hljs-title">cubeVolume</span>  
+, <span class="hljs-title">cubeArea</span>  
+, <span class="hljs-title">cuboidArea</span>  
+, <span class="hljs-title">cuboidVolume</span>  
 ) <span class="hljs-keyword">where</span>
 </code></pre>
 <p>&#x5982;&#x4F60;&#x6240;&#x89C1;&#xFF0C;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x5BF9;&#x7403;&#x4F53;,&#x7ACB;&#x65B9;&#x4F53;&#x548C;&#x7ACB;&#x65B9;&#x4F53;&#x7684;&#x9762;&#x79EF;&#x548C;&#x4F53;&#x79EF;&#x7684;&#x89E3;&#x6CD5;&#x3002;&#x7EE7;&#x7EED;&#x8FDB;&#x53D1;&#xFF0C;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x4F53;:</p>
 <pre><code class="lang-haskell"><span class="hljs-keyword">module</span> Geometry  
 ( <span class="hljs-title">sphereVolume</span>  
-&#xFF0C;<span class="hljs-title">sphereArea</span>  
-&#xFF0C;<span class="hljs-title">cubeVolume</span>  
-&#xFF0C;<span class="hljs-title">cubeArea</span>  
-&#xFF0C;<span class="hljs-title">cuboidArea</span>  
-&#xFF0C;<span class="hljs-title">cuboidVolume</span>  
+, <span class="hljs-title">sphereArea</span>  
+, <span class="hljs-title">cubeVolume</span>  
+, <span class="hljs-title">cubeArea</span>  
+, <span class="hljs-title">cuboidArea</span>  
+, <span class="hljs-title">cuboidVolume</span>  
 ) <span class="hljs-keyword">where</span>  
 
 <span class="hljs-title">sphereVolume</span> :: <span class="hljs-type">Float</span> -&gt; <span class="hljs-type">Float</span>  
@@ -1032,10 +1032,10 @@
 <p>&#x6A21;&#x5757;&#x4E5F;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x5206;&#x5C42;&#x7684;&#x7ED3;&#x6784;&#x6765;&#x7EC4;&#x7EC7;&#xFF0C;&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x90FD;&#x53EF;&#x4EE5;&#x542B;&#x6709;&#x591A;&#x4E2A;&#x5B50;&#x6A21;&#x5757;&#x3002;&#x800C;&#x5B50;&#x6A21;&#x5757;&#x8FD8;&#x53EF;&#x4EE5;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x5B50;&#x6A21;&#x5757;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A; <code>Geometry</code> &#x5206;&#x6210;&#x4E09;&#x4E2A;&#x5B50;&#x6A21;&#x5757;&#xFF0C;&#x800C;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x5BF9;&#x5E94;&#x5404;&#x81EA;&#x7684;&#x56FE;&#x5F62;&#x5BF9;&#x8C61;.</p>
 <p>&#x9996;&#x5148;&#xFF0C;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A; <code>Geometry</code> &#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x6CE8;&#x610F;&#x9996;&#x5B57;&#x6BCD;&#x8981;&#x5927;&#x5199;&#xFF0C;&#x5728;&#x91CC;&#x9762;&#x65B0;&#x5EFA;&#x4E09;&#x4E2A;&#x6587;&#x4EF6;</p>
 <p>&#x5982;&#x4E0B;&#x5C31;&#x662F;&#x5404;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;:</p>
-<p>sphere.hs</p>
+<p>Sphere.hs</p>
 <pre><code class="lang-haskell"><span class="hljs-keyword">module</span> Geometry.Sphere  
 ( <span class="hljs-title">volume</span>  
-&#xFF0C;<span class="hljs-title">area</span>  
+, <span class="hljs-title">area</span>  
 ) <span class="hljs-keyword">where</span>  
 
 <span class="hljs-title">volume</span> :: <span class="hljs-type">Float</span> -&gt; <span class="hljs-type">Float</span>  
@@ -1044,10 +1044,10 @@
 <span class="hljs-title">area</span> :: <span class="hljs-type">Float</span> -&gt; <span class="hljs-type">Float</span>  
 <span class="hljs-title">area</span> radius = <span class="hljs-number">4</span> * pi * (radius ^ <span class="hljs-number">2</span>)
 </code></pre>
-<p>cuboid.hs</p>
+<p>Cuboid.hs</p>
 <pre><code class="lang-haskell"><span class="hljs-keyword">module</span> Geometry.Cuboid  
 ( <span class="hljs-title">volume</span>  
-&#xFF0C;<span class="hljs-title">area</span>  
+, <span class="hljs-title">area</span>  
 ) <span class="hljs-keyword">where</span>  
 
 <span class="hljs-title">volume</span> :: <span class="hljs-type">Float</span> -&gt; <span class="hljs-type">Float</span> -&gt; <span class="hljs-type">Float</span> -&gt; <span class="hljs-type">Float</span>  
@@ -1059,10 +1059,10 @@
 <span class="hljs-title">rectangleArea</span> :: <span class="hljs-type">Float</span> -&gt; <span class="hljs-type">Float</span> -&gt; <span class="hljs-type">Float</span>  
 <span class="hljs-title">rectangleArea</span> a b = a * b
 </code></pre>
-<p>cube.hs</p>
+<p>Cube.hs</p>
 <pre><code class="lang-haskell"><span class="hljs-keyword">module</span> Geometry.Cube  
 ( <span class="hljs-title">volume</span>  
-&#xFF0C;<span class="hljs-title">area</span>  
+, <span class="hljs-title">area</span>  
 ) <span class="hljs-keyword">where</span>  
 
 <span class="hljs-keyword">import</span> <span class="hljs-keyword">qualified</span> Geometry.Cuboid <span class="hljs-keyword">as</span> Cuboid  
@@ -1126,7 +1126,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Module","level":"1.8","depth":1,"next":{"title":"Build Our Own Type and Typeclass","level":"1.9","depth":1,"path":"8-build-our-own-type-and-typeclass.md","ref":"8-build-our-own-type-and-typeclass.md","articles":[]},"previous":{"title":"High Order Function","level":"1.7","depth":1,"path":"6-high-order-function.md","ref":"6-high-order-function.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-cn","gitbook":"*"},"file":{"path":"7-module.md","mtime":"2019-11-07T09:17:12.677Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-07T09:30:46.419Z"},"basePath":".","book":{"language":"zh-cn"}});
+            gitbook.page.hasChanged({"page":{"title":"Module","level":"1.8","depth":1,"next":{"title":"Build Our Own Type and Typeclass","level":"1.9","depth":1,"path":"8-build-our-own-type-and-typeclass.md","ref":"8-build-our-own-type-and-typeclass.md","articles":[]},"previous":{"title":"High Order Function","level":"1.7","depth":1,"path":"6-high-order-function.md","ref":"6-high-order-function.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-cn","gitbook":"*"},"file":{"path":"7-module.md","mtime":"2020-12-03T17:01:40.720Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-03T17:01:59.781Z"},"basePath":".","book":{"language":"zh-cn"}});
         });
     </script>
 </div>
